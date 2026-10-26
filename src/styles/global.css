@@ -714,9 +714,35 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* ==============================================================
+   Swup Page Transitions
+   Simple, snappy, and effective
+   ============================================================== */
+.transition-swup {
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+html.is-animating .transition-swup {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+html.is-rendering .transition-swup {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
 } /* end @layer components */
 
 @media (prefers-reduced-motion: reduce) {
+  .transition-swup,
+  html.is-animating .transition-swup,
+  html.is-rendering .transition-swup {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
   html {
     scroll-behavior: auto;
   }

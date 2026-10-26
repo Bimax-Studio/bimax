@@ -18,12 +18,16 @@
     "@keystatic/astro": "6.0.0",
     "@keystatic/core": "0.6.9",
     "@mdx-js/mdx": "3.1.1",
+    "@swup/head-plugin": "^2.3.1",
+    "@swup/scripts-plugin": "^2.1.0",
+    "@swup/scroll-plugin": "^4.0.0",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
     "astro": "7.2.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "remark-gfm": "4.0.1",
+    "swup": "^4.10.0",
     "tailwindcss": "4.3.3"
   }
 }
