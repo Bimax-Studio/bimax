@@ -459,6 +459,151 @@ const territoryStickers = [
   </section>
 
   <!-- ============================================================== -->
+  <!-- SEZIONE BLU: SITI ACCESSIBILITY COMPLIANT (WCAG & EAA)        -->
+  <!-- ============================================================== -->
+  <section
+    id="accessibilita"
+    class="border-b-2 border-ink bg-[#1E40AF] px-[var(--page-gutter)] py-20 md:py-28 text-white relative overflow-hidden"
+  >
+    <!-- Pattern a pois leggeri -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(#FFFFFF_2px,transparent_2px)] [background-size:24px_24px]"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative mx-auto max-w-[1360px]">
+      <div class="grid gap-12 lg:grid-cols-12 lg:items-center" data-reveal>
+        <div class="lg:col-span-8">
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="pop-badge bg-[#FFD027] text-ink font-bold -rotate-1">
+              ♿ Inclusione & Conformità
+            </span>
+            <span class="pop-badge bg-white text-ink font-bold rotate-1">
+              Standard WCAG 2.1 AA
+            </span>
+            <span class="pop-badge bg-[#00C9A7] text-ink font-bold -rotate-1">
+              European Accessibility Act (EAA)
+            </span>
+          </div>
+
+          <h2 class="display-lg text-white max-w-[16ch] text-balance">
+            Sviluppiamo siti web <span class="bg-[#FFD027] text-ink px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">accessibili a tutti</span> e a norma di legge.
+          </h2>
+
+          <p class="mt-6 max-w-2xl text-[17px] leading-relaxed text-[#DBEAFE] md:text-[18px]">
+            L'accessibilità digitale non è un dettaglio secondario: è rispetto concreto per ogni visitatore, garanzia di conformità alle normative europee e una leva strategica che porta più clienti reali alla tua PMI.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={basePath('/contact')}
+              class="pop-btn bg-[#FFD027] text-ink hover:bg-[#ffe169] text-sm px-6 py-3.5 font-bold"
+            >
+              Richiedi una verifica di accessibilità
+              <Icon name="arrow-right" size={15} />
+            </a>
+            <span class="text-xs font-mono font-bold text-[#DBEAFE] flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-[#00C9A7]"></span>
+              Nessuna barriera all'ingresso
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col items-center">
+          <div class="relative">
+            <!-- Baloon con citazione cartoon -->
+            <div class="pop-card bg-white p-4 mb-4 text-center text-xs font-bold text-ink max-w-[240px] shadow-[4px_4px_0px_#1A1A1A]">
+              "Un sito ben fatto deve poter essere navigato da chiunque, senza escludere nessuno!" 🌟
+            </div>
+            <div class="flex justify-center">
+              <Mascot name="accessible" size={170} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- I 4 Pilastri dell'Accessibilità BIMAX -->
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#FFD027] text-ink font-bold shadow-[2px_2px_0px_#1A1A1A]">
+                ⚖️
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">
+                Conformità di Legge & EAA
+              </h3>
+            </div>
+            <p class="text-[14px] leading-relaxed text-ink/80">
+              Linee guida europee e WCAG 2.1 AA rispettate per prevenire sanzioni e garantire conformità normativa alle PMI.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
+            ✓ Linee Guida Europee
+          </div>
+        </div>
+
+        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#00C9A7] text-ink font-bold shadow-[2px_2px_0px_#1A1A1A]">
+                ⌨️
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">
+                Navigazione da Tastiera
+              </h3>
+            </div>
+            <p class="text-[14px] leading-relaxed text-ink/80">
+              Focus visibile su tutti gli elementi interattivi, skip links e piena compatibilità per chi non usa il mouse.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
+            ✓ 100% Keyboard Friendly
+          </div>
+        </div>
+
+        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#FFE8E2] text-[#D63914] font-bold shadow-[2px_2px_0px_#1A1A1A]">
+                👁️
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">
+                Contrasti & Leggibilità
+              </h3>
+            </div>
+            <p class="text-[14px] leading-relaxed text-ink/80">
+              Contrasto minimo 4.5:1 verificato, font ad alta leggibilità, testi scalabili e niente combinazioni cromatiche faticose.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
+            ✓ Contrasti Verificati
+          </div>
+        </div>
+
+        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#DFF9F4] text-[#064E3B] font-bold shadow-[2px_2px_0px_#1A1A1A]">
+                🔊
+              </span>
+              <h3 class="font-display text-base font-bold text-ink">
+                Screen Reader & SEO
+              </h3>
+            </div>
+            <p class="text-[14px] leading-relaxed text-ink/80">
+              HTML5 semantico puro, etichette ARIA descrittive e testi alternativi sulle immagini per lettori vocali e crawler Google.
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
+            ✓ Semantica & Aria Ready
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
   <!-- PROGETTI & CASI STUDIO (SCRITTI COME ARTICOLI)                 -->
   <!-- ============================================================== -->
   <section

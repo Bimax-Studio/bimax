@@ -210,4 +210,64 @@ const { name = 'coder', size = 160, class: className = '' } = Astro.props;
       </svg>
     )
   }
+
+  {
+    name === 'accessible' && (
+      /* Il guardiano dell'accessibilità: simpatico robottino con occhiali, scudo AA e pollice in su */
+      <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte siti accessibili e conformi">
+        <!-- Ombra a terra -->
+        <ellipse cx="100" cy="186" rx="58" ry="9" fill="#1A1A1A" opacity="0.15" />
+
+        <!-- Scarpine scattanti -->
+        <rect x="74" y="152" width="16" height="26" rx="8" fill="#1A1A1A" />
+        <rect x="110" y="152" width="16" height="26" rx="8" fill="#1A1A1A" />
+        <ellipse cx="78" cy="178" rx="16" ry="9" fill="#FFD027" stroke="#1A1A1A" stroke-width="3" />
+        <ellipse cx="122" cy="178" rx="16" ry="9" fill="#FFD027" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Corpo cicciotto azzurro/menta -->
+        <rect x="52" y="80" width="96" height="82" rx="40" fill="#00C9A7" stroke="#1A1A1A" stroke-width="3.5" />
+        
+        <!-- Pancia bianca luminosa ad alto contrasto -->
+        <ellipse cx="100" cy="122" rx="32" ry="26" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" />
+        <!-- Simbolo accessibilità universale sulla pancia -->
+        <circle cx="100" cy="112" r="4" fill="#1A1A1A" />
+        <path d="M92 119 H108 M100 119 V132 M94 132 L100 125 L106 132" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- Antenna con stellina gialla -->
+        <path d="M100 80 V54" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" />
+        <circle cx="100" cy="50" r="10" fill="#FFD027" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Braccina -->
+        <!-- Braccio sinistro con scudo WCAG AA -->
+        <path d="M52 108 C34 116 28 136 44 146" stroke="#1A1A1A" stroke-width="10" stroke-linecap="round" />
+        <path d="M52 108 C34 116 28 136 44 146" stroke="#00C9A7" stroke-width="5" stroke-linecap="round" />
+        <!-- Scudo AA -->
+        <path d="M22 112 C22 104 46 100 46 100 C46 100 70 104 70 112 C70 134 46 150 46 150 C46 150 22 134 22 112 Z" fill="#FFD027" stroke="#1A1A1A" stroke-width="3" />
+        <text x="46" y="129" font-family="sans-serif" font-weight="900" font-size="13" fill="#1A1A1A" text-anchor="middle">AA</text>
+
+        <!-- Braccio destro che saluta / pollice in su -->
+        <path d="M148 108 C166 100 174 80 166 68" stroke="#1A1A1A" stroke-width="10" stroke-linecap="round" />
+        <path d="M148 108 C166 100 174 80 166 68" stroke="#00C9A7" stroke-width="5" stroke-linecap="round" />
+        <circle cx="166" cy="66" r="9" fill="#FFD2B8" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Occhialoni grandi neri con lenti bianche a contrasto -->
+        <circle cx="82" cy="78" r="16" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3.5" />
+        <circle cx="118" cy="78" r="16" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3.5" />
+        <line x1="98" y1="78" x2="102" y2="78" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" />
+
+        <!-- Pupille vispe con luce -->
+        <circle cx="85" cy="78" r="6" fill="#1A1A1A" />
+        <circle cx="87" cy="76" r="2" fill="#FFFFFF" />
+        <circle cx="121" cy="78" r="6" fill="#1A1A1A" />
+        <circle cx="123" cy="76" r="2" fill="#FFFFFF" />
+
+        <!-- Guanciotte rosa -->
+        <ellipse cx="68" cy="88" rx="6" ry="4" fill="#FF5A36" opacity="0.6" />
+        <ellipse cx="132" cy="88" rx="6" ry="4" fill="#FF5A36" opacity="0.6" />
+
+        <!-- Sorrisetto felice -->
+        <path d="M92 93 Q100 102 108 93" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    )
+  }
 </div>
