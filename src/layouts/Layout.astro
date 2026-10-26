@@ -1,0 +1,166 @@
+---
+import '@/styles/global.css';
+
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { SITE, basePath } from '@/lib/design';
+
+const {
+  title = `${SITE.name} — ${SITE.tagline}`,
+  description = SITE.description,
+  image = '/og.svg',
+  accent = 'solar',
+  ogType = 'website',
+  noindex = false,
+  bodyClass = '',
+} = Astro.props;
+
+const site = Astro.site ?? new URL(Astro.url.origin);
+const canonical = new URL(Astro.url.pathname, site);
+const ogImage = new URL(basePath(image), site);
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === (import.meta.env.BASE_URL || '/');
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.legalName,
+  url: site.origin,
+  email: SITE.email,
+  foundingDate: String(SITE.founded),
+  description: SITE.description,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.address,
+    addressLocality: 'Verona',
+    addressRegion: 'VR',
+    addressCountry: 'IT',
+  },
+};
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={basePath('/favicon.svg')} type="image/svg+xml" />
+    <meta name="site-base" content={import.meta.env.BASE_URL || '/'} />
+    <meta name="theme-color" content="#D63914" />
+    <meta name="color-scheme" content="light" />
+
+    <script is:inline>
+      // Automatic link resolver for GitHub Pages subpath
+      (function() {
+        const base = document.querySelector('meta[name="site-base"]')?.getAttribute('content') || '/';
+        if (base && base !== '/') {
+          document.addEventListener('click', function(e) {
+            const a = e.target.closest('a');
+            if (!a) return;
+            const href = a.getAttribute('href');
+            if (href && href.startsWith('/') && !href.startsWith(base) && !href.startsWith('//')) {
+              a.setAttribute('href', base + href.slice(1));
+            }
+          }, true);
+        }
+      })();
+    </script>
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="it_IT" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400..800&family=Space+Mono:ital,wght@0,400;0,700&display=swap"
+    />
+
+    {
+      isHome && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(organization)}
+        />
+      )
+    }
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Salta al contenuto</a>
+
+    <div class="grain-layer" aria-hidden="true"></div>
+
+    <Header />
+
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      // Reveal-on-scroll. Content is visible by default; the `js` class is what
+      // opts into the animation, so nothing disappears if scripting fails.
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches;
+
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.05 },
+        );
+
+        document
+          .querySelectorAll('[data-reveal]')
+          .forEach((element) => observer.observe(element));
+      } else {
+        document
+          .querySelectorAll('[data-reveal]')
+          .forEach((element) => element.classList.add('is-visible'));
+      }
+
+      // Close the mobile menu on Escape or when tapping outside of it.
+      const menu = document.querySelector('header details');
+
+      if (menu) {
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && menu.open) {
+            menu.open = false;
+            menu.querySelector('summary')?.focus();
+          }
+        });
+
+        document.addEventListener('click', (event) => {
+          if (menu.open && !menu.contains(event.target)) menu.open = false;
+        });
+      }
+    </script>
+  </body>
+</html>

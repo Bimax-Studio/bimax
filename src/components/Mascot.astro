@@ -1,0 +1,213 @@
+---
+/**
+ * Flat 2D colorful cartoon mascots for BIMAX.
+ * Eccentric, friendly, human, vector-sharp.
+ */
+const { name = 'coder', size = 160, class: className = '' } = Astro.props;
+---
+
+<div class:list={['inline-block select-none transition-transform hover:scale-105 duration-300 ease-organic', className]}>
+  {
+    name === 'coder' && (
+      /* Il programmatore sereno: tondo, occhialoni, cuffie, cappellino e tazza */
+      <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte sviluppatore simpatico">
+        <!-- Ombra a terra -->
+        <ellipse cx="100" cy="188" rx="60" ry="10" fill="#E2DCD2" />
+        
+        <!-- Gambette & scarpine -->
+        <rect x="75" y="150" width="16" height="30" rx="8" fill="#1A1A1A" />
+        <rect x="109" y="150" width="16" height="30" rx="8" fill="#1A1A1A" />
+        <ellipse cx="78" cy="180" rx="16" ry="9" fill="#FF5A36" stroke="#1A1A1A" stroke-width="3" />
+        <ellipse cx="122" cy="180" rx="16" ry="9" fill="#FF5A36" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Corpo: Felpa cicciotta gialla -->
+        <rect x="52" y="90" width="96" height="74" rx="36" fill="#FFD027" stroke="#1A1A1A" stroke-width="3.5" />
+        <!-- Tascone a marsupio -->
+        <path d="M70 135 H130 C130 148 116 156 100 156 C84 156 70 148 70 135 Z" fill="#FFE169" stroke="#1A1A1A" stroke-width="2.5" />
+        <text x="100" y="149" font-family="monospace" font-size="11" font-weight="bold" fill="#1A1A1A" text-anchor="middle">&lt;/&gt;</text>
+
+        <!-- Braccina -->
+        <!-- Braccio sinistro rilassato -->
+        <path d="M52 110 C36 122 36 142 48 146" stroke="#1A1A1A" stroke-width="12" stroke-linecap="round" />
+        <path d="M52 110 C36 122 36 142 48 146" stroke="#FFD027" stroke-width="6" stroke-linecap="round" />
+        <!-- Braccio destro che saluta -->
+        <path d="M148 110 C168 100 174 72 165 60" stroke="#1A1A1A" stroke-width="12" stroke-linecap="round" />
+        <path d="M148 110 C168 100 174 72 165 60" stroke="#FFD027" stroke-width="6" stroke-linecap="round" />
+        <circle cx="165" cy="58" r="9" fill="#FFD2B8" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Testa tonda color pesca -->
+        <circle cx="100" cy="74" r="46" fill="#FFD2B8" stroke="#1A1A1A" stroke-width="3.5" />
+        
+        <!-- Ciuffo ribelle sopra la testa -->
+        <path d="M96 28 C92 14 108 12 104 28" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" />
+        <path d="M104 28 C112 18 122 22 110 32" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" />
+
+        <!-- Cuffione viola da musica -->
+        <path d="M52 74 C52 44 148 44 148 74" fill="none" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round" />
+        <path d="M52 74 C52 44 148 44 148 74" fill="none" stroke="#845EC2" stroke-width="4" stroke-linecap="round" />
+        <rect x="44" y="62" width="14" height="26" rx="7" fill="#845EC2" stroke="#1A1A1A" stroke-width="3" />
+        <rect x="142" y="62" width="14" height="26" rx="7" fill="#845EC2" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Occhialoni da nerd tondi -->
+        <circle cx="82" cy="74" r="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3" />
+        <circle cx="118" cy="74" r="15" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3" />
+        <line x1="97" y1="74" x2="103" y2="74" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" />
+        
+        <!-- Pupille vispe con riflesso -->
+        <circle cx="85" cy="74" r="6" fill="#1A1A1A" />
+        <circle cx="87" cy="72" r="2" fill="#FFFFFF" />
+        <circle cx="121" cy="74" r="6" fill="#1A1A1A" />
+        <circle cx="123" cy="72" r="2" fill="#FFFFFF" />
+
+        <!-- Guanciotte rosse felici -->
+        <ellipse cx="68" cy="85" rx="6" ry="4" fill="#FF8080" opacity="0.8" />
+        <ellipse cx="132" cy="85" rx="6" ry="4" fill="#FF8080" opacity="0.8" />
+
+        <!-- Sorrisetto caldo -->
+        <path d="M92 90 Q100 99 108 90" fill="none" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" />
+      </svg>
+    )
+  }
+
+  {
+    name === 'scout' && (
+      /* Il guardiano di Google Maps & Local SEO: simpatico pin vivente con cappellino */
+      <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte Google Maps Verona">
+        <!-- Ombra -->
+        <ellipse cx="100" cy="186" rx="55" ry="9" fill="#E2DCD2" />
+
+        <!-- Scarpine verdi scattanti -->
+        <rect x="76" y="152" width="14" height="26" rx="7" fill="#1A1A1A" />
+        <rect x="110" y="152" width="14" height="26" rx="7" fill="#1A1A1A" />
+        <ellipse cx="78" cy="178" rx="15" ry="9" fill="#00C9A7" stroke="#1A1A1A" stroke-width="3" />
+        <ellipse cx="122" cy="178" rx="15" ry="9" fill="#00C9A7" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Corpo a goccia / Google Pin gigante corallo -->
+        <path d="M100 162 C40 100 44 40 100 40 C156 40 160 100 100 162 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="4" />
+        
+        <!-- Cerchione pancia bianco (come il centro del pin) -->
+        <circle cx="100" cy="88" r="34" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Occhi grandi felici -->
+        <circle cx="88" cy="84" r="5" fill="#1A1A1A" />
+        <circle cx="90" cy="82" r="1.5" fill="#FFFFFF" />
+        <circle cx="112" cy="84" r="5" fill="#1A1A1A" />
+        <circle cx="114" cy="82" r="1.5" fill="#FFFFFF" />
+
+        <!-- Sorrisone aperto -->
+        <path d="M92 95 Q100 106 108 95" fill="#FF8080" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" />
+
+        <!-- Cappellino da esploratore azzurro -->
+        <path d="M68 44 C68 24 132 24 132 44 Z" fill="#2C73D2" stroke="#1A1A1A" stroke-width="3" />
+        <path d="M58 44 H142" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" />
+        <circle cx="100" cy="22" r="5" fill="#FFD027" stroke="#1A1A1A" stroke-width="2" />
+
+        <!-- Bandierina "VR" che tiene in mano -->
+        <path d="M148 100 L176 80 L176 110 L148 116 Z" fill="#FFD027" stroke="#1A1A1A" stroke-width="2.5" />
+        <text x="162" y="99" font-family="sans-serif" font-weight="900" font-size="11" fill="#1A1A1A" text-anchor="middle">VR</text>
+        <line x1="148" y1="74" x2="148" y2="135" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" />
+      </svg>
+    )
+  }
+
+  {
+    name === 'speedy' && (
+      /* Il mostriciattolo/razzietto della velocità (< 0.8s) */
+      <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte velocità fulminea">
+        <!-- Ombra veloce sfumata -->
+        <ellipse cx="90" cy="184" rx="65" ry="9" fill="#E2DCD2" />
+
+        <!-- Linee di vento scatto -->
+        <path d="M18 70 H42" stroke="#FF5A36" stroke-width="3.5" stroke-linecap="round" />
+        <path d="M10 95 H36" stroke="#FFD027" stroke-width="4" stroke-linecap="round" />
+        <path d="M22 120 H45" stroke="#00C9A7" stroke-width="3.5" stroke-linecap="round" />
+
+        <!-- Corpo: Saetta morbida o creaturina verde menta / azzurra -->
+        <rect x="55" y="45" width="90" height="100" rx="42" fill="#00C9A7" stroke="#1A1A1A" stroke-width="3.5" transform="rotate(-6 100 95)" />
+        
+        <!-- Pancia color crema -->
+        <ellipse cx="100" cy="102" rx="30" ry="32" fill="#FFFFFF" opacity="0.9" stroke="#1A1A1A" stroke-width="2.5" />
+
+        <!-- Occhioni giganti vispi cartoon -->
+        <circle cx="86" cy="78" r="11" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3" />
+        <circle cx="114" cy="75" r="11" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3" />
+        <circle cx="88" cy="78" r="5" fill="#1A1A1A" />
+        <circle cx="90" cy="76" r="1.5" fill="#FFFFFF" />
+        <circle cx="116" cy="75" r="5" fill="#1A1A1A" />
+        <circle cx="118" cy="73" r="1.5" fill="#FFFFFF" />
+
+        <!-- Sorrisetto furbo a linguaccia -->
+        <path d="M92 98 Q100 108 108 97" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" />
+        <path d="M97 101 Q100 112 105 101 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="2" />
+
+        <!-- Stelline di turbo -->
+        <path d="M152 42 L155 49 L162 50 L157 55 L159 62 L152 58 L146 62 L148 55 L143 50 L150 49 Z" fill="#FFD027" stroke="#1A1A1A" stroke-width="2" />
+        <path d="M46 36 L48 41 L53 42 L49 46 L51 51 L46 48 L42 51 L43 46 L39 42 L44 41 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="2" />
+
+        <!-- Scarpette da corsa rosse -->
+        <ellipse cx="78" cy="174" rx="18" ry="10" fill="#FF4B2B" stroke="#1A1A1A" stroke-width="3" />
+        <ellipse cx="126" cy="168" rx="18" ry="10" fill="#FF4B2B" stroke="#1A1A1A" stroke-width="3" />
+      </svg>
+    )
+  }
+
+  {
+    name === 'whatsapp-buddy' && (
+      /* La nuvoletta WhatsApp simpatica: amichevole, con fumetto e telefonino */
+      <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte conversione WhatsApp">
+        <!-- Ombra -->
+        <ellipse cx="100" cy="186" rx="55" ry="9" fill="#E2DCD2" />
+
+        <!-- Gambette -->
+        <rect x="78" y="152" width="14" height="24" rx="7" fill="#1A1A1A" />
+        <rect x="108" y="152" width="14" height="24" rx="7" fill="#1A1A1A" />
+        <ellipse cx="80" cy="178" rx="15" ry="9" fill="#845EC2" stroke="#1A1A1A" stroke-width="3" />
+        <ellipse cx="120" cy="178" rx="15" ry="9" fill="#845EC2" stroke="#1A1A1A" stroke-width="3" />
+
+        <!-- Fumettone / nuvoletta verde smeraldo WhatsApp -->
+        <path d="M100 40 C52 40 40 76 40 102 C40 120 50 136 68 146 L56 166 L86 158 C91 160 95 160 100 160 C148 160 160 124 160 102 C160 76 148 40 100 40 Z" fill="#25D366" stroke="#1A1A1A" stroke-width="4" />
+
+        <!-- Occhi cartoon rassicuranti -->
+        <circle cx="82" cy="94" r="7" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" />
+        <circle cx="118" cy="94" r="7" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" />
+        <circle cx="84" cy="94" r="3.5" fill="#1A1A1A" />
+        <circle cx="120" cy="94" r="3.5" fill="#1A1A1A" />
+
+        <!-- Sorrisone dolce -->
+        <path d="M92 112 Q100 122 108 112" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" fill="none" />
+        
+        <!-- Cuoricino volante -->
+        <path d="M142 42 C142 34 154 32 158 40 C162 32 174 34 174 42 C174 54 158 64 158 64 C158 64 142 54 142 42 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="2.5" />
+
+        <!-- Micro telefono in mano -->
+        <rect x="134" y="96" width="22" height="36" rx="5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3" transform="rotate(12 145 114)" />
+        <rect x="138" y="100" width="14" height="22" rx="2" fill="#FFD027" transform="rotate(12 145 111)" />
+      </svg>
+    )
+  }
+
+  {
+    name === 'cup' && (
+      /* La tazza amica del caffè mattutino */
+      <svg width={size} height={size} viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte tazza da caffè">
+        <ellipse cx="80" cy="148" rx="45" ry="7" fill="#E2DCD2" />
+        <!-- Piatto -->
+        <ellipse cx="80" cy="142" rx="54" ry="10" fill="#FFD027" stroke="#1A1A1A" stroke-width="3" />
+        <!-- Tazza -->
+        <path d="M40 70 H120 V115 C120 135 102 140 80 140 C58 140 40 135 40 115 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="3.5" />
+        <!-- Manico -->
+        <path d="M120 80 C138 80 142 110 120 116" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" />
+        <path d="M120 80 C138 80 142 110 120 116" stroke="#FF5A36" stroke-width="3.5" stroke-linecap="round" />
+        <!-- Occhietti e sorriso -->
+        <circle cx="68" cy="98" r="4.5" fill="#FFFFFF" />
+        <circle cx="69" cy="98" r="2.5" fill="#1A1A1A" />
+        <circle cx="92" cy="98" r="4.5" fill="#FFFFFF" />
+        <circle cx="93" cy="98" r="2.5" fill="#1A1A1A" />
+        <path d="M76 108 Q80 114 84 108" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <!-- Vapore caldo a cuoricino -->
+        <path d="M68 54 C68 40 76 34 76 22" stroke="#FFD027" stroke-width="3" stroke-linecap="round" />
+        <path d="M88 50 C88 38 96 32 96 20" stroke="#FF5A36" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    )
+  }
+</div>

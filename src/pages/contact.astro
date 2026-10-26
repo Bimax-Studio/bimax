@@ -1,0 +1,321 @@
+---
+import Icon from '@/components/Icon.astro';
+import Mascot from '@/components/Mascot.astro';
+import Layout from '@/layouts/Layout.astro';
+import { SITE, basePath } from '@/lib/design';
+
+const isSent = Astro.url.searchParams.get('sent') === '1';
+const isError = Astro.url.searchParams.get('error') === '1';
+---
+
+<Layout
+  title="Contatti & Audit per PMI — BIMAX Verona"
+  description="Richiedi un audit del tuo sito o contattaci su WhatsApp: parli direttamente con i referenti del progetto a Verona e sul territorio."
+>
+  <section class="relative overflow-hidden pt-12 pb-18 md:pt-18 md:pb-24 bg-paper">
+    <!-- Texture a pois leggeri -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
+    >
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+          📬 Contatto Diretto Verona
+        </span>
+        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1 font-bold">
+          🤝 Partner per le PMI
+        </span>
+        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+          🔍 Analisi Trasparente
+        </span>
+      </div>
+
+      <div class="mt-4 grid gap-12 lg:grid-cols-12 lg:gap-14">
+        <!-- Colonna Sinistra: Info e WhatsApp Fast Lane -->
+        <div class="lg:col-span-5">
+          <h1 class="display-xl max-w-[15ch] text-balance text-ink">
+            Parliamo del tuo progetto a <span class="bg-[#FFD027] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">Verona</span>
+          </h1>
+
+          <p class="mt-6 max-w-md text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
+            Hai già delle campagne attive o un sito che non porta contatti? Mandaci il link: controlleremo velocità, visibilità locale e tracciamenti per dirti con sincerità cosa sistemare.
+          </p>
+
+          <!-- Box WhatsApp amichevole ed eccentrico -->
+          <div class="mt-8 pop-card bg-[#DFF9F4] p-6 relative overflow-hidden">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <span class="grid h-12 w-12 place-items-center rounded-2xl border-2 border-ink bg-[#25D366] text-ink shadow-[2px_2px_0px_#1A1A1A]">
+                  <Icon name="whatsapp" size={24} />
+                </span>
+                <div>
+                  <h2 class="font-display text-lg font-bold text-ink">
+                    Canale WhatsApp Rapido
+                  </h2>
+                  <span class="inline-block mt-0.5 font-mono text-xs font-bold text-[#064E3B]">
+                    ⚡ Dialogo diretto con i referenti
+                  </span>
+                </div>
+              </div>
+
+              <div class="shrink-0 -mt-2 -mr-1 hidden sm:block">
+                <Mascot name="whatsapp-buddy" size={70} />
+              </div>
+            </div>
+
+            <p class="mt-4 text-[14px] leading-relaxed text-ink/80">
+              Puoi scriverci su WhatsApp anche solo per inviarci il link del tuo sito web attuale. Lo esamineremo con calma e ti risponderemo con un consiglio sincero e zero vendite aggressive.
+            </p>
+
+            <a
+              href={SITE.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] mt-5 w-full flex items-center justify-center gap-2 font-bold py-3 text-[15px]"
+            >
+              <Icon name="whatsapp" size={19} />
+              Scrivici su WhatsApp
+            </a>
+          </div>
+
+          <!-- Recapiti diretti in card pop -->
+          <div class="mt-8 grid gap-3 sm:grid-cols-2">
+            <div class="pop-card bg-white p-4">
+              <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold">
+                Telefono Sede
+              </p>
+              <a
+                href={`tel:${SITE.phoneRaw}`}
+                class="mt-1 inline-block font-display text-base font-bold text-ink hover:text-accent"
+              >
+                {SITE.phone}
+              </a>
+            </div>
+
+            <div class="pop-card bg-white p-4">
+              <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold">
+                Email
+              </p>
+              <a
+                href={`mailto:${SITE.email}`}
+                class="mt-1 inline-block font-mono text-[13px] font-bold text-ink hover:text-accent truncate block"
+              >
+                {SITE.email}
+              </a>
+            </div>
+
+            <div class="pop-card bg-white p-4 sm:col-span-2">
+              <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold">
+                Sede a Verona
+              </p>
+              <address class="mt-1 not-italic text-[13px] text-ink/85 font-medium">
+                {SITE.address} — {SITE.city}
+              </address>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonna Destra: Modulo Contatti Breve -->
+        <div class="lg:col-span-7">
+          <div
+            class="pop-card bg-white p-8 md:p-10 shadow-[6px_6px_0px_#1A1A1A]"
+          >
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <span class="pop-badge bg-[#FFD027] text-ink text-[11px] mb-2">
+                  Modulo Breve
+                </span>
+                <h2 class="display-md text-2xl font-bold text-ink">
+                  Richiedi un audit gratuito
+                </h2>
+              </div>
+              <span class="hidden sm:inline-block font-mono text-xs font-bold bg-[#DFF9F4] text-[#064E3B] border border-ink/20 px-2.5 py-1 rounded-lg">
+                ⏱️ 1 minuto
+              </span>
+            </div>
+
+            <p class="mt-2 text-[14px] leading-relaxed text-ink/75">
+              Bastano nome, sito ed email: controlleremo velocità da mobile, posizionamento su Google Maps a Verona e tracciamenti per dirti cosa sistemare.
+            </p>
+
+            <!-- Banner di successo dinamico (client-side o server) -->
+            <div
+              id="form-success-banner"
+              class={`mt-6 rounded-2xl border-2 border-ink bg-[#DFF9F4] p-5 text-ink shadow-[3px_3px_0px_#1A1A1A] ${isSent ? 'block' : 'hidden'}`}
+            >
+              <div class="flex items-center gap-3">
+                <span class="grid h-6 w-6 place-items-center rounded-full bg-[#00C9A7] text-white border border-ink font-bold text-xs">✓</span>
+                <p class="font-bold text-sm">
+                  Grazie, abbiamo ricevuto la tua richiesta di audit!
+                </p>
+              </div>
+              <p class="mt-1.5 text-xs text-ink/85 leading-relaxed">
+                Esamineremo velocità, visibilità e tracciamenti del tuo sito per ricontattarti con un'analisi chiara e senza filtri.
+              </p>
+              <div class="mt-4 pt-3 border-t border-ink/15 flex flex-wrap items-center gap-3">
+                <span class="text-xs text-ink/75 font-medium">Vuoi un riscontro immediato?</span>
+                <a
+                  id="whatsapp-forward-btn"
+                  href={SITE.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="pop-badge bg-[#25D366] text-ink text-xs font-bold hover:bg-[#20ba5a] inline-flex items-center gap-1.5"
+                >
+                  <Icon name="whatsapp" size={13} />
+                  Apri la richiesta su WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <form
+              id="contact-form"
+              class="mt-7 space-y-4"
+            >
+              <!-- Campo honeypot anti-spam nascosto -->
+              <div class="hidden" aria-hidden="true">
+                <label for="website-field">Non compilare questo campo</label>
+                <input
+                  type="text"
+                  id="website-field"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="name"
+                  class="block font-mono text-xs font-bold uppercase text-ink/75"
+                >
+                  Nome e Cognome *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Mario Rossi"
+                  class="mt-1.5 w-full rounded-xl border-2 border-ink bg-canvas/30 px-4 py-3 text-[14px] text-ink font-medium placeholder:text-ink/65 outline-none transition-colors focus:border-accent focus:bg-white"
+                />
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="email"
+                    class="block font-mono text-xs font-bold uppercase text-ink/75"
+                  >
+                    Email aziendale *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="mario@azienda.it"
+                    class="mt-1.5 w-full rounded-xl border-2 border-ink bg-canvas/30 px-4 py-3 text-[14px] text-ink font-medium placeholder:text-ink/65 outline-none transition-colors focus:border-accent focus:bg-white"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="site"
+                    class="block font-mono text-xs font-bold uppercase text-ink/75"
+                  >
+                    Sito web attuale
+                  </label>
+                  <input
+                    type="text"
+                    id="site"
+                    name="site"
+                    placeholder="www.tuosito.it"
+                    class="mt-1.5 w-full rounded-xl border-2 border-ink bg-canvas/30 px-4 py-3 text-[14px] text-ink font-medium placeholder:text-ink/65 outline-none transition-colors focus:border-accent focus:bg-white"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block font-mono text-xs font-bold uppercase text-ink/75"
+                >
+                  Note o problemi riscontrati (opzionale)
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="Es. Il nostro sito è lento da cellulare, oppure vorremmo comparire nelle ricerche a Verona..."
+                  class="mt-1.5 w-full rounded-xl border-2 border-ink bg-canvas/30 px-4 py-3 text-[14px] text-ink font-medium placeholder:text-ink/65 outline-none transition-colors focus:border-accent focus:bg-white"
+                ></textarea>
+              </div>
+
+              <div class="flex items-start gap-3 pt-1">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  value="yes"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-2 border-ink text-accent focus:ring-accent"
+                />
+                <label for="consent" class="text-xs text-ink/75 leading-relaxed font-medium">
+                  Accetto l'informativa sulla <a href={basePath('/privacy')} class="underline text-ink font-bold">privacy</a> per la sola ricezione dell'audit gratuito.
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="pop-btn bg-[#D63914] text-white hover:bg-[#b82f0f] w-full py-3.5 text-center font-bold text-[15px] mt-4 flex items-center justify-center gap-2 cursor-pointer"
+              >
+                Invia richiesta audit gratuito
+                <Icon name="arrow-right" size={16} />
+              </button>
+
+              <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-ink/75 font-mono text-xs uppercase font-bold">
+                <span>✓ Nessun costo né vincolo</span>
+                <span>⚡ Tempi chiari e concordati</span>
+              </div>
+            </form>
+
+            <script is:inline>
+              const form = document.getElementById('contact-form');
+              const successBanner = document.getElementById('form-success-banner');
+              const waBtn = document.getElementById('whatsapp-forward-btn');
+
+              if (form && successBanner) {
+                form.addEventListener('submit', (e) => {
+                  e.preventDefault();
+                  const fd = new FormData(form);
+                  const name = fd.get('name') || '';
+                  const email = fd.get('email') || '';
+                  const site = fd.get('site') || '';
+                  const msg = fd.get('message') || '';
+
+                  // Aggiorna link whatsapp con i dati inseriti
+                  if (waBtn) {
+                    const waText = encodeURIComponent(
+                      `Ciao BIMAX, sono ${name} (${email}). Richiedo un audit gratuito per il sito: ${site || 'da concordare'}.\nNote: ${msg}`
+                    );
+                    waBtn.href = `https://wa.me/393401234567?text=${waText}`;
+                  }
+
+                  // Mostra banner di successo e nascondi form
+                  form.classList.add('hidden');
+                  successBanner.classList.remove('hidden');
+                  successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

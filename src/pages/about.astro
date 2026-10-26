@@ -1,0 +1,251 @@
+---
+import CtaBand from '@/components/CtaBand.astro';
+import Icon from '@/components/Icon.astro';
+import Mascot from '@/components/Mascot.astro';
+import Layout from '@/layouts/Layout.astro';
+import { SITE } from '@/lib/design';
+
+const method = [
+  {
+    index: '01',
+    title: 'Analisi & Allineamento',
+    body: 'Esaminiamo la presenza attuale, le campagne attive e i canali di contatto prioritari per la tua attività.',
+    output: 'Ascolto sincero · Verifica del sito attuale · Priorità',
+    color: 'bg-[#FFD027]',
+  },
+  {
+    index: '02',
+    title: 'Sviluppo Tecnico & Contenuti',
+    body: 'Realizzazione della piattaforma sui nostri blocchi ottimizzati, garantendo navigabilità fluida da smartphone.',
+    output: 'Codice snello · Admin semplice · Ottimizzazione mobile',
+    color: 'bg-[#00C9A7]',
+  },
+  {
+    index: '03',
+    title: 'Cablaggio Dati & Presidio Locale',
+    body: 'Integrazione dei codici di tracciamento (GTM/GA4) e allineamento con la scheda Google Maps.',
+    output: 'Scheda Google Maps · Eventi WhatsApp · Trasparenza dati',
+    color: 'bg-[#845EC2] text-white',
+  },
+  {
+    index: '04',
+    title: 'Messa Online & Continuità',
+    body: "Rilascio sul dominio, formazione rapida sull'uso dell'admin e monitoraggio continuo di sicurezza e prestazioni.",
+    output: 'Pubblicazione · Formazione semplice · Supporto continuo',
+    color: 'bg-[#D63914] text-white',
+  },
+];
+
+const pillars = [
+  {
+    title: 'Dialogo diretto tra persone',
+    body: 'Nelle agenzie tradizionali parlate con venditori o commerciali. Con noi parlate direttamente con chi scrive il codice e si occupa in prima persona del vostro sito.',
+    icon: 'shield-check',
+    bg: 'bg-[#FFF5CF]',
+  },
+  {
+    title: 'Concretezza e serenità',
+    body: 'Non vi vendiamo ore di consulenza astratta o promesse gonfiate. Vi consegniamo uno strumento snello, rapido e piacevole da usare che porta contatti verificati.',
+    icon: 'activity',
+    bg: 'bg-[#DFF9F4]',
+  },
+  {
+    title: 'Vicinanza al territorio di Verona',
+    body: 'Amiamo il nostro territorio: dal centro storico alla ZAI, dalla Valpolicella alle rive del Garda. Conosciamo le abitudini e le esigenze delle attività locali.',
+    icon: 'map-pin',
+    bg: 'bg-[#FFE8E2]',
+  },
+  {
+    title: 'Piena autonomia e zero vincoli',
+    body: 'Nessun canone nascosto o dipendenza tecnologica forzata. Il sito è vostro al 100%, leggero e facile da gestire tramite un pannello di controllo intuitivo.',
+    icon: 'check',
+    bg: 'bg-[#EFE7D7]',
+  },
+];
+---
+
+<Layout
+  title="Chi Siamo & Approccio — BIMAX Verona"
+  description="Il partner di fiducia per le imprese di Verona che cercano concretezza, ascolto e vicinanza senza intermediari."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
+    <!-- Texture a pois leggeri -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]">
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+          👥 Chi Siamo & Approccio
+        </span>
+        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1">
+          🚫 Zero Intermediari
+        </span>
+        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+          ☕ Parliamo chiaro
+        </span>
+      </div>
+
+      <div class="mt-4 grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-8">
+          <h1 class="display-xl max-w-[15ch] text-balance text-ink">
+            Il partner digitale che unisce <span class="bg-[#FFD027] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A] text-nowrap">visione d'impresa</span> e padronanza tecnica.
+          </h1>
+          <div class="mt-8 max-w-xl space-y-4 text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
+            <p>
+              Non siamo semplici programmatori che scrivono codice isolati dal contesto aziendale: siamo un partner al fianco delle PMI. La tecnologia e il codice su misura sono il nostro strumento, ma l'obiettivo prioritario è far crescere la tua attività, supportare il lavoro di tutti i giorni e portare contatti e clienti reali.
+            </p>
+            <p>
+              Abbiamo scelto di offrire alle piccole e medie imprese di Verona e del territorio un rapporto diretto e trasparente: nessun intermediario o venditore commerciale a fare promesse irrealizzabili. Parli direttamente con chi progetta, sviluppa e segue nel tempo la tua piattaforma.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col items-center gap-4">
+          <!-- Mascotte sviluppatore con nuvoletta -->
+          <div class="relative">
+            <div class="pop-card bg-white p-3.5 mb-3 text-center text-xs font-bold text-ink max-w-[220px]">
+              "La tecnologia è il mezzo, il tuo business è l'obiettivo!" 🚀
+            </div>
+            <div class="flex justify-center">
+              <Mascot name="coder" size={160} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- I 4 Valori / Punti di forza -->
+  <section class="border-y-2 border-ink/10 px-[var(--page-gutter)] py-20 md:py-28">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="max-w-2xl" data-reveal>
+        <span class="pop-badge bg-[#FFD027] text-ink mb-3">
+          I nostri principi
+        </span>
+        <h2 class="display-lg text-ink">
+          Un modo di lavorare più umano e trasparente
+        </h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
+          Crediamo nella semplicità, nella parola data e nella cura artigianale di ogni singolo sito a Verona.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4" data-reveal>
+        {
+          pillars.map((item, index) => (
+            <div
+              class={`pop-card p-7 ${item.bg} flex flex-col justify-between`}
+              style={`--reveal-delay: ${index * 60}ms`}
+            >
+              <div>
+                <div class="flex items-center gap-3.5">
+                  <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-white shadow-[2px_2px_0px_#1A1A1A]">
+                    <Icon name={item.icon} size={20} />
+                  </span>
+                  <h3 class="font-display text-lg font-bold text-ink">
+                    {item.title}
+                  </h3>
+                </div>
+                <p class="mt-3.5 text-[14px] leading-relaxed text-ink/90">
+                  {item.body}
+                </p>
+              </div>
+
+              <div class="mt-6 pt-3 border-t-2 border-ink/15 text-xs text-ink font-mono font-bold">
+                Punto fermo 0{index + 1}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Il Metodo di Lavoro a 4 Step -->
+  <section id="method" class="px-[var(--page-gutter)] py-20 md:py-28 bg-paper">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="max-w-2xl" data-reveal>
+        <span class="pop-badge bg-[#00C9A7] text-ink mb-3">
+          Processo a 4 Step
+        </span>
+        <h2 class="display-lg text-ink">
+          Il Metodo di Lavoro
+        </h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
+          Un percorso senza stress, dall'analisi iniziale al monitoraggio continuo sul territorio.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4" data-reveal>
+        {
+          method.map((step, index) => (
+            <div
+              class="pop-card bg-white p-7 flex flex-col justify-between"
+              style={`--reveal-delay: ${index * 60}ms`}
+            >
+              <div>
+                <span class={`inline-block font-mono text-base font-black px-3 py-1 rounded-xl border-2 border-ink ${step.color} shadow-[2px_2px_0px_#1A1A1A]`}>
+                  {step.index}
+                </span>
+                <h3 class="font-display text-lg font-bold text-ink mt-5">
+                  {step.title}
+                </h3>
+                <p class="mt-3 text-[14px] leading-relaxed text-ink/75">
+                  {step.body}
+                </p>
+              </div>
+
+              <div class="mt-6 pt-3.5 border-t-2 border-ink/10">
+                <p class="font-mono text-xs uppercase text-ink/75 font-bold">
+                  Cosa ricevi:
+                </p>
+                <p class="mt-1 text-[13px] font-semibold text-ink">
+                  {step.output}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Box Ufficio & Caffè a Verona -->
+  <section class="px-[var(--page-gutter)] pb-12">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="pop-card bg-[#FFE8E2] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex-1">
+          <span class="pop-badge bg-[#D63914] text-white mb-3">
+            📍 Sede di Verona
+          </span>
+          <h3 class="display-md text-2xl md:text-3xl font-bold text-ink">
+            La moka è sempre sul fuoco.
+          </h3>
+          <p class="mt-3 text-[15px] leading-relaxed text-ink/90 max-w-xl">
+            Siamo a Verona: {SITE.address}, {SITE.city}. Se sei nei paraggi della ZAI o in centro, fermati pure per fare due chiacchiere e un caffè senza alcun impegno.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-4 text-sm font-mono font-bold text-ink">
+            <span class="rounded-xl border border-ink/20 bg-white/80 px-3 py-1.5">📞 {SITE.phone}</span>
+            <span class="rounded-xl border border-ink/20 bg-white/80 px-3 py-1.5">✉️ {SITE.email}</span>
+          </div>
+        </div>
+
+        <div class="shrink-0 flex flex-col items-center">
+          <Mascot name="cup" size={130} />
+          <span class="text-xs font-mono font-bold text-ink mt-1">Caffè garantito!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Hai un progetto da raccontarci?"
+    description="Mandaci il link del tuo sito attuale o scrivici due righe: lo esamineremo con cura per darti indicazioni concrete su come migliorare presenza e contatti."
+    primary={{ label: 'Scrivici su WhatsApp', href: SITE.whatsappUrl, isExternal: true }}
+    secondary={{ label: 'Compila il modulo contatti breve', href: '/contact' }}
+  />
+</Layout>

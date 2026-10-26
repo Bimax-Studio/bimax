@@ -1,0 +1,55 @@
+---
+import Icon from '@/components/Icon.astro';
+import Mascot from '@/components/Mascot.astro';
+import Layout from '@/layouts/Layout.astro';
+import { basePath } from '@/lib/design';
+---
+
+<Layout title="Pagina non trovata (404) — BIMAX Verona" noindex>
+  <section
+    class="relative flex min-h-[75vh] items-center overflow-hidden px-[var(--page-gutter)] py-20 bg-paper"
+  >
+    <!-- Texture a pois leggeri -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative mx-auto w-full max-w-[1360px]">
+      <div class="grid items-center gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-8">
+          <span class="pop-badge bg-[#FFD027] text-ink -rotate-1 mb-4">
+            ⚠️ Errore 404 · Pagina dispersa
+          </span>
+
+          <h1 class="display-xl mt-4 max-w-[14ch] text-balance text-ink">
+            Ops! Questa pagina si è <span class="bg-[#FFE8E2] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">persa</span> per strada.
+          </h1>
+
+          <p class="mt-6 max-w-md text-[17px] leading-relaxed text-ink/80">
+            Forse l'indirizzo è cambiato o è stato digitato male. Nessun problema: torna alla home page o dai un'occhiata ai nostri progetti a Verona!
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href={basePath('/')} class="pop-btn bg-[#FF5A36] text-white">
+              Torna alla home
+              <Icon name="arrow-right" size={15} />
+            </a>
+            <a href={basePath('/projects')} class="pop-btn bg-white text-ink">
+              Vedi i progetti
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="pop-card bg-white p-6 flex flex-col items-center text-center">
+            <Mascot name="coder" size={160} />
+            <p class="font-mono text-xs font-bold text-ink mt-2">
+              "Tranquillo, il resto del sito funziona!" ✌️
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

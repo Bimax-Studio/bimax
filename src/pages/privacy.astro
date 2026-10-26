@@ -1,0 +1,68 @@
+---
+import CtaBand from '@/components/CtaBand.astro';
+import Layout from '@/layouts/Layout.astro';
+import { SITE } from '@/lib/design';
+
+const lastUpdated = new Date().toLocaleDateString('it-IT', {
+  year: 'numeric',
+  month: 'long',
+});
+---
+
+<Layout
+  title="Informativa sulla Privacy — BIMAX Verona"
+  description="Informativa trasparente sul trattamento dei dati personali raccolti tramite il sito web di BIMAX a Verona."
+>
+  <section class="px-[var(--page-gutter)] pb-16 pt-12 md:pt-18 bg-paper">
+    <div class="mx-auto max-w-3xl">
+      <span class="pop-badge bg-[#FFD027] text-ink -rotate-1 mb-4">
+        🔒 Note Legali & Privacy
+      </span>
+
+      <h1 class="display-lg mt-4 text-ink">Informativa sul trattamento dei dati personali</h1>
+      <p class="mt-4 text-[16px] leading-relaxed text-ink/80">
+        Trasparenza totale: questo sito raccoglie esclusivamente le informazioni che scegliete volontariamente di inviarci tramite modulo o WhatsApp per richiedere un audit tecnico.
+      </p>
+
+      <div class="prose prose-lg prose-editorial mt-10 max-w-none text-ink/85 leading-relaxed pop-card bg-white p-8 md:p-10 shadow-[4px_4px_0px_#1A1A1A]">
+        <h2>Dati raccolti</h2>
+        <p>
+          Quando inviate una richiesta di audit o un messaggio tramite il modulo contatti, riceviamo: nome, indirizzo email aziendale, indirizzo del sito web attuale ed eventuali note o messaggi descrittivi. Questi dati vengono utilizzati esclusivamente per elaborare l'audit tecnico e ricontattarvi.
+        </p>
+
+        <h2>Conservazione e finalità</h2>
+        <p>
+          I dati non vengono ceduti a terzi né inseriti in newsletter o liste di telemarketing non richieste. Servono unicamente per la gestione della richiesta di contatto e per la formulazione della proposta tecnica.
+        </p>
+
+        <h2>Cookie e archiviazione locale</h2>
+        <p>
+          Questo sito non installa cookie di profilazione o traccianti invasivi. Non viene utilizzata alcuna archiviazione locale per raccogliere dati personali a fini pubblicitari.
+        </p>
+
+        <h2>I vostri diritti (GDPR)</h2>
+        <p>
+          In conformità al Regolamento UE 2016/679 (GDPR), potete richiedere in qualsiasi momento l'accesso, la rettifica o la cancellazione dei vostri dati personali scrivendo a <a href={`mailto:${SITE.email}`} class="underline font-bold">{SITE.email}</a>.
+        </p>
+
+        <h2>Titolare del trattamento</h2>
+        <p>
+          {SITE.legalName}<br />
+          {SITE.address}, {SITE.city}<br />
+          Email: <a href={`mailto:${SITE.email}`} class="underline font-bold">{SITE.email}</a> — Tel: {SITE.phone}
+        </p>
+
+        <p class="text-xs text-ink/75 pt-4 font-mono font-semibold">
+          Ultimo aggiornamento: {lastUpdated}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Hai domande sulla nostra gestione tecnica?"
+    description="Siamo a disposizione per qualsiasi chiarimento sui nostri sistemi e sulla gestione della privacy."
+    primary={{ label: 'Scrivici su WhatsApp', href: SITE.whatsappUrl, isExternal: true }}
+    secondary={{ label: 'Compila il modulo contatti breve', href: '/contact' }}
+  />
+</Layout>

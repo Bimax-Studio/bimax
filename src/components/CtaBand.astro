@@ -1,0 +1,80 @@
+---
+import Icon from '@/components/Icon.astro';
+import Mascot from '@/components/Mascot.astro';
+import { SITE, basePath } from '@/lib/design';
+
+const {
+  title = 'Parliamo del tuo progetto a Verona',
+  description = 'Hai già delle campagne attive o un sito che non porta contatti? Mandaci il link: controlleremo velocità, visibilità locale e tracciamenti per dirti esattamente cosa sistemare.',
+  primary = { label: 'Scrivici su WhatsApp', href: SITE.whatsappUrl, isExternal: true },
+  secondary = { label: 'Compila il modulo contatti breve', href: basePath('/contact') },
+} = Astro.props;
+---
+
+<section class="px-[var(--page-gutter)] py-16 md:py-24">
+  <div
+    class="relative mx-auto max-w-[1360px] overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-[#FFD027] p-8 text-ink shadow-[6px_6px_0px_#1A1A1A] md:p-14 lg:p-16"
+  >
+    <!-- Background pattern eccentric dots -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(#1A1A1A_2.5px,transparent_2.5px)] [background-size:20px_20px]"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Badge sticker in alto a destra -->
+    <div class="absolute -top-3 right-8 md:right-16 z-10 hidden sm:block">
+      <span class="pop-badge bg-[#D63914] text-white rotate-2 border-2 border-ink shadow-[2.5px_2.5px_0px_#1A1A1A]">
+        ⚡ Dialogo Diretto & Senza Filtri
+      </span>
+    </div>
+
+    <div class="relative grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-8">
+        <div class="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-white px-3.5 py-1 font-mono text-xs font-bold text-ink shadow-[2px_2px_0px_#1A1A1A] mb-5">
+          <span class="h-2 w-2 rounded-full bg-[#00C9A7]"></span>
+          Audit & Confronto Diretto per le PMI
+        </div>
+
+        <h2 class="display-lg max-w-[15ch] text-ink">{title}</h2>
+        <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-ink/85 md:text-[18px]">
+          {description}
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono font-bold text-ink/75">
+          <span class="rounded-lg bg-white/80 border border-ink/30 px-2.5 py-1">✓ Nessun intermediario</span>
+          <span class="rounded-lg bg-white/80 border border-ink/30 px-2.5 py-1">✓ Tecnologia al servizio del business</span>
+          <span class="rounded-lg bg-white/80 border border-ink/30 px-2.5 py-1">✓ Consigli concreti per la tua PMI</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-5 lg:col-span-4 lg:items-end">
+        <!-- Piccola mascotte amichevole che sbuca -->
+        <div class="hidden lg:flex items-center gap-3 self-end -mb-2">
+          <div class="rounded-2xl border-2 border-ink bg-white px-3 py-1.5 text-xs font-bold text-ink shadow-[2px_2px_0px_#1A1A1A]">
+            Mandaci il link! 👇
+          </div>
+          <Mascot name="whatsapp-buddy" size={80} />
+        </div>
+
+        <div class="flex flex-col gap-3 w-full sm:w-auto sm:flex-row lg:flex-col lg:w-full">
+          <a
+            href={primary.href}
+            target={primary.isExternal ? '_blank' : undefined}
+            rel={primary.isExternal ? 'noopener noreferrer' : undefined}
+            class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] text-center w-full flex items-center justify-center gap-2 text-[15px]"
+          >
+            <Icon name="whatsapp" size={19} />
+            {primary.label}
+          </a>
+          <a
+            href={secondary.href}
+            class="pop-btn bg-white text-ink hover:bg-neutral-50 text-center w-full flex items-center justify-center gap-2 text-[15px]"
+          >
+            {secondary.label}
+            <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

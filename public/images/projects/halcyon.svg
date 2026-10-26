@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Relais Valpolicella — illustrazione 2D flat colorata">
+  <!-- Sfondo cielo e colline flat pop -->
+  <rect width="1200" height="900" fill="#E8F4FC"/>
+
+  <!-- Cornice sticker 2D -->
+  <rect x="25" y="25" width="1150" height="850" rx="36" fill="none" stroke="#1A1A1A" stroke-width="8"/>
+
+  <!-- Grande sole giallo sorridente -->
+  <circle cx="980" cy="220" r="140" fill="#FFD027" stroke="#1A1A1A" stroke-width="7"/>
+  <!-- Occhi e sorriso sole -->
+  <circle cx="940" cy="205" r="9" fill="#1A1A1A"/>
+  <circle cx="1020" cy="205" r="9" fill="#1A1A1A"/>
+  <path d="M960 230 Q980 250 1000 230" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Colline della Valpolicella -->
+  <path d="M-50 900 L-50 620 C200 520 400 680 700 560 C950 460 1150 580 1250 500 L1250 900 Z" fill="#00C9A7" stroke="#1A1A1A" stroke-width="7"/>
+  <path d="M-50 900 L-50 720 C250 640 550 760 850 660 C1050 600 1180 700 1250 670 L1250 900 Z" fill="#25D366" stroke="#1A1A1A" stroke-width="7"/>
+
+  <!-- Grappolone d'uva cartoon simpatico -->
+  <g transform="translate(320, 480)">
+    <!-- Foglia verde -->
+    <ellipse cx="0" cy="-110" rx="35" ry="20" fill="#25D366" stroke="#1A1A1A" stroke-width="6" transform="rotate(-20 0 -110)"/>
+    <!-- Acini viola -->
+    <circle cx="-50" cy="-60" r="32" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <circle cx="0" cy="-60" r="32" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <circle cx="50" cy="-60" r="32" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <circle cx="-25" cy="-10" r="32" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <circle cx="25" cy="-10" r="32" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <circle cx="0" cy="40" r="32" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+
+    <!-- Faccina sull'acino centrale -->
+    <circle cx="-10" cy="-12" r="5" fill="#FFFFFF"/>
+    <circle cx="10" cy="-12" r="5" fill="#FFFFFF"/>
+    <path d="M-6 0 Q0 8 6 0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Fumetto pop WhatsApp conversione -->
+  <g transform="translate(680, 420)">
+    <rect x="0" y="0" width="380" height="150" rx="28" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="7"/>
+    <polygon points="50,150 80,150 40,190" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="7"/>
+    <rect x="44" y="145" width="40" height="10" fill="#FFFFFF"/>
+    <text x="190" y="65" font-family="sans-serif" font-weight="900" font-size="30" fill="#1A1A1A" text-anchor="middle">💬 +320 CHAT</text>
+    <text x="190" y="105" font-family="monospace" font-weight="bold" font-size="20" fill="#25D366" text-anchor="middle">WHATSAPP DIRETTO</text>
+  </g>
+
+  <!-- Titolo Sticker -->
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="480" height="110" rx="24" fill="#FF5A36" stroke="#1A1A1A" stroke-width="7"/>
+    <text x="240" y="50" font-family="sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" text-anchor="middle">TENUTA VALPOLICELLA</text>
+    <text x="240" y="88" font-family="monospace" font-weight="bold" font-size="20" fill="#FFD027" text-anchor="middle">WINE &amp; RELAIS · ZERO OTA</text>
+  </g>
+</svg>

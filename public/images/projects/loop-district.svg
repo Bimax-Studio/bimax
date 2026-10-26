@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Termoimpianti Adige — illustrazione 2D flat colorata">
+  <!-- Sfondo vaniglia caldo con riquadri colorati -->
+  <rect width="1200" height="900" fill="#FFFDF5"/>
+
+  <!-- Cornice sticker 2D -->
+  <rect x="25" y="25" width="1150" height="850" rx="36" fill="none" stroke="#1A1A1A" stroke-width="8"/>
+
+  <!-- Cerchione caloroso arancio / fiamma -->
+  <circle cx="360" cy="460" r="190" fill="#FF5A36" stroke="#1A1A1A" stroke-width="8"/>
+  <circle cx="360" cy="460" r="130" fill="#FFD027" stroke="#1A1A1A" stroke-width="7"/>
+
+  <!-- Faccina calda sorridente al centro -->
+  <circle cx="320" cy="440" r="14" fill="#1A1A1A"/>
+  <circle cx="324" cy="436" r="4" fill="#FFFFFF"/>
+  <circle cx="400" cy="440" r="14" fill="#1A1A1A"/>
+  <circle cx="404" cy="436" r="4" fill="#FFFFFF"/>
+  <path d="M340 480 Q360 510 380 480" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+  <!-- Smartphone gigante che squilla con +180% chiamate -->
+  <g transform="translate(740, 260)">
+    <rect x="0" y="0" width="280" height="480" rx="42" fill="#2C73D2" stroke="#1A1A1A" stroke-width="8"/>
+    <rect x="20" y="24" width="240" height="432" rx="26" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="5"/>
+    
+    <!-- Cornetta telefono verde cartoon -->
+    <circle cx="140" cy="180" r="60" fill="#00C9A7" stroke="#1A1A1A" stroke-width="6"/>
+    <text x="140" y="198" font-size="54" text-anchor="middle">📞</text>
+    
+    <rect x="40" y="280" width="200" height="60" rx="16" fill="#FFD027" stroke="#1A1A1A" stroke-width="5"/>
+    <text x="140" y="322" font-family="sans-serif" font-weight="900" font-size="28" fill="#1A1A1A" text-anchor="middle">+180% CALLS</text>
+  </g>
+
+  <!-- Titolo Sticker -->
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="460" height="110" rx="24" fill="#00C9A7" stroke="#1A1A1A" stroke-width="7"/>
+    <text x="230" y="50" font-family="sans-serif" font-weight="900" font-size="34" fill="#1A1A1A" text-anchor="middle">TERMOIMPIANTI ADIGE</text>
+    <text x="230" y="88" font-family="monospace" font-weight="bold" font-size="20" fill="#FFFFFF" text-anchor="middle">PRONTO INTERVENTO · MAPS #1</text>
+  </g>
+</svg>

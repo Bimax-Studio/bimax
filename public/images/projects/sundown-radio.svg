@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Studio Gardesano — illustrazione 2D flat colorata">
+  <!-- Sfondo azzurro lago di Garda -->
+  <rect width="1200" height="900" fill="#EBF6FC"/>
+
+  <!-- Cornice sticker 2D -->
+  <rect x="25" y="25" width="1150" height="850" rx="36" fill="none" stroke="#1A1A1A" stroke-width="8"/>
+
+  <!-- Lago con onde 2D -->
+  <path d="M-50 900 L-50 640 Q250 580 550 640 T1150 640 T1250 640 L1250 900 Z" fill="#2C73D2" stroke="#1A1A1A" stroke-width="7"/>
+
+  <!-- Barchetta a vela pop sorridente -->
+  <g transform="translate(420, 520)">
+    <!-- Scafo -->
+    <path d="M-80 0 L80 0 L60 40 L-60 40 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="6"/>
+    <!-- Albero -->
+    <line x1="0" y1="0" x2="0" y2="-120" stroke="#1A1A1A" stroke-width="6"/>
+    <!-- Vele colorate -->
+    <polygon points="5,-110 5,-10 70,-10" fill="#FFD027" stroke="#1A1A1A" stroke-width="6"/>
+    <polygon points="-5,-110 -5,-10 -50,-10" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="6"/>
+  </g>
+
+  <!-- Villa / Casa geometrica flat sul lago -->
+  <g transform="translate(760, 360)">
+    <rect x="0" y="0" width="340" height="260" rx="20" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="7"/>
+    <!-- Tetto spiovente color menta -->
+    <polygon points="-20,0 170,-90 360,0" fill="#00C9A7" stroke="#1A1A1A" stroke-width="7"/>
+    <!-- Grandi finestre stile architettura moderna -->
+    <rect x="40" y="50" width="110" height="150" rx="10" fill="#FFD027" stroke="#1A1A1A" stroke-width="5"/>
+    <rect x="190" y="50" width="110" height="150" rx="10" fill="#2C73D2" stroke="#1A1A1A" stroke-width="5"/>
+  </g>
+
+  <!-- Badge 100/100 Google Lighthouse -->
+  <g transform="translate(180, 260)">
+    <circle cx="80" cy="80" r="90" fill="#00C9A7" stroke="#1A1A1A" stroke-width="8"/>
+    <text x="80" y="75" font-family="sans-serif" font-weight="900" font-size="52" fill="#FFFFFF" text-anchor="middle">100</text>
+    <text x="80" y="115" font-family="monospace" font-weight="bold" font-size="20" fill="#1A1A1A" text-anchor="middle">PAGESPEED</text>
+  </g>
+
+  <!-- Titolo Sticker -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="480" height="110" rx="24" fill="#845EC2" stroke="#1A1A1A" stroke-width="7"/>
+    <text x="240" y="50" font-family="sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" text-anchor="middle">STUDIO GARDESANO</text>
+    <text x="240" y="88" font-family="monospace" font-weight="bold" font-size="20" fill="#FFD027" text-anchor="middle">PESCHIERA D/G · LIGHTHOUSE 100</text>
+  </g>
+</svg>

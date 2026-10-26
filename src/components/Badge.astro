@@ -1,0 +1,35 @@
+---
+import Icon from '@/components/Icon.astro';
+
+const { label = 'Open for projects — Q3 2026 — ', class: className = '' } = Astro.props;
+---
+
+<div
+  class:list={['relative grid h-28 w-28 place-items-center', className]}
+  role="img"
+  aria-label="Open for projects, Q3 2026"
+>
+  <svg
+    viewBox="0 0 100 100"
+    class="spin-slow absolute inset-0 h-full w-full"
+    aria-hidden="true"
+  >
+    <defs>
+      <path
+        id="badge-arc"
+        d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+      />
+    </defs>
+    <text
+      class="fill-current font-mono text-[7.4px] uppercase"
+      style="letter-spacing: 0.18em"
+    >
+      <textPath href="#badge-arc">{label}</textPath>
+    </text>
+  </svg>
+  <span
+    class="grid h-12 w-12 place-items-center rounded-full bg-paper/15 backdrop-blur-sm"
+  >
+    <Icon name="asterisk" size={18} />
+  </span>
+</div>

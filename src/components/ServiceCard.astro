@@ -1,0 +1,71 @@
+---
+import Icon from '@/components/Icon.astro';
+import { ACCENTS, accentStyle, basePath } from '@/lib/design';
+
+const { service, index = 0, detailed = false } = Astro.props;
+const accent = ACCENTS[service.accent] ?? ACCENTS.solar;
+const number = service.number || String(index + 1).padStart(2, '0');
+---
+
+<article
+  class="group relative"
+  style={accentStyle(service.accent)}
+  id={service.slug}
+>
+  <a
+    href={basePath(`/services#${service.slug}`)}
+    class="grid gap-5 border-t border-black/10 py-8 transition-colors duration-500 hover:border-black/25 md:grid-cols-12 md:items-start md:gap-6 md:py-9"
+  >
+    <span class="font-mono text-xs tracking-[0.14em] text-ink/70 md:col-span-1 md:pt-2 font-bold">
+      {number}
+    </span>
+
+    <div class="flex items-start gap-4 md:col-span-4">
+      <span
+        class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-black/[0.08] bg-accent-soft text-accent-ink transition-colors duration-500 group-hover:bg-accent group-hover:text-accent-contrast"
+      >
+        <Icon name={service.icon} size={19} />
+      </span>
+      <div>
+        <h3 class="font-display text-2xl font-bold leading-[1.05] tracking-[-0.035em] md:text-[1.7rem]">
+          {service.title}
+        </h3>
+        <p class="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink/70 font-bold">
+          {service.kicker}
+        </p>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 md:pt-1.5">
+      <p class="max-w-md text-[14px] leading-relaxed text-ink/70">
+        {service.summary}
+      </p>
+
+      {
+        detailed && service.features?.length > 0 && (
+          <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
+            {service.features.slice(0, 4).map((feature) => (
+              <li class="flex items-center gap-1.5 text-[12px] text-ink/70">
+                <span class="h-1 w-1 rounded-full bg-accent" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+
+    <div class="md:col-span-2 md:flex md:justify-end md:pt-1">
+      <span
+        class="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink/70 font-bold transition-colors group-hover:text-ink"
+      >
+        {detailed ? 'Dettagli' : 'Approfondisci'}
+        <Icon
+          name="arrow-up-right"
+          size={14}
+          class="transition-transform duration-500 ease-organic group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        />
+      </span>
+    </div>
+  </a>
+</article>

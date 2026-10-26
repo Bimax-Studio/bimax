@@ -1,0 +1,234 @@
+---
+import CtaBand from '@/components/CtaBand.astro';
+import Icon from '@/components/Icon.astro';
+import Mascot from '@/components/Mascot.astro';
+import Layout from '@/layouts/Layout.astro';
+import { getServices, readEntryContent } from '@/lib/content';
+import { ACCENTS, SITE, accentStyle } from '@/lib/design';
+import { renderMdx } from '@/lib/mdx';
+
+const services = await getServices();
+const details = await Promise.all(
+  services.map(async (service) => ({
+    ...service,
+    html: await renderMdx(await readEntryContent(service)),
+  })),
+);
+
+const commitments = [
+  {
+    title: 'Codice snello e proprietario',
+    body: 'Niente CMS pesanti o template pieni di plugin. Scriviamo codice leggero che si carica istantaneamente e dura anni.',
+    icon: 'zap',
+    bg: 'bg-[#FFFBEB]',
+  },
+  {
+    title: 'Referente tecnico diretto a Verona',
+    body: 'Parli direttamente con gli sviluppatori che realizzano il sito e configurano i tracciamenti, senza passaggi intermedi.',
+    icon: 'shield-check',
+    bg: 'bg-[#DFF9F4]',
+  },
+  {
+    title: 'Controllo totale e zero canoni',
+    body: 'Piattaforma, codici e account pubblicitari rimangono di tua proprietà al 100%. Nessun vincolo o canone nascosto.',
+    icon: 'check',
+    bg: 'bg-[#FFE8E2]',
+  },
+];
+
+const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
+---
+
+<Layout
+  title="I 3 Pilastri Operativi — BIMAX Verona"
+  description="Sviluppo web performante, local SEO con Google Maps e tracciamenti di conversione avanzati per le aziende di Verona e provincia."
+>
+  <!-- Hero Servizi -->
+  <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
+    <!-- Texture a pois leggeri -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
+    >
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+          ⚙️ 3 Pilastri Operativi
+        </span>
+        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1">
+          🚀 Velocità Garantita
+        </span>
+        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+          📍 Verona & Territorio
+        </span>
+      </div>
+
+      <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-8">
+          <h1 class="display-xl max-w-[14ch] text-balance text-ink">
+            Strumenti concreti per dare valore alla tua impresa sul territorio.
+          </h1>
+          <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
+            Tre pilastri pensati per darti serenità ed eliminare le dispersioni: piattaforme web che si caricano all'istante da cellulare, presidio curato su Google Maps a Verona e tracciamento trasparente di telefonate e messaggi WhatsApp.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4">
+          <div class="pop-card bg-white p-5">
+            <p class="font-mono text-xs font-bold uppercase tracking-[0.14em] text-ink/75">
+              Naviga i pilastri
+            </p>
+            <ul class="mt-3.5 space-y-2">
+              {
+                details.map((service, index) => (
+                  <li>
+                    <a
+                      href={`#${service.slug}`}
+                      class="group flex items-center justify-between gap-3 rounded-xl border border-ink/10 bg-canvas/40 px-3.5 py-2.5 text-[13px] font-semibold text-ink transition-all hover:bg-[#FFD027] hover:border-ink"
+                    >
+                      <span>{service.title}</span>
+                      <span class="font-mono text-xs font-bold text-accent">
+                        0{index + 1}
+                      </span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticker bar statica dei servizi (senza animazione infinita) -->
+  <div class="border-y-2 border-ink bg-[#FFFBEB] py-3.5 overflow-hidden">
+    <div class="mx-auto max-w-[1360px] px-[var(--page-gutter)]">
+      <div class="flex flex-wrap items-center justify-center gap-2.5">
+        <span class="pop-badge bg-[#FFD027] text-ink text-xs">⚡ Sviluppo Web Moderno</span>
+        <span class="pop-badge bg-[#00C9A7] text-ink text-xs">🗺️ Local SEO Verona</span>
+        <span class="pop-badge bg-[#FF8080] text-ink text-xs">📍 Google Maps & Scheda Locale</span>
+        <span class="pop-badge bg-[#845EC2] text-white text-xs">📊 Google Tag Manager & GA4</span>
+        <span class="pop-badge bg-[#2C73D2] text-white text-xs">💬 Tracciamento WhatsApp & Chiamate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sezione I 3 Pilastri -->
+  <section class="px-[var(--page-gutter)] py-16 md:py-24">
+    <div class="mx-auto max-w-[1360px] space-y-12 md:space-y-16">
+      {
+        details.map((service, index) => {
+          const accent = ACCENTS[service.accent] ?? ACCENTS.solar;
+          const mascotName = serviceMascots[index % serviceMascots.length];
+          return (
+            <article
+              id={service.slug}
+              class="scroll-mt-28 overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-white shadow-[6px_6px_0px_#1A1A1A] transition-transform hover:-translate-y-1"
+              style={accentStyle(service.accent)}
+              data-reveal
+            >
+              <div class="grid gap-8 p-7 md:grid-cols-12 md:gap-10 md:p-12 lg:p-14">
+                <div class="md:col-span-5 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-4">
+                      <div class="flex items-center gap-3">
+                        <span
+                          class="grid h-12 w-12 place-items-center rounded-2xl border-2 border-ink bg-accent text-white shadow-[2px_2px_0px_#1A1A1A]"
+                        >
+                          <Icon name={service.icon} size={22} />
+                        </span>
+                        <span class="pop-badge bg-canvas text-ink text-xs font-bold">
+                          {service.kicker}
+                        </span>
+                      </div>
+                      
+                      <!-- Mascotte in miniatura -->
+                      <div class="shrink-0">
+                        <Mascot name={mascotName} size={65} />
+                      </div>
+                    </div>
+
+                    <h2 class="display-md mt-6 text-2xl text-ink md:text-3xl font-bold">{service.title}</h2>
+                    <p class="mt-4 text-[15px] leading-relaxed text-ink/80">
+                      {service.summary}
+                    </p>
+
+                    <!-- Lista caratteristiche fluida senza container innestato -->
+                    <div class="mt-7 border-t-2 border-ink/10 pt-5">
+                      <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/70 font-bold mb-3">
+                        Cosa include il pilastro:
+                      </p>
+                      <ul class="space-y-2.5">
+                        {(service.features ?? []).map((feature) => (
+                          <li class="flex items-start gap-2.5 text-[14px] text-ink font-medium">
+                            <span class="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#00C9A7] border border-ink text-ink text-[10px] font-bold">✓</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="mt-8 flex flex-wrap items-center gap-3">
+                    <a
+                      href={SITE.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] text-[13px] py-2.5 px-4"
+                    >
+                      <Icon name="whatsapp" size={16} />
+                      Richiedi info per questo pilastro
+                    </a>
+                  </div>
+                </div>
+
+                <div class="md:col-span-7 md:col-start-6">
+                  <div
+                    class="prose prose-lg prose-editorial max-w-none prose-headings:mt-0 text-ink/85 leading-relaxed"
+                    set:html={service.html}
+                  />
+                </div>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <!-- Punti fermi del servizio (icona affiancata all'h3, non impilata) -->
+  <section class="px-[var(--page-gutter)] pb-16">
+    <div
+      class="mx-auto grid max-w-[1360px] gap-6 md:grid-cols-3"
+    >
+      {
+        commitments.map((item) => (
+          <div class={`pop-card p-7 md:p-8 ${item.bg}`}>
+            <div class="flex items-center gap-3.5">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-white shadow-[2px_2px_0px_#1A1A1A]">
+                <Icon name={item.icon} size={22} />
+              </span>
+              <h3 class="font-display text-xl font-bold tracking-[-0.025em] text-ink">
+                {item.title}
+              </h3>
+            </div>
+            <p class="mt-3.5 text-[14px] leading-relaxed text-ink/80">
+              {item.body}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <CtaBand
+    title="Hai un sito lento o che non genera contatti a Verona?"
+    description="Inviaci il link del tuo sito web: verificheremo gratuitamente velocità da mobile, posizionamento su Google Maps e tracciamento contatti per dirti cosa sistemare."
+    primary={{ label: 'Scrivici su WhatsApp', href: SITE.whatsappUrl, isExternal: true }}
+    secondary={{ label: 'Compila il modulo contatti breve', href: '/contact' }}
+  />
+</Layout>

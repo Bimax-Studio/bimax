@@ -1,0 +1,159 @@
+---
+import { SITE, basePath } from '@/lib/design';
+
+const path = Astro.url.pathname;
+
+const links = [
+  { href: basePath('/projects'), label: 'Progetti', index: '01' },
+  { href: basePath('/services'), label: 'Servizi', index: '02' },
+  { href: basePath('/about'), label: 'Chi Siamo', index: '03' },
+  { href: basePath('/contact'), label: 'Contatti', index: '04' },
+];
+
+const isActive = (href) =>
+  href === basePath('/') ? path === basePath('/') : path === href || path.startsWith(`${href}/`);
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-black/[0.06] bg-paper/90 backdrop-blur-xl"
+>
+  <div
+    class="mx-auto flex h-18 max-w-[1400px] items-center justify-between gap-6 px-[var(--page-gutter)]"
+  >
+    <a
+      href={basePath('/')}
+      class="group flex shrink-0 items-center gap-2.5"
+      aria-label="BIMAX — home"
+    >
+      <span
+        class="grid h-9 w-9 place-items-center rounded-full bg-ink text-paper transition-transform duration-500 ease-organic group-hover:-rotate-12"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 4h9a4 4 0 0 1 0 8H5V4Z"></path>
+          <path d="M5 12h10a4 4 0 0 1 0 8H5v-8Z"></path>
+        </svg>
+      </span>
+      <span class="leading-none">
+        <span
+          class="block font-display text-[1.25rem] font-bold tracking-[-0.03em]"
+        >
+          BIMAX
+        </span>
+        <span class="mt-0.5 hidden text-xs font-semibold text-ink/75 sm:block">
+          Partner Digitale per PMI
+        </span>
+      </span>
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Principale">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'group relative rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors',
+              isActive(link.href)
+                ? 'text-ink'
+                : 'text-ink/80 hover:text-ink',
+            ]}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+            <span
+              class:list={[
+                'absolute inset-x-3.5 -bottom-0.5 h-0.5 origin-left rounded-full bg-accent transition-transform duration-400 ease-organic',
+                isActive(link.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+              ]}
+            />
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <span
+        class="hidden items-center gap-2 text-[12px] text-ink/80 xl:flex font-semibold"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+        PMI Verona & Territorio
+      </span>
+
+      <a
+        href={basePath('/contact')}
+        class="pop-btn bg-[#D63914] text-white hover:bg-[#b82f0f] hidden min-h-9 px-4 text-[12px] sm:inline-flex py-1.5 font-bold"
+      >
+        Richiedi un audit gratuito
+      </a>
+
+      <!-- Mobile menu -->
+      <details class="group relative lg:hidden">
+        <summary
+          class="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-full border border-black/10 transition-colors hover:border-black/30"
+          aria-label="Apri menu"
+        >
+          <span class="relative block h-3 w-4">
+            <span
+              class="absolute inset-x-0 top-0 h-px bg-ink transition-transform duration-300 group-open:translate-y-[5.5px] group-open:rotate-45"
+            ></span>
+            <span
+              class="absolute inset-x-0 top-[5.5px] h-px bg-ink transition-opacity duration-300 group-open:opacity-0"
+            ></span>
+            <span
+              class="absolute inset-x-0 bottom-0 h-px bg-ink transition-transform duration-300 group-open:-translate-y-[5.5px] group-open:-rotate-45"
+            ></span>
+          </span>
+        </summary>
+
+        <div
+          class="absolute right-0 top-[calc(100%+0.65rem)] w-[min(88vw,22rem)] overflow-hidden rounded-3xl border border-black/10 bg-paper p-3 shadow-2xl"
+        >
+          <nav aria-label="Mobile" class="flex flex-col">
+            {
+              links.map((link) => (
+                <a
+                  href={link.href}
+                  class:list={[
+                    'flex items-center justify-between rounded-2xl px-4 py-3.5 transition-colors hover:bg-canvas',
+                    isActive(link.href) && 'bg-canvas',
+                  ]}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                >
+                  <span class="font-display text-2xl font-bold tracking-[-0.03em]">
+                    {link.label}
+                  </span>
+                  <span class="font-mono text-[9px] text-ink/60">
+                    {link.index}
+                  </span>
+                </a>
+              ))
+            }
+            <a href={basePath('/contact')} class="btn btn-primary mt-2 w-full">
+              Richiedi un audit gratuito
+            </a>
+          </nav>
+
+          <div
+            class="mt-3 flex items-center justify-between border-t border-black/5 px-2 pt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-ink/60"
+          >
+            <span>Verona, IT</span>
+            <a href={`mailto:${SITE.email}`} class="link-underline">
+              {SITE.email}
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

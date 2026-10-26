@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="BIMAX — A design studio for brands you can feel">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF5E1E"/>
+      <stop offset="55%" stop-color="#FF7A3D"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#111827" opacity=".35"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#111827"/>
+  <rect x="720" width="480" height="630" fill="url(#bg)"/>
+  <rect x="720" width="480" height="630" fill="url(#dots)"/>
+
+  <g font-family="Helvetica Neue, Arial, sans-serif" fill="#F9FAFB">
+    <text x="70" y="150" font-size="48" font-weight="700" letter-spacing="-2">BIMAX®</text>
+    <text x="70" y="340" font-size="92" font-weight="800" letter-spacing="-5">Brands you</text>
+    <text x="70" y="430" font-size="92" font-weight="800" letter-spacing="-5">can feel.</text>
+  </g>
+
+  <g font-family="Courier New, monospace" font-size="17" letter-spacing="4" fill="#F9FAFB" opacity=".65">
+    <text x="72" y="510">INDEPENDENT DESIGN STUDIO</text>
+    <text x="72" y="548">TORINO · WORLDWIDE · BIMAX.STUDIO</text>
+  </g>
+
+  <circle cx="960" cy="120" r="70" fill="none" stroke="#F9FAFB" stroke-opacity=".5" stroke-width="2"/>
+  <text x="960" y="132" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="52" font-weight="800" fill="#F9FAFB">B®</text>
+</svg>

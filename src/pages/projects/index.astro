@@ -1,0 +1,111 @@
+---
+import CtaBand from '@/components/CtaBand.astro';
+import Icon from '@/components/Icon.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import Layout from '@/layouts/Layout.astro';
+import { getProjects } from '@/lib/content';
+import { SITE } from '@/lib/design';
+
+const projects = await getProjects();
+---
+
+<Layout
+  title="Progetti & Casi Studio — BIMAX Verona"
+  description="I nostri progetti web per aziende e professionisti di Verona e provincia: schede semplici con immagine e articoli approfonditi."
+>
+  <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
+    <!-- Texture a pois leggeri -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
+    >
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+            📁 Casi Studio Veronesi
+          </span>
+          <span class="pop-badge bg-[#00C9A7] text-ink rotate-1">
+            📖 Spiegati come articoli
+          </span>
+          <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+            ⚡ Risultati Reali
+          </span>
+        </div>
+        <p class="font-mono text-xs font-bold text-ink/60 bg-white border border-ink/20 px-3 py-1 rounded-full">
+          {projects.length} storie di progetti · Verona
+        </p>
+      </div>
+
+      <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-8">
+          <h1 class="display-xl max-w-[15ch] text-balance text-ink">
+            Progetti realizzati con cura e attenzione sul territorio.
+          </h1>
+          <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
+            La parte dei progetti è semplice: ogni scheda mostra l'immagine del progetto e, aprendo la visualizzazione, la spiegazione di cosa è stato fatto, scritta come un vero articolo per comprendere il percorso e i risultati.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4">
+          <div class="pop-card bg-[#FFFBEB] p-5">
+            <p class="font-mono text-xs font-bold uppercase tracking-[0.14em] text-ink/75">
+              Approccio ai casi studio
+            </p>
+            <p class="mt-2 text-xs leading-relaxed text-ink/80">
+              Ogni progetto racconta il percorso reale svolto al fianco della PMI: problemi iniziali, interventi tecnici e risultati commerciali misurati.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-[var(--page-gutter)] py-16 md:py-24 border-t-2 border-ink/10">
+    <div class="mx-auto max-w-[1360px]">
+      <h2 class="sr-only">Archivio casi studio</h2>
+      {
+        projects.length === 0 ? (
+          <div class="pop-card flex min-h-64 flex-col items-center justify-center gap-4 p-10 text-center bg-white">
+            <Icon name="spark" size={24} class="text-accent" />
+            <p class="display-md text-ink">Nessun progetto trovato.</p>
+            <p class="max-w-sm text-sm text-ink/60">
+              I progetti sono in fase di aggiornamento.
+            </p>
+          </div>
+        ) : (
+          <div class="grid gap-x-8 gap-y-14 md:grid-cols-12 md:gap-y-18">
+            {projects.map((project, index) => (
+              <div
+                class:list={[
+                  'md:col-span-6',
+                  index % 4 === 1 && 'md:pt-10',
+                  index % 4 === 2 && 'md:col-start-2',
+                  index % 4 === 3 && 'md:pt-10',
+                ]}
+                data-reveal
+                style={`--reveal-delay: ${(index % 2) * 80}ms`}
+              >
+                <ProjectCard
+                  project={project}
+                  index={index}
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <CtaBand
+    title="Vuoi dare nuova linfa al tuo sito a Verona?"
+    description="Inviaci il link del tuo sito web attuale: controlleremo con calma velocità reale da smartphone, visibilità su Google Maps e tracciamenti per spiegarti con sincerità cosa sistemare."
+    primary={{ label: 'Scrivici su WhatsApp', href: SITE.whatsappUrl, isExternal: true }}
+    secondary={{ label: 'Compila il modulo contatti breve', href: '/contact' }}
+  />
+</Layout>

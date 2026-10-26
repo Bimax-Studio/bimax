@@ -1,0 +1,272 @@
+---
+import CtaBand from '@/components/CtaBand.astro';
+import Icon from '@/components/Icon.astro';
+import Mascot from '@/components/Mascot.astro';
+import Layout from '@/layouts/Layout.astro';
+import {
+  formatDate,
+  getProject,
+  getProjects,
+  readEntryContent,
+} from '@/lib/content';
+import { ACCENTS, SITE, accentStyle, basePath } from '@/lib/design';
+import { renderMdx } from '@/lib/mdx';
+
+export async function getStaticPaths() {
+  const all = await getProjects();
+  return all.map((item) => ({
+    params: { slug: item.slug },
+    props: { project: item },
+  }));
+}
+
+const { slug } = Astro.params;
+const project = Astro.props.project ?? (await getProject(slug));
+
+if (!project) {
+  Astro.response.status = 404;
+}
+
+const html = project
+  ? await renderMdx(await readEntryContent(project))
+  : '';
+
+const allProjects = await getProjects();
+const currentIndex = allProjects.findIndex((item) => item.slug === slug);
+const nextProject =
+  currentIndex >= 0
+    ? allProjects[(currentIndex + 1) % allProjects.length]
+    : null;
+
+const accent = project
+  ? (ACCENTS[project.accent] ?? ACCENTS.solar)
+  : ACCENTS.solar;
+---
+
+{
+  !project ? (
+    <Layout title="Progetto non trovato — BIMAX" noindex>
+      <section class="mx-auto flex min-h-[60vh] max-w-[1360px] flex-col items-start justify-center px-[var(--page-gutter)] py-24">
+        <h1 class="display-lg mt-5 max-w-[14ch] text-ink">
+          Questo progetto non è disponibile.
+        </h1>
+        <p class="mt-5 max-w-md text-[15px] leading-relaxed text-ink/75">
+          Il caso studio che stai cercando non esiste o è stato rinominato.
+          Puoi consultare l'elenco completo nell'archivio progetti.
+        </p>
+        <a href={basePath('/projects')} class="pop-btn bg-[#D63914] text-white mt-8">
+          Torna all'archivio progetti
+          <Icon name="arrow-right" size={15} />
+        </a>
+      </section>
+    </Layout>
+  ) : (
+    <Layout
+      title={`${project.title} — Articolo & Caso Studio | BIMAX`}
+      description={project.summary || SITE.description}
+      image={project.coverUrl || '/og.svg'}
+      ogType="article"
+      accent={project.accent}
+    >
+      <div style={accentStyle(project.accent)}>
+        <!-- Case header -->
+        <section class="relative overflow-hidden pt-10 pb-12 md:pt-14 md:pb-16 bg-paper">
+          <!-- Texture a pois leggeri -->
+          <div
+            class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
+          >
+            <a
+              href={basePath('/projects')}
+              class="pop-badge bg-white text-ink text-xs mb-6 hover:bg-[#FFD027] inline-flex items-center gap-1.5 font-bold"
+            >
+              <Icon
+                name="arrow-right"
+                size={13}
+                class="rotate-180"
+              />
+              Tutti i progetti
+            </a>
+
+            <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
+              <div class="lg:col-span-8">
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                  <span class="pop-badge bg-[#FFD027] text-ink text-xs font-bold">
+                    📍 {project.client}
+                  </span>
+                  <span class="pop-badge bg-[#00C9A7] text-ink text-xs font-bold">
+                    Articolo Caso Studio
+                  </span>
+                </div>
+
+                <h1 class="display-xl mt-3 max-w-[15ch] text-balance text-ink">{project.title}</h1>
+
+                <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
+                  {project.summary}
+                </p>
+              </div>
+
+              <div class="lg:col-span-4">
+                <div class="pop-card bg-white p-5">
+                  <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold mb-3">
+                    Dati di sintesi
+                  </p>
+                  <dl class="space-y-3 text-xs">
+                    <div class="flex justify-between items-center border-b border-ink/10 pb-2">
+                      <dt class="font-mono text-ink/75 font-bold">Cliente</dt>
+                      <dd class="font-bold text-ink">{project.client}</dd>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-ink/10 pb-2">
+                      <dt class="font-mono text-ink/75 font-bold">Territorio</dt>
+                      <dd class="font-bold text-ink">Verona e provincia</dd>
+                    </div>
+                    <div>
+                      <dt class="font-mono text-ink/75 font-bold mb-1.5">Ambiti</dt>
+                      <dd class="flex flex-wrap gap-1">
+                        {(project.tags ?? []).map((tag) => (
+                          <span class="rounded bg-canvas px-2 py-0.5 font-mono text-xs font-bold text-ink">
+                            {tag}
+                          </span>
+                        ))}
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cover Image -->
+        <section class="px-[var(--page-gutter)] pt-4 pb-8 md:pt-6">
+          <div class="mx-auto max-w-[1360px]">
+            <div class="relative overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-white shadow-[6px_6px_0px_#1A1A1A]">
+              {project.coverUrl ? (
+                <img
+                  src={project.coverUrl}
+                  alt={`${project.title} per ${project.client}`}
+                  width="1200"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  class="aspect-[4/3] w-full object-cover md:aspect-[16/9]"
+                />
+              ) : (
+                <div class="aspect-[16/9] w-full bg-[#FFE8E2] flex items-center justify-center">
+                  <span class="font-display text-4xl font-black text-ink">{project.title}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        <!-- Article Body -->
+        <section class="px-[var(--page-gutter)] py-12 md:py-20 border-t-2 border-ink/10">
+          <div class="mx-auto grid max-w-[1360px] gap-12 lg:grid-cols-12 lg:gap-14">
+            <aside class="lg:col-span-4">
+              <div class="lg:sticky lg:top-28 space-y-6">
+                <div class="pop-card bg-white p-6">
+                  <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold">
+                    Nota sull'articolo
+                  </p>
+                  <div class="mt-4 space-y-3.5 border-t-2 border-ink/10 pt-4 text-xs">
+                    <div>
+                      <p class="font-mono text-xs uppercase tracking-[0.12em] text-ink/75 font-bold">
+                        Pubblicato il
+                      </p>
+                      <p class="mt-0.5 text-[13px] font-semibold text-ink">
+                        {formatDate(project.publishedAt)}
+                      </p>
+                    </div>
+                    <div>
+                      <p class="font-mono text-xs uppercase tracking-[0.12em] text-ink/75 font-bold">
+                        Approccio
+                      </p>
+                      <p class="mt-0.5 text-[13px] font-medium text-ink/80">
+                        Codice su misura, Google Maps presidiato e tracciamenti reali di chiamate e messaggi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 border-t-2 border-ink/10 pt-4">
+                    <a
+                      href={SITE.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] w-full text-xs flex items-center justify-center gap-2 py-2.5"
+                    >
+                      <Icon name="whatsapp" size={16} />
+                      Scrivici per un progetto simile
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Box amichevole con mascotte -->
+                <div class="pop-card bg-[#FFFBEB] p-5 flex items-center gap-4">
+                  <Mascot name="coder" size={70} />
+                  <div>
+                    <p class="text-xs font-bold text-ink">
+                      "Parli sempre direttamente con noi programmatori."
+                    </p>
+                    <p class="text-xs text-ink/75 mt-1 font-medium">
+                      Niente account manager a fare da filtro.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+            <article class="lg:col-span-8 max-w-[65ch]">
+              <div class="prose prose-lg prose-editorial max-w-none text-ink/85 leading-relaxed" set:html={html} />
+            </article>
+          </div>
+        </section>
+
+        <!-- Next project -->
+        {
+          nextProject && nextProject.slug !== project.slug && (
+            <section class="px-[var(--page-gutter)] pb-16 md:pb-20">
+              <div class="mx-auto max-w-[1360px]">
+                <a
+                  href={basePath(`/projects/${nextProject.slug}`)}
+                  class="group block pop-card bg-[#FFE8E2] p-6 md:p-10 transition-transform hover:-translate-y-1 shadow-[5px_5px_0px_#1A1A1A]"
+                >
+                  <div class="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+                    <div>
+                      <span class="pop-badge bg-white text-ink text-xs font-bold mb-2">
+                        Prossimo articolo caso studio →
+                      </span>
+                      <h2 class="display-md text-2xl md:text-3xl font-bold text-ink mt-2">
+                        {nextProject.title}
+                      </h2>
+                      <p class="mt-1 font-mono text-xs font-semibold text-ink/75">
+                        {nextProject.client} · Verona e provincia
+                      </p>
+                    </div>
+                    <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-ink bg-white text-ink transition-transform group-hover:scale-110 shadow-[2px_2px_0px_#1A1A1A]">
+                      <Icon
+                        name="arrow-up-right"
+                        size={20}
+                      />
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </section>
+          )
+        }
+      </div>
+
+      <CtaBand
+        title="Parliamo del tuo progetto a Verona"
+        description="Hai già delle campagne attive o un sito che non porta contatti? Mandaci il link: controlleremo velocità, visibilità locale e tracciamenti per dirti esattamente cosa sistemare."
+        primary={{ label: 'Scrivici su WhatsApp', href: SITE.whatsappUrl, isExternal: true }}
+        secondary={{ label: 'Compila il modulo contatti breve', href: '/contact' }}
+      />
+    </Layout>
+  )
+}

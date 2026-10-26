@@ -1,0 +1,31 @@
+---
+import Icon from '@/components/Icon.astro';
+
+const { items = [], class: className = '' } = Astro.props;
+---
+
+<div
+  class:list={[
+    'marquee border-y border-black/[0.07] bg-canvas/60 py-4',
+    className,
+  ]}
+  aria-label="Studio capabilities"
+>
+  <div class="marquee-track">
+    {
+      [0, 1].map((copy) => (
+        <ul
+          class="flex shrink-0 items-center"
+          aria-hidden={copy === 1 ? 'true' : undefined}
+        >
+          {items.map((item) => (
+            <li class="flex items-center gap-7 px-7 font-mono text-[10px] uppercase tracking-[0.22em] text-ink/60">
+              <span>{item}</span>
+              <Icon name="asterisk" size={11} class="text-accent" />
+            </li>
+          ))}
+        </ul>
+      ))
+    }
+  </div>
+</div>

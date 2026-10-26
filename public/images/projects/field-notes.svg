@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Officine Meccaniche Scaligere — illustrazione 2D flat colorata">
+  <!-- Sfondo pop vaniglia caldo con bordo e pattern a pois -->
+  <rect width="1200" height="900" fill="#FFF8E7"/>
+  
+  <pattern id="dot-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="15" cy="15" r="2.5" fill="#1A1A1A" opacity="0.12"/>
+  </pattern>
+  <rect width="1200" height="900" fill="url(#dot-grid)"/>
+
+  <!-- Cornice sticker 2D -->
+  <rect x="25" y="25" width="1150" height="850" rx="36" fill="none" stroke="#1A1A1A" stroke-width="8"/>
+
+  <!-- Forme geometriche pop colorate -->
+  <circle cx="950" cy="240" r="180" fill="#FFD027" stroke="#1A1A1A" stroke-width="7"/>
+  <rect x="760" y="460" width="360" height="280" rx="28" fill="#00C9A7" stroke="#1A1A1A" stroke-width="7"/>
+  <ellipse cx="320" cy="680" rx="220" ry="120" fill="#FF5A36" stroke="#1A1A1A" stroke-width="7"/>
+
+  <!-- Ingranaggio simpatico sorridente -->
+  <g transform="translate(300, 320)">
+    <circle cx="0" cy="0" r="140" fill="#845EC2" stroke="#1A1A1A" stroke-width="8"/>
+    <!-- Denti dell'ingranaggio -->
+    <rect x="-24" y="-175" width="48" height="36" rx="10" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <rect x="-24" y="139" width="48" height="36" rx="10" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <rect x="-175" y="-24" width="36" height="48" rx="10" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    <rect x="139" y="-24" width="36" height="48" rx="10" fill="#845EC2" stroke="#1A1A1A" stroke-width="6"/>
+    
+    <!-- Centro con faccina simpatica -->
+    <circle cx="0" cy="0" r="75" fill="#FFFDF5" stroke="#1A1A1A" stroke-width="6"/>
+    <!-- Occhioni cartoon -->
+    <circle cx="-25" cy="-10" r="12" fill="#1A1A1A"/>
+    <circle cx="-22" cy="-14" r="4" fill="#FFFFFF"/>
+    <circle cx="25" cy="-10" r="12" fill="#1A1A1A"/>
+    <circle cx="28" cy="-14" r="4" fill="#FFFFFF"/>
+    <!-- Sorrisetto felice -->
+    <path d="M-18 16 Q0 35 18 16" fill="none" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="-42" cy="12" rx="10" ry="6" fill="#FF8080" opacity="0.8"/>
+    <ellipse cx="42" cy="12" rx="10" ry="6" fill="#FF8080" opacity="0.8"/>
+  </g>
+
+  <!-- Mascotte Coder accanto al macchinario -->
+  <g transform="translate(750, 200)">
+    <!-- Adesivo pop badge -->
+    <rect x="0" y="0" width="320" height="85" rx="20" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="6"/>
+    <text x="160" y="55" font-family="sans-serif" font-weight="900" font-size="34" fill="#1A1A1A" text-anchor="middle">⚡ 0.6s SPEED</text>
+  </g>
+
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="460" height="120" rx="24" fill="#FF5A36" stroke="#1A1A1A" stroke-width="7"/>
+    <text x="230" y="52" font-family="sans-serif" font-weight="900" font-size="36" fill="#FFFFFF" text-anchor="middle">OFFICINE SCALIGERE</text>
+    <text x="230" y="92" font-family="monospace" font-weight="bold" font-size="22" fill="#FFE169" text-anchor="middle">VERONA ZAI · +140% CONTATTI</text>
+  </g>
+</svg>
