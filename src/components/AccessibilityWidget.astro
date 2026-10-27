@@ -1,0 +1,435 @@
+---
+import Icon from '@/components/Icon.astro';
+---
+
+<!-- ============================================================== -->
+<!-- FLOATING ACCESSIBILITY BUTTON & PREFERENCES MODAL (WCAG 2.2)    -->
+<!-- ============================================================== -->
+
+<aside aria-label="Strumenti di accessibilità">
+  <!-- Floating Button -->
+  <button
+    type="button"
+    id="a11y-trigger-btn"
+    class="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full border-2 border-ink bg-pop-yellow px-3.5 py-2.5 text-xs font-bold text-ink shadow-pop-md transition-all hover:scale-105 hover:bg-pop-yellow-hover focus:outline-none focus:ring-4 focus:ring-pop-blue active:scale-95 cursor-pointer"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="a11y-modal"
+    aria-label="Apri opzioni di accessibilità visiva e lettura"
+    title="Opzioni di Accessibilità"
+  >
+    <span class="grid h-6 w-6 place-items-center rounded-full bg-ink text-white" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="5" r="2" />
+        <path d="M12 7v7" />
+        <path d="M7 10l5 2 5-2" />
+        <path d="M8 21l4-7 4 7" />
+      </svg>
+    </span>
+    <span class="font-display tracking-tight hidden sm:inline">Accessibilità</span>
+  </button>
+
+  <!-- Accessibility Modal Backdrop -->
+  <div
+    id="a11y-backdrop"
+    class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs transition-opacity duration-200"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Accessibility Modal Dialog -->
+  <div
+    id="a11y-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="a11y-title"
+    class="fixed bottom-0 right-0 z-50 hidden w-full max-w-md max-h-[90vh] overflow-y-auto rounded-t-3xl border-2 border-ink bg-white p-6 shadow-pop-lg sm:bottom-6 sm:right-6 sm:rounded-3xl"
+  >
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between border-b-2 border-ink/10 pb-4">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-8 w-8 place-items-center rounded-xl border-2 border-ink bg-pop-yellow text-ink shadow-pop-sm" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="5" r="2" />
+            <path d="M12 7v7" />
+            <path d="M7 10l5 2 5-2" />
+            <path d="M8 21l4-7 4 7" />
+          </svg>
+        </span>
+        <div>
+          <h2 id="a11y-title" class="font-display text-lg font-bold text-ink">
+            Accessibilità Visiva
+          </h2>
+          <p class="text-[11px] font-mono text-ink/75 font-semibold">
+            Standard WCAG 2.1 & 2.2 AA
+          </p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        id="a11y-close-btn"
+        class="grid h-9 w-9 place-items-center rounded-xl border-2 border-ink bg-canvas text-ink transition-colors hover:bg-pop-coral hover:text-white focus:outline-none focus:ring-2 focus:ring-ink cursor-pointer"
+        aria-label="Chiudi pannello di accessibilità"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Controls Body -->
+    <div class="mt-5 space-y-6">
+      <!-- 1. Text Zoom -->
+      <div>
+        <label class="block font-mono text-xs uppercase tracking-wider font-bold text-ink/80 mb-2.5">
+          🔍 Dimensione Caratteri
+        </label>
+        <div class="grid grid-cols-3 gap-2">
+          <button
+            type="button"
+            data-a11y-font="normal"
+            class="a11y-btn-font rounded-xl border-2 border-ink bg-canvas px-3 py-2 text-xs font-bold text-ink hover:bg-pop-yellow focus:ring-2 focus:ring-ink transition-colors cursor-pointer active"
+          >
+            Normale (100%)
+          </button>
+          <button
+            type="button"
+            data-a11y-font="lg"
+            class="a11y-btn-font rounded-xl border-2 border-ink bg-canvas px-3 py-2 text-xs font-bold text-ink hover:bg-pop-yellow focus:ring-2 focus:ring-ink transition-colors cursor-pointer"
+          >
+            Medio (+15%)
+          </button>
+          <button
+            type="button"
+            data-a11y-font="xl"
+            class="a11y-btn-font rounded-xl border-2 border-ink bg-canvas px-3 py-2 text-xs font-bold text-ink hover:bg-pop-yellow focus:ring-2 focus:ring-ink transition-colors cursor-pointer"
+          >
+            Grande (+30%)
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Contrast & Colors -->
+      <div>
+        <label class="block font-mono text-xs uppercase tracking-wider font-bold text-ink/80 mb-2.5">
+          🎨 Contrasto & Colori
+        </label>
+        <div class="grid grid-cols-3 gap-2">
+          <button
+            type="button"
+            data-a11y-contrast="default"
+            class="a11y-btn-contrast rounded-xl border-2 border-ink bg-canvas px-3 py-2 text-xs font-bold text-ink hover:bg-pop-yellow focus:ring-2 focus:ring-ink transition-colors cursor-pointer active"
+          >
+            Standard
+          </button>
+          <button
+            type="button"
+            data-a11y-contrast="high"
+            class="a11y-btn-contrast rounded-xl border-2 border-ink bg-ink text-white px-3 py-2 text-xs font-bold hover:bg-black focus:ring-2 focus:ring-white transition-colors cursor-pointer"
+          >
+            Alto Contrasto
+          </button>
+          <button
+            type="button"
+            data-a11y-contrast="grayscale"
+            class="a11y-btn-contrast rounded-xl border-2 border-ink bg-neutral-300 text-ink px-3 py-2 text-xs font-bold hover:bg-neutral-400 focus:ring-2 focus:ring-ink transition-colors cursor-pointer"
+          >
+            Scala Grigi
+          </button>
+        </div>
+      </div>
+
+      <!-- 3. Reading & Dyslexia Toggles -->
+      <div>
+        <label class="block font-mono text-xs uppercase tracking-wider font-bold text-ink/80 mb-2.5">
+          📖 Facilitazioni di Lettura
+        </label>
+        <div class="space-y-2.5">
+          <label class="flex items-center justify-between p-3 rounded-xl border-2 border-ink/15 hover:border-ink bg-canvas/40 cursor-pointer transition-colors">
+            <span class="text-xs font-bold text-ink">
+              Carattere ad alta leggibilità (Dislessia)
+            </span>
+            <input
+              type="checkbox"
+              id="a11y-toggle-readable-font"
+              class="h-4 w-4 rounded border-2 border-ink text-ink focus:ring-ink cursor-pointer"
+            />
+          </label>
+
+          <label class="flex items-center justify-between p-3 rounded-xl border-2 border-ink/15 hover:border-ink bg-canvas/40 cursor-pointer transition-colors">
+            <span class="text-xs font-bold text-ink">
+              Spaziatura e interlinea maggiorata
+            </span>
+            <input
+              type="checkbox"
+              id="a11y-toggle-text-spacing"
+              class="h-4 w-4 rounded border-2 border-ink text-ink focus:ring-ink cursor-pointer"
+            />
+          </label>
+
+          <label class="flex items-center justify-between p-3 rounded-xl border-2 border-ink/15 hover:border-ink bg-canvas/40 cursor-pointer transition-colors">
+            <span class="text-xs font-bold text-ink">
+              Sottolinea tutti i collegamenti (Link)
+            </span>
+            <input
+              type="checkbox"
+              id="a11y-toggle-underline-links"
+              class="h-4 w-4 rounded border-2 border-ink text-ink focus:ring-ink cursor-pointer"
+            />
+          </label>
+
+          <label class="flex items-center justify-between p-3 rounded-xl border-2 border-ink/15 hover:border-ink bg-canvas/40 cursor-pointer transition-colors">
+            <span class="text-xs font-bold text-ink">
+              Ferma animazioni (Movimento ridotto)
+            </span>
+            <input
+              type="checkbox"
+              id="a11y-toggle-stop-animations"
+              class="h-4 w-4 rounded border-2 border-ink text-ink focus:ring-ink cursor-pointer"
+            />
+          </label>
+        </div>
+      </div>
+
+      <!-- 4. Reset Button -->
+      <div class="pt-3 border-t-2 border-ink/10 flex items-center justify-between gap-3">
+        <button
+          type="button"
+          id="a11y-reset-btn"
+          class="pop-btn bg-canvas text-ink hover:bg-neutral-200 text-xs py-2 px-3.5 font-bold cursor-pointer"
+        >
+          Ripristina predefiniti
+        </button>
+
+        <span class="text-[11px] font-mono text-ink/70 font-semibold">
+          Preferenze memorizzate
+        </span>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script is:inline>
+  (function () {
+    const STORAGE_KEY = 'bimax:a11y_prefs';
+
+    // State
+    const defaultPrefs = {
+      fontSize: 'normal',
+      contrast: 'default',
+      readableFont: false,
+      textSpacing: false,
+      underlineLinks: false,
+      stopAnimations: false,
+    };
+
+    function loadPrefs() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        return stored ? { ...defaultPrefs, ...JSON.parse(stored) } : defaultPrefs;
+      } catch (e) {
+        return defaultPrefs;
+      }
+    }
+
+    function savePrefs(prefs) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+      } catch (e) {}
+    }
+
+    function applyPrefs(prefs) {
+      const root = document.documentElement;
+
+      // Font size
+      root.classList.remove('a11y-text-lg', 'a11y-text-xl');
+      if (prefs.fontSize === 'lg') root.classList.add('a11y-text-lg');
+      if (prefs.fontSize === 'xl') root.classList.add('a11y-text-xl');
+
+      // Contrast
+      root.classList.remove('a11y-high-contrast', 'a11y-grayscale');
+      if (prefs.contrast === 'high') root.classList.add('a11y-high-contrast');
+      if (prefs.contrast === 'grayscale') root.classList.add('a11y-grayscale');
+
+      // Toggles
+      root.classList.toggle('a11y-readable-font', !!prefs.readableFont);
+      root.classList.toggle('a11y-text-spacing', !!prefs.textSpacing);
+      root.classList.toggle('a11y-underline-links', !!prefs.underlineLinks);
+      root.classList.toggle('a11y-stop-animations', !!prefs.stopAnimations);
+    }
+
+    function syncUI(prefs) {
+      // Font size buttons
+      document.querySelectorAll('.a11y-btn-font').forEach((btn) => {
+        const val = btn.getAttribute('data-a11y-font');
+        const isActive = val === prefs.fontSize;
+        btn.classList.toggle('bg-pop-yellow', isActive);
+        btn.classList.toggle('bg-canvas', !isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      // Contrast buttons
+      document.querySelectorAll('.a11y-btn-contrast').forEach((btn) => {
+        const val = btn.getAttribute('data-a11y-contrast');
+        const isActive = val === prefs.contrast;
+        btn.classList.toggle('ring-2', isActive);
+        btn.classList.toggle('ring-offset-2', isActive);
+        btn.classList.toggle('ring-ink', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      // Toggles
+      const chkFont = document.getElementById('a11y-toggle-readable-font');
+      if (chkFont) chkFont.checked = !!prefs.readableFont;
+
+      const chkSpacing = document.getElementById('a11y-toggle-text-spacing');
+      if (chkSpacing) chkSpacing.checked = !!prefs.textSpacing;
+
+      const chkLinks = document.getElementById('a11y-toggle-underline-links');
+      if (chkLinks) chkLinks.checked = !!prefs.underlineLinks;
+
+      const chkAnim = document.getElementById('a11y-toggle-stop-animations');
+      if (chkAnim) chkAnim.checked = !!prefs.stopAnimations;
+    }
+
+    function initWidget() {
+      const triggerBtn = document.getElementById('a11y-trigger-btn');
+      const closeBtn = document.getElementById('a11y-close-btn');
+      const modal = document.getElementById('a11y-modal');
+      const backdrop = document.getElementById('a11y-backdrop');
+      const resetBtn = document.getElementById('a11y-reset-btn');
+
+      if (!triggerBtn || !modal || !backdrop) return;
+
+      let currentPrefs = loadPrefs();
+      applyPrefs(currentPrefs);
+      syncUI(currentPrefs);
+
+      function openModal() {
+        modal.classList.remove('hidden');
+        backdrop.classList.remove('hidden');
+        triggerBtn.setAttribute('aria-expanded', 'true');
+        closeBtn?.focus();
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        backdrop.classList.add('hidden');
+        triggerBtn.setAttribute('aria-expanded', 'false');
+        triggerBtn.focus();
+        document.body.style.overflow = '';
+      }
+
+      triggerBtn.addEventListener('click', () => {
+        const isExpanded = triggerBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) closeModal();
+        else openModal();
+      });
+
+      closeBtn?.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+
+      // Keyboard Esc to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Font size buttons
+      document.querySelectorAll('.a11y-btn-font').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentPrefs.fontSize = btn.getAttribute('data-a11y-font') || 'normal';
+          savePrefs(currentPrefs);
+          applyPrefs(currentPrefs);
+          syncUI(currentPrefs);
+        });
+      });
+
+      // Contrast buttons
+      document.querySelectorAll('.a11y-btn-contrast').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentPrefs.contrast = btn.getAttribute('data-a11y-contrast') || 'default';
+          savePrefs(currentPrefs);
+          applyPrefs(currentPrefs);
+          syncUI(currentPrefs);
+        });
+      });
+
+      // Checkboxes
+      document.getElementById('a11y-toggle-readable-font')?.addEventListener('change', (e) => {
+        currentPrefs.readableFont = e.target.checked;
+        savePrefs(currentPrefs);
+        applyPrefs(currentPrefs);
+      });
+
+      document.getElementById('a11y-toggle-text-spacing')?.addEventListener('change', (e) => {
+        currentPrefs.textSpacing = e.target.checked;
+        savePrefs(currentPrefs);
+        applyPrefs(currentPrefs);
+      });
+
+      document.getElementById('a11y-toggle-underline-links')?.addEventListener('change', (e) => {
+        currentPrefs.underlineLinks = e.target.checked;
+        savePrefs(currentPrefs);
+        applyPrefs(currentPrefs);
+      });
+
+      document.getElementById('a11y-toggle-stop-animations')?.addEventListener('change', (e) => {
+        currentPrefs.stopAnimations = e.target.checked;
+        savePrefs(currentPrefs);
+        applyPrefs(currentPrefs);
+      });
+
+      // Reset
+      resetBtn?.addEventListener('click', () => {
+        currentPrefs = { ...defaultPrefs };
+        savePrefs(currentPrefs);
+        applyPrefs(currentPrefs);
+        syncUI(currentPrefs);
+      });
+    }
+
+    // Run on initial load and after Swup navigation
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWidget);
+    } else {
+      initWidget();
+    }
+
+    document.addEventListener('swup:page:view', initWidget);
+  })();
+</script>

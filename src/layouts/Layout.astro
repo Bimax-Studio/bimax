@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 
+import AccessibilityWidget from '@/components/AccessibilityWidget.astro';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import { SITE, basePath } from '@/lib/design';
@@ -102,6 +103,18 @@ const organization = {
 
     <script is:inline>
       document.documentElement.classList.add('js');
+      try {
+        const prefs = JSON.parse(localStorage.getItem('bimax:a11y_prefs') || '{}');
+        const root = document.documentElement;
+        if (prefs.fontSize === 'lg') root.classList.add('a11y-text-lg');
+        if (prefs.fontSize === 'xl') root.classList.add('a11y-text-xl');
+        if (prefs.contrast === 'high') root.classList.add('a11y-high-contrast');
+        if (prefs.contrast === 'grayscale') root.classList.add('a11y-grayscale');
+        if (prefs.readableFont) root.classList.add('a11y-readable-font');
+        if (prefs.textSpacing) root.classList.add('a11y-text-spacing');
+        if (prefs.underlineLinks) root.classList.add('a11y-underline-links');
+        if (prefs.stopAnimations) root.classList.add('a11y-stop-animations');
+      } catch (e) {}
     </script>
   </head>
 
@@ -117,6 +130,8 @@ const organization = {
     </main>
 
     <Footer />
+
+    <AccessibilityWidget />
 
     <script src="@/scripts/swup-init.js"></script>
   </body>

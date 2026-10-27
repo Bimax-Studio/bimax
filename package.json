@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test:reader": "node scripts/inspect-reader.mjs"
+    "test:reader": "node scripts/inspect-reader.mjs",
+    "test:a11y": "astro build && node scripts/wcag-audit.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^11.1.0",
@@ -29,5 +30,9 @@
     "remark-gfm": "4.0.1",
     "swup": "^4.10.0",
     "tailwindcss": "4.3.3"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "playwright-core": "^1.64.1"
   }
 }
