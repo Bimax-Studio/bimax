@@ -20,19 +20,19 @@ const commitments = [
     title: 'Codice snello e proprietario',
     body: 'Niente CMS pesanti o template pieni di plugin. Scriviamo codice leggero che si carica istantaneamente e dura anni.',
     icon: 'zap',
-    bg: 'bg-[#FFFBEB]',
+    bg: 'bg-pop-yellow-soft',
   },
   {
     title: 'Referente tecnico diretto a Verona',
     body: 'Parli direttamente con gli sviluppatori che realizzano il sito e configurano i tracciamenti, senza passaggi intermedi.',
     icon: 'shield-check',
-    bg: 'bg-[#DFF9F4]',
+    bg: 'bg-pop-mint-soft',
   },
   {
     title: 'Controllo totale e zero canoni',
     body: 'Piattaforma, codici e account pubblicitari rimangono di tua proprietà al 100%. Nessun vincolo o canone nascosto.',
     icon: 'check',
-    bg: 'bg-[#FFE8E2]',
+    bg: 'bg-pop-coral-soft',
   },
 ];
 
@@ -47,7 +47,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
   <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
     <!-- Texture a pois leggeri -->
     <div
-      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
       aria-hidden="true"
     ></div>
 
@@ -55,13 +55,13 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
       class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
     >
       <div class="flex flex-wrap items-center gap-2.5 mb-6">
-        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+        <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
           ⚙️ 3 Pilastri Operativi
         </span>
-        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1">
+        <span class="pop-badge bg-pop-mint text-ink rotate-1">
           🚀 Velocità Garantita
         </span>
-        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+        <span class="pop-badge bg-pop-coral-soft text-pop-coral -rotate-2">
           📍 Verona & Territorio
         </span>
       </div>
@@ -87,7 +87,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
                   <li>
                     <a
                       href={`#${service.slug}`}
-                      class="group flex items-center justify-between gap-3 rounded-xl border border-ink/10 bg-canvas/40 px-3.5 py-2.5 text-[13px] font-semibold text-ink transition-all hover:bg-[#FFD027] hover:border-ink"
+                      class="group flex items-center justify-between gap-3 rounded-xl border border-ink/10 bg-canvas/40 px-3.5 py-2.5 text-[13px] font-semibold text-ink transition-all hover:bg-pop-yellow hover:border-ink"
                     >
                       <span>{service.title}</span>
                       <span class="font-mono text-xs font-bold text-accent">
@@ -105,14 +105,14 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
   </section>
 
   <!-- Sticker bar statica dei servizi (senza animazione infinita) -->
-  <div class="border-y-2 border-ink bg-[#FFFBEB] py-3.5 overflow-hidden">
+  <div class="border-y-2 border-ink bg-pop-yellow-soft py-3.5 overflow-hidden">
     <div class="mx-auto max-w-[1360px] px-[var(--page-gutter)]">
       <div class="flex flex-wrap items-center justify-center gap-2.5">
-        <span class="pop-badge bg-[#FFD027] text-ink text-xs">⚡ Sviluppo Web Moderno</span>
-        <span class="pop-badge bg-[#00C9A7] text-ink text-xs">🗺️ Local SEO Verona</span>
-        <span class="pop-badge bg-[#FF8080] text-ink text-xs">📍 Google Maps & Scheda Locale</span>
-        <span class="pop-badge bg-[#845EC2] text-white text-xs">📊 Google Tag Manager & GA4</span>
-        <span class="pop-badge bg-[#2C73D2] text-white text-xs">💬 Tracciamento WhatsApp & Chiamate</span>
+        <span class="pop-badge bg-pop-yellow text-ink text-xs">⚡ Sviluppo Web Moderno</span>
+        <span class="pop-badge bg-pop-mint text-ink text-xs">🗺️ Local SEO Verona</span>
+        <span class="pop-badge bg-pop-coral-soft text-pop-coral text-xs">📍 Google Maps & Scheda Locale</span>
+        <span class="pop-badge bg-pop-purple text-white text-xs">📊 Google Tag Manager & GA4</span>
+        <span class="pop-badge bg-pop-blue text-white text-xs">💬 Tracciamento WhatsApp & Chiamate</span>
       </div>
     </div>
   </div>
@@ -127,7 +127,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
           return (
             <article
               id={service.slug}
-              class="scroll-mt-28 overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-white shadow-[6px_6px_0px_#1A1A1A] transition-transform hover:-translate-y-1"
+              class="scroll-mt-28 overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-white shadow-pop-lg transition-transform hover:-translate-y-1"
               style={accentStyle(service.accent)}
               data-reveal
             >
@@ -137,7 +137,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
                     <div class="flex items-center justify-between gap-4">
                       <div class="flex items-center gap-3">
                         <span
-                          class="grid h-12 w-12 place-items-center rounded-2xl border-2 border-ink bg-accent text-white shadow-[2px_2px_0px_#1A1A1A]"
+                          class="grid h-12 w-12 place-items-center rounded-2xl border-2 border-ink bg-accent text-white shadow-pop-sm"
                         >
                           <Icon name={service.icon} size={22} />
                         </span>
@@ -165,7 +165,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
                       <ul class="space-y-2.5">
                         {(service.features ?? []).map((feature) => (
                           <li class="flex items-start gap-2.5 text-[14px] text-ink font-medium">
-                            <span class="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-[#00C9A7] border border-ink text-ink text-[10px] font-bold">✓</span>
+                            <span class="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-pop-mint border border-ink text-ink text-[10px] font-bold">✓</span>
                             {feature}
                           </li>
                         ))}
@@ -178,7 +178,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
                       href={SITE.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] text-[13px] py-2.5 px-4"
+                      class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover text-[13px] py-2.5 px-4"
                     >
                       <Icon name="whatsapp" size={16} />
                       Richiedi info per questo pilastro
@@ -209,7 +209,7 @@ const serviceMascots = ['speedy', 'scout', 'whatsapp-buddy'] as const;
         commitments.map((item) => (
           <div class={`pop-card p-7 md:p-8 ${item.bg}`}>
             <div class="flex items-center gap-3.5">
-              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-white shadow-[2px_2px_0px_#1A1A1A]">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-white shadow-pop-sm">
                 <Icon name={item.icon} size={22} />
               </span>
               <h3 class="font-display text-xl font-bold tracking-[-0.025em] text-ink">

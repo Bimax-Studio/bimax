@@ -11,28 +11,28 @@ const method = [
     title: 'Analisi & Allineamento',
     body: 'Esaminiamo la presenza attuale, le campagne attive e i canali di contatto prioritari per la tua attività.',
     output: 'Ascolto sincero · Verifica del sito attuale · Priorità',
-    color: 'bg-[#FFD027]',
+    color: 'bg-pop-yellow',
   },
   {
     index: '02',
     title: 'Sviluppo Tecnico & Contenuti',
     body: 'Realizzazione della piattaforma sui nostri blocchi ottimizzati, garantendo navigabilità fluida da smartphone.',
     output: 'Codice snello · Admin semplice · Ottimizzazione mobile',
-    color: 'bg-[#00C9A7]',
+    color: 'bg-pop-mint',
   },
   {
     index: '03',
     title: 'Cablaggio Dati & Presidio Locale',
     body: 'Integrazione dei codici di tracciamento (GTM/GA4) e allineamento con la scheda Google Maps.',
     output: 'Scheda Google Maps · Eventi WhatsApp · Trasparenza dati',
-    color: 'bg-[#845EC2] text-white',
+    color: 'bg-pop-purple text-white',
   },
   {
     index: '04',
     title: 'Messa Online & Continuità',
     body: "Rilascio sul dominio, formazione rapida sull'uso dell'admin e monitoraggio continuo di sicurezza e prestazioni.",
     output: 'Pubblicazione · Formazione semplice · Supporto continuo',
-    color: 'bg-[#D63914] text-white',
+    color: 'bg-pop-coral text-white',
   },
 ];
 
@@ -41,25 +41,25 @@ const pillars = [
     title: 'Dialogo diretto tra persone',
     body: 'Nelle agenzie tradizionali parlate con venditori o commerciali. Con noi parlate direttamente con chi scrive il codice e si occupa in prima persona del vostro sito.',
     icon: 'shield-check',
-    bg: 'bg-[#FFF5CF]',
+    bg: 'bg-pop-yellow-soft',
   },
   {
     title: 'Concretezza e serenità',
     body: 'Non vi vendiamo ore di consulenza astratta o promesse gonfiate. Vi consegniamo uno strumento snello, rapido e piacevole da usare che porta contatti verificati.',
     icon: 'activity',
-    bg: 'bg-[#DFF9F4]',
+    bg: 'bg-pop-mint-soft',
   },
   {
     title: 'Vicinanza al territorio di Verona',
     body: 'Amiamo il nostro territorio: dal centro storico alla ZAI, dalla Valpolicella alle rive del Garda. Conosciamo le abitudini e le esigenze delle attività locali.',
     icon: 'map-pin',
-    bg: 'bg-[#FFE8E2]',
+    bg: 'bg-pop-coral-soft',
   },
   {
     title: 'Piena autonomia e zero vincoli',
     body: 'Nessun canone nascosto o dipendenza tecnologica forzata. Il sito è vostro al 100%, leggero e facile da gestire tramite un pannello di controllo intuitivo.',
     icon: 'check',
-    bg: 'bg-[#EFE7D7]',
+    bg: 'bg-canvas',
   },
 ];
 ---
@@ -72,19 +72,19 @@ const pillars = [
   <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
     <!-- Texture a pois leggeri -->
     <div
-      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
       aria-hidden="true"
     ></div>
 
     <div class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]">
       <div class="flex flex-wrap items-center gap-2.5 mb-6">
-        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+        <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
           👥 Chi Siamo & Approccio
         </span>
-        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1">
+        <span class="pop-badge bg-pop-mint text-ink rotate-1">
           🚫 Zero Intermediari
         </span>
-        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+        <span class="pop-badge bg-pop-coral-soft text-pop-coral -rotate-2">
           ☕ Parliamo chiaro
         </span>
       </div>
@@ -92,7 +92,7 @@ const pillars = [
       <div class="mt-4 grid gap-12 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-8">
           <h1 class="display-xl max-w-[15ch] text-balance text-ink">
-            Il partner digitale che unisce <span class="bg-[#FFD027] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A] text-nowrap">visione d'impresa</span> e padronanza tecnica.
+            Il partner digitale che unisce <span class="bg-pop-yellow px-2 py-0.5 rounded-lg border-2 border-ink shadow-pop-sm text-nowrap">visione d'impresa</span> e padronanza tecnica.
           </h1>
           <div class="mt-8 max-w-xl space-y-4 text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
             <p>
@@ -123,7 +123,7 @@ const pillars = [
   <section class="border-y-2 border-ink/10 px-[var(--page-gutter)] py-20 md:py-28">
     <div class="mx-auto max-w-[1360px]">
       <div class="max-w-2xl" data-reveal>
-        <span class="pop-badge bg-[#FFD027] text-ink mb-3">
+        <span class="pop-badge bg-pop-yellow text-ink mb-3">
           I nostri principi
         </span>
         <h2 class="display-lg text-ink">
@@ -143,7 +143,7 @@ const pillars = [
             >
               <div>
                 <div class="flex items-center gap-3.5">
-                  <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-white shadow-[2px_2px_0px_#1A1A1A]">
+                  <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border-2 border-ink bg-white shadow-pop-sm">
                     <Icon name={item.icon} size={20} />
                   </span>
                   <h3 class="font-display text-lg font-bold text-ink">
@@ -169,7 +169,7 @@ const pillars = [
   <section id="method" class="px-[var(--page-gutter)] py-20 md:py-28 bg-paper">
     <div class="mx-auto max-w-[1360px]">
       <div class="max-w-2xl" data-reveal>
-        <span class="pop-badge bg-[#00C9A7] text-ink mb-3">
+        <span class="pop-badge bg-pop-mint text-ink mb-3">
           Processo a 4 Step
         </span>
         <h2 class="display-lg text-ink">
@@ -188,7 +188,7 @@ const pillars = [
               style={`--reveal-delay: ${index * 60}ms`}
             >
               <div>
-                <span class={`inline-block font-mono text-base font-black px-3 py-1 rounded-xl border-2 border-ink ${step.color} shadow-[2px_2px_0px_#1A1A1A]`}>
+                <span class={`inline-block font-mono text-base font-black px-3 py-1 rounded-xl border-2 border-ink ${step.color} shadow-pop-sm`}>
                   {step.index}
                 </span>
                 <h3 class="font-display text-lg font-bold text-ink mt-5">
@@ -217,9 +217,9 @@ const pillars = [
   <!-- Box Ufficio & Caffè a Verona -->
   <section class="px-[var(--page-gutter)] pb-12">
     <div class="mx-auto max-w-[1360px]">
-      <div class="pop-card bg-[#FFE8E2] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="pop-card bg-pop-coral-soft p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="flex-1">
-          <span class="pop-badge bg-[#D63914] text-white mb-3">
+          <span class="pop-badge bg-pop-coral text-white mb-3">
             📍 Sede di Verona
           </span>
           <h3 class="display-md text-2xl md:text-3xl font-bold text-ink">

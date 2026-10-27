@@ -7,21 +7,46 @@
 /* ------------------------------------------------------------------ */
 
 @theme {
-  /* Palette — Eccentric, Colorful & Human */
+  /* Core brand & paper */
   --color-paper: #FFFFFF;
   --color-canvas: #F8F9FA;
   --color-ink: #1A1A1A;
   --color-void: #000000;
+
+  /* Pop palette tokens — Clean & structured */
+  --color-pop-coral: #D63914;
+  --color-pop-coral-hover: #b82f0f;
+  --color-pop-coral-soft: #FFE8E2;
+  --color-pop-yellow: #FFD027;
+  --color-pop-yellow-hover: #ffe169;
+  --color-pop-yellow-soft: #FFFBEB;
+  --color-pop-mint: #00C9A7;
+  --color-pop-mint-hover: #00b395;
+  --color-pop-mint-soft: #DFF9F4;
+  --color-pop-blue: #1E40AF;
+  --color-pop-blue-hover: #1d4ed8;
+  --color-pop-blue-soft: #DBEAFE;
+  --color-pop-purple: #845EC2;
+  --color-pop-purple-soft: #F3E8FF;
+  --color-pop-green: #25D366;
+  --color-pop-green-hover: #20ba5a;
+
+  /* Legacy aliases for compatibility */
   --color-solar: #D63914;
   --color-acid: #00C9A7;
   --color-yellow: #FFD027;
   --color-purple: #845EC2;
-  --color-sky: #2C73D2;
-  --color-pink: #FF8080;
   --color-moss: #10B981;
-  --color-sand: #EFE7D7;
   --color-solar-ink: #1A1A1A;
   --color-acid-ink: #047857;
+
+  /* Shadows — Pop solid drop-shadow tokens */
+  --shadow-pop-sm: 2px 2px 0px #1A1A1A;
+  --shadow-pop: 3px 3px 0px #1A1A1A;
+  --shadow-pop-md: 4px 4px 0px #1A1A1A;
+  --shadow-pop-lg: 6px 6px 0px #1A1A1A;
+  --shadow-pop-white: 3px 3px 0px #FFFFFF;
+  --shadow-pop-white-sm: 2px 2px 0px #FFFFFF;
 
   /* Type */
   --font-display: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial,

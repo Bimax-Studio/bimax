@@ -22,7 +22,7 @@ const number = String(index + 1).padStart(2, '0');
   data-accent-hint={`${project.title} — ${accent.label} palette. ${project.summary}`}
 >
   <div
-    class="bento-lift relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-ink bg-canvas shadow-[4px_4px_0px_#1A1A1A] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[6px_6px_0px_#1A1A1A]"
+    class="bento-lift relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-ink bg-canvas shadow-pop-md transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-pop-lg"
   >
     {
       project.coverUrl ? (
@@ -36,7 +36,7 @@ const number = String(index + 1).padStart(2, '0');
           class="h-full w-full object-cover transition-transform duration-500 ease-organic group-hover:scale-105"
         />
       ) : (
-        <div class="h-full w-full bg-[#FFE8E2] flex items-center justify-center p-6">
+        <div class="h-full w-full bg-pop-coral-soft flex items-center justify-center p-6">
           <span class="font-display text-4xl font-black text-ink">
             {project.title}
           </span>
@@ -61,7 +61,7 @@ const number = String(index + 1).padStart(2, '0');
 
     <!-- Badge hover "Leggi l'articolo" -->
     <span
-      class="pop-btn absolute bottom-3 right-3 bg-[#FFD027] text-ink text-xs font-bold py-1.5 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5"
+      class="pop-btn absolute bottom-3 right-3 bg-pop-yellow text-ink text-xs font-bold py-1.5 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5"
     >
       Leggi l'articolo
       <Icon name="arrow-up-right" size={13} />
@@ -78,7 +78,7 @@ const number = String(index + 1).padStart(2, '0');
         aria-hidden="true"
       ></span>
       <span
-        class="grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-ink bg-white text-ink transition-all group-hover:bg-[#FFD027] group-hover:shadow-[2px_2px_0px_#1A1A1A]"
+        class="grid h-9 w-9 shrink-0 place-items-center rounded-full border-2 border-ink bg-white text-ink transition-all group-hover:bg-pop-yellow group-hover:shadow-pop-sm"
       >
         <Icon
           name="arrow-up-right"

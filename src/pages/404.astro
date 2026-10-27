@@ -11,19 +11,19 @@ import { basePath } from '@/lib/design';
   >
     <!-- Texture a pois leggeri -->
     <div
-      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
       aria-hidden="true"
     ></div>
 
     <div class="relative mx-auto w-full max-w-[1360px]">
       <div class="grid items-center gap-12 lg:grid-cols-12">
         <div class="lg:col-span-8">
-          <span class="pop-badge bg-[#FFD027] text-ink -rotate-1 mb-4">
+          <span class="pop-badge bg-pop-yellow text-ink -rotate-1 mb-4">
             ⚠️ Errore 404 · Pagina dispersa
           </span>
 
           <h1 class="display-xl mt-4 max-w-[14ch] text-balance text-ink">
-            Ops! Questa pagina si è <span class="bg-[#FFE8E2] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">persa</span> per strada.
+            Ops! Questa pagina si è <span class="bg-pop-coral-soft px-2 py-0.5 rounded-lg border-2 border-ink shadow-pop-sm">persa</span> per strada.
           </h1>
 
           <p class="mt-6 max-w-md text-[17px] leading-relaxed text-ink/80">
@@ -31,7 +31,7 @@ import { basePath } from '@/lib/design';
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href={basePath('/')} class="pop-btn bg-[#FF5A36] text-white">
+            <a href={basePath('/')} class="pop-btn bg-pop-coral text-white hover:bg-pop-coral-hover">
               Torna alla home
               <Icon name="arrow-right" size={15} />
             </a>

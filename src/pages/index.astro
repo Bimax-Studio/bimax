@@ -1,4 +1,5 @@
 ---
+import AccessibilityBanner from '@/components/AccessibilityBanner.astro';
 import Icon from '@/components/Icon.astro';
 import Mascot from '@/components/Mascot.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
@@ -19,28 +20,28 @@ const guarantees = [
     description: 'Piattaforme leggere e veloci senza template pesanti, pensate per chi naviga da cellulare.',
     icon: 'smartphone',
     mascot: 'speedy',
-    badgeColor: 'bg-[#FFD027] text-ink',
+    badgeColor: 'bg-pop-yellow text-ink',
   },
   {
     title: 'Visibilità su Google Maps & ricerca locale',
     description: 'Presidio curato della scheda aziendale e dati geografici per farsi trovare sul territorio.',
     icon: 'map-pin',
     mascot: 'scout',
-    badgeColor: 'bg-[#00C9A7] text-ink',
+    badgeColor: 'bg-pop-mint text-ink',
   },
   {
     title: 'Tracciamento reale di contatti e telefonate',
     description: 'Misuriamo ogni click verso WhatsApp, chiamate e preventivi per verificare l’efficacia del sito.',
     icon: 'activity',
     mascot: 'whatsapp-buddy',
-    badgeColor: 'bg-[#845EC2] text-white',
+    badgeColor: 'bg-pop-purple text-white',
   },
   {
     title: 'Un partner diretto, zero intermediari',
     description: 'Dialogo continuo con chi segue e sviluppa il tuo progetto. Niente commerciali o passaggi a vuoto.',
     icon: 'shield-check',
     mascot: 'coder',
-    badgeColor: 'bg-[#D63914] text-white',
+    badgeColor: 'bg-pop-coral text-white',
   },
 ];
 
@@ -50,7 +51,7 @@ const painPoints = [
     description:
       'Spesso realizzati con template generici pieni di plugin superflui che rallentano la navigazione da mobile e si rompono a ogni aggiornamento.',
     icon: 'zap',
-    bg: 'bg-[#FFF5CF]',
+    bg: 'bg-pop-yellow-soft',
     badge: '🐌 Sito lento = cliente che cambia idea',
   },
   {
@@ -58,7 +59,7 @@ const painPoints = [
     description:
       'Avere un bel sito serve a poco se le aziende e i clienti della tua zona (Verona, lago o provincia) faticano a trovare la tua attività quando cercano un servizio su Google o Maps.',
     icon: 'map-pin',
-    bg: 'bg-[#FFE8E2]',
+    bg: 'bg-pop-coral-soft',
     badge: '🗺️ Presenza locale da curare',
   },
   {
@@ -66,7 +67,7 @@ const painPoints = [
     description:
       'Molte aziende investono budget in campagne pubblicitarie ma non sanno quanti contatti, messaggi WhatsApp o telefonate arrivano effettivamente dal sito web.',
     icon: 'activity',
-    bg: 'bg-[#DFF9F4]',
+    bg: 'bg-pop-mint-soft',
     badge: '💸 Budget speso senza riscontri',
   },
 ];
@@ -76,35 +77,35 @@ const processSteps = [
     step: '01',
     title: 'Analisi & Allineamento',
     body: 'Esaminiamo il modello di business, i punti di forza della tua PMI e i canali di contatto prioritari per i tuoi clienti.',
-    color: 'bg-[#FFD027]',
+    color: 'bg-pop-yellow',
   },
   {
     step: '02',
     title: 'Sviluppo Tecnico & Contenuti',
     body: 'Realizzazione della piattaforma su codice pulito e leggero, garantendo una navigazione immediata e intuitiva da smartphone.',
-    color: 'bg-[#00C9A7]',
+    color: 'bg-pop-mint',
   },
   {
     step: '03',
     title: 'Cablaggio Dati & Presidio Locale',
     body: 'Integrazione dei codici di misurazione (GTM/GA4) e cura della scheda Google Maps con dati territoriali corretti.',
-    color: 'bg-[#845EC2] text-white',
+    color: 'bg-pop-purple text-white',
   },
   {
     step: '04',
     title: 'Messa Online & Continuità',
     body: "Rilascio sul dominio, formazione pratica sull'uso del pannello e supporto continuativo per far crescere la tua attività.",
-    color: 'bg-[#D63914] text-white',
+    color: 'bg-pop-coral text-white',
   },
 ];
 
 const territoryStickers = [
-  { name: 'Verona Centro & ZAI', slug: 'verona', color: 'bg-[#FFD027]' },
-  { name: 'Lago di Garda', slug: 'lago-di-garda', color: 'bg-[#00C9A7]' },
-  { name: 'Valpolicella', slug: 'valpolicella', color: 'bg-[#FF8080]' },
-  { name: 'Villafranca', slug: 'villafranca', color: 'bg-[#845EC2] text-white' },
-  { name: 'San Bonifacio', slug: 'san-bonifacio', color: 'bg-[#2C73D2] text-white' },
-  { name: 'Bussolengo', slug: 'bussolengo', color: 'bg-[#FFD027]' },
+  { name: 'Verona Centro & ZAI', slug: 'verona', color: 'bg-pop-yellow' },
+  { name: 'Lago di Garda', slug: 'lago-di-garda', color: 'bg-pop-mint' },
+  { name: 'Valpolicella', slug: 'valpolicella', color: 'bg-pop-coral-soft' },
+  { name: 'Villafranca', slug: 'villafranca', color: 'bg-pop-purple text-white' },
+  { name: 'San Bonifacio', slug: 'san-bonifacio', color: 'bg-pop-blue text-white' },
+  { name: 'Bussolengo', slug: 'bussolengo', color: 'bg-pop-yellow' },
 ];
 ---
 
@@ -118,20 +119,20 @@ const territoryStickers = [
   <section class="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24 bg-paper">
     <!-- Texture a pois leggeri di sottofondo -->
     <div
-      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
       aria-hidden="true"
     ></div>
 
     <div class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]">
       <!-- Riga Sticker in alto -->
       <div class="flex flex-wrap items-center gap-2.5 mb-6">
-        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+        <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
           📍 Verona & Territorio PMI
         </span>
-        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1">
+        <span class="pop-badge bg-pop-mint text-ink rotate-1">
           🤝 Partner Diretto, Zero Venditori
         </span>
-        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+        <span class="pop-badge bg-pop-coral-soft text-ink -rotate-2">
           💡 La tecnologia al servizio del business
         </span>
       </div>
@@ -153,7 +154,7 @@ const territoryStickers = [
               href={SITE.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="pop-btn bg-[#25D366] text-ink hover:bg-[#20bd5a] text-base px-7 py-4"
+              class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover text-base px-7 py-4"
             >
               <Icon name="whatsapp" size={20} />
               Richiedi audit via WhatsApp
@@ -162,7 +163,7 @@ const territoryStickers = [
 
             <a
               href={basePath('/contact')}
-              class="pop-btn bg-paper text-ink hover:bg-[#FFF5CF] text-base px-6 py-4"
+              class="pop-btn bg-paper text-ink hover:bg-pop-yellow-soft text-base px-6 py-4"
             >
               Compila il modulo rapido
               <Icon name="arrow-right" size={16} />
@@ -179,7 +180,7 @@ const territoryStickers = [
         <div class="lg:col-span-5 xl:col-span-4 flex flex-col items-center">
           <div class="relative w-full max-w-[340px] text-center">
             <!-- Fumetto parlante pop -->
-            <div class="pop-card bg-[#FFF5CF] p-4 mb-4 text-left relative rotate-1">
+            <div class="pop-card bg-pop-yellow-soft p-4 mb-4 text-left relative rotate-1">
               <p class="font-display font-bold text-sm text-ink leading-snug">
                 "Partner al tuo fianco, non solo tecnici."
               </p>
@@ -187,14 +188,14 @@ const territoryStickers = [
                 La tecnologia è il nostro strumento per supportare la tua attività e far crescere il tuo business. Parli direttamente con noi, senza intermediari o commerciali.
               </p>
               <!-- Freccina del fumetto -->
-              <div class="absolute -bottom-3 left-16 w-5 h-5 bg-[#FFF5CF] border-r-2 border-b-2 border-ink transform rotate-45"></div>
+              <div class="absolute -bottom-3 left-16 w-5 h-5 bg-pop-yellow-soft border-r-2 border-b-2 border-ink transform rotate-45"></div>
             </div>
 
             <!-- Mascotte sviluppatore/partner -->
             <Mascot name="coder" size={210} class="mx-auto" />
 
-            <div class="mt-2 inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border-2 border-ink shadow-[2px_2px_0px_#1A1A1A] font-mono text-xs font-bold">
-              <span class="h-2 w-2 rounded-full bg-[#00C9A7]"></span>
+            <div class="mt-2 inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border-2 border-ink shadow-pop-sm font-mono text-xs font-bold">
+              <span class="h-2 w-2 rounded-full bg-pop-mint"></span>
               Al fianco delle PMI
             </div>
           </div>
@@ -216,7 +217,7 @@ const territoryStickers = [
               >
                 <div>
                   <div class="flex items-center justify-between mb-3">
-                    <span class={`grid h-10 w-10 place-items-center rounded-xl border-2 border-ink shadow-[2px_2px_0px_#1A1A1A] ${item.badgeColor}`}>
+                    <span class={`grid h-10 w-10 place-items-center rounded-xl border-2 border-ink shadow-pop-sm ${item.badgeColor}`}>
                       <Icon name={item.icon} size={18} />
                     </span>
                     <Mascot name={item.mascot} size={46} />
@@ -240,7 +241,7 @@ const territoryStickers = [
   </section>
 
   <!-- STRISCIA TERRITORIO ADESIVI COLORATI CLICCABILI -->
-  <div class="border-y-2 border-ink bg-[#FFFBEB] py-4 overflow-hidden">
+  <div class="border-y-2 border-ink bg-pop-yellow-soft py-4 overflow-hidden">
     <div class="mx-auto max-w-[1360px] px-[var(--page-gutter)]">
       <div class="flex flex-wrap items-center justify-center gap-3">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-bold text-ink mr-2">
@@ -270,7 +271,7 @@ const territoryStickers = [
   <section class="border-b-2 border-ink bg-canvas px-[var(--page-gutter)] py-20 md:py-26">
     <div class="mx-auto max-w-[1360px]">
       <div class="max-w-2xl" data-reveal>
-        <span class="pop-badge bg-[#1A1A1A] text-white -rotate-1 mb-4">
+        <span class="pop-badge bg-ink text-white -rotate-1 mb-4">
           La realtà dei fatti
         </span>
         <h2 class="display-lg mt-3 text-ink">
@@ -324,7 +325,7 @@ const territoryStickers = [
     <div class="mx-auto max-w-[1360px]">
       <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
         <div class="max-w-2xl">
-          <span class="pop-badge bg-[#00C9A7] text-ink -rotate-1 mb-4">
+          <span class="pop-badge bg-pop-mint text-ink -rotate-1 mb-4">
             Strumenti concreti
           </span>
           <h2 class="display-lg mt-3">
@@ -335,7 +336,7 @@ const territoryStickers = [
           </p>
         </div>
 
-        <a href={basePath('/services')} class="pop-btn bg-[#FFD027] text-ink text-xs px-5 py-3">
+        <a href={basePath('/services')} class="pop-btn bg-pop-yellow text-ink text-xs px-5 py-3">
           Esplora tutti i dettagli
           <Icon name="arrow-right" size={14} />
         </a>
@@ -346,9 +347,9 @@ const territoryStickers = [
         {
           services.map((service, index) => {
             const colors = [
-              { bg: 'bg-[#FFF8E7]', accent: 'bg-[#FFD027] text-ink', mascot: 'speedy' },
-              { bg: 'bg-[#EBFBF7]', accent: 'bg-[#00C9A7] text-ink', mascot: 'scout' },
-              { bg: 'bg-[#F4EFFC]', accent: 'bg-[#845EC2] text-white', mascot: 'whatsapp-buddy' },
+              { bg: 'bg-pop-yellow-soft', accent: 'bg-pop-yellow text-ink', mascot: 'speedy' },
+              { bg: 'bg-pop-mint-soft', accent: 'bg-pop-mint text-ink', mascot: 'scout' },
+              { bg: 'bg-pop-purple-soft', accent: 'bg-pop-purple text-white', mascot: 'whatsapp-buddy' },
             ];
             const col = colors[index % colors.length];
 
@@ -382,7 +383,7 @@ const territoryStickers = [
                     <div class="mt-6 flex flex-wrap gap-2">
                       {(service.features ?? []).map((feat) => (
                         <span class="inline-flex items-center gap-1.5 rounded-lg border border-ink/20 bg-white/80 px-2.5 py-1 text-xs font-medium text-ink">
-                          <span class="text-[#00C9A7] font-bold">✓</span>
+                          <span class="text-pop-mint font-bold">✓</span>
                           {feat}
                         </span>
                       ))}
@@ -393,7 +394,7 @@ const territoryStickers = [
                     <Mascot name={col.mascot} size={135} />
                     <a
                       href={basePath(`/services#${service.slug}`)}
-                      class="pop-btn bg-white text-ink text-xs px-4 py-2 mt-3 hover:bg-[#FFD027]"
+                      class="pop-btn bg-white text-ink text-xs px-4 py-2 mt-3 hover:bg-pop-yellow"
                     >
                       Approfondisci questo pilastro →
                     </a>
@@ -413,7 +414,7 @@ const territoryStickers = [
   <section class="border-b-2 border-ink bg-canvas px-[var(--page-gutter)] py-20 md:py-28">
     <div class="mx-auto max-w-[1360px]">
       <div class="max-w-2xl" data-reveal>
-        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1 mb-4">
+        <span class="pop-badge bg-pop-yellow text-ink -rotate-1 mb-4">
           Come lavoriamo
         </span>
         <h2 class="display-lg mt-3 text-ink">
@@ -433,7 +434,7 @@ const territoryStickers = [
             >
               <div>
                 <span
-                  class={`inline-block font-mono text-sm font-black px-3 py-1 rounded-xl border-2 border-ink ${step.color} shadow-[2px_2px_0px_#1A1A1A]`}
+                  class={`inline-block font-mono text-sm font-black px-3 py-1 rounded-xl border-2 border-ink ${step.color} shadow-pop-sm`}
                 >
                   {step.step}
                 </span>
@@ -459,147 +460,11 @@ const territoryStickers = [
   </section>
 
   <!-- ============================================================== -->
-  <!-- SEZIONE BLU: SITI ACCESSIBILITY COMPLIANT (WCAG & EAA)        -->
+  <!-- PICCOLO BANNER BLU: ACCESSIBILITÀ & CONFORMITÀ (WCAG/EAA)      -->
   <!-- ============================================================== -->
-  <section
-    id="accessibilita"
-    class="border-b-2 border-ink bg-[#1E40AF] px-[var(--page-gutter)] py-20 md:py-28 text-white relative overflow-hidden"
-  >
-    <!-- Pattern a pois leggeri -->
-    <div
-      class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(#FFFFFF_2px,transparent_2px)] [background-size:24px_24px]"
-      aria-hidden="true"
-    ></div>
-
-    <div class="relative mx-auto max-w-[1360px]">
-      <div class="grid gap-12 lg:grid-cols-12 lg:items-center" data-reveal>
-        <div class="lg:col-span-8">
-          <div class="flex flex-wrap items-center gap-2 mb-4">
-            <span class="pop-badge bg-[#FFD027] text-ink font-bold -rotate-1">
-              ♿ Inclusione & Conformità
-            </span>
-            <span class="pop-badge bg-white text-ink font-bold rotate-1">
-              Standard WCAG 2.1 AA
-            </span>
-            <span class="pop-badge bg-[#00C9A7] text-ink font-bold -rotate-1">
-              European Accessibility Act (EAA)
-            </span>
-          </div>
-
-          <h2 class="display-lg text-white max-w-[16ch] text-balance">
-            Sviluppiamo siti web <span class="bg-[#FFD027] text-ink px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">accessibili a tutti</span> e a norma di legge.
-          </h2>
-
-          <p class="mt-6 max-w-2xl text-[17px] leading-relaxed text-[#DBEAFE] md:text-[18px]">
-            L'accessibilità digitale non è un dettaglio secondario: è rispetto concreto per ogni visitatore, garanzia di conformità alle normative europee e una leva strategica che porta più clienti reali alla tua PMI.
-          </p>
-
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={basePath('/contact')}
-              class="pop-btn bg-[#FFD027] text-ink hover:bg-[#ffe169] text-sm px-6 py-3.5 font-bold"
-            >
-              Richiedi una verifica di accessibilità
-              <Icon name="arrow-right" size={15} />
-            </a>
-            <span class="text-xs font-mono font-bold text-[#DBEAFE] flex items-center gap-2">
-              <span class="h-2 w-2 rounded-full bg-[#00C9A7]"></span>
-              Nessuna barriera all'ingresso
-            </span>
-          </div>
-        </div>
-
-        <div class="lg:col-span-4 flex flex-col items-center">
-          <div class="relative">
-            <!-- Baloon con citazione cartoon -->
-            <div class="pop-card bg-white p-4 mb-4 text-center text-xs font-bold text-ink max-w-[240px] shadow-[4px_4px_0px_#1A1A1A]">
-              "Un sito ben fatto deve poter essere navigato da chiunque, senza escludere nessuno!" 🌟
-            </div>
-            <div class="flex justify-center">
-              <Mascot name="accessible" size={170} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- I 4 Pilastri dell'Accessibilità BIMAX -->
-      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
-        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#FFD027] text-ink font-bold shadow-[2px_2px_0px_#1A1A1A]">
-                ⚖️
-              </span>
-              <h3 class="font-display text-base font-bold text-ink">
-                Conformità di Legge & EAA
-              </h3>
-            </div>
-            <p class="text-[14px] leading-relaxed text-ink/80">
-              Linee guida europee e WCAG 2.1 AA rispettate per prevenire sanzioni e garantire conformità normativa alle PMI.
-            </p>
-          </div>
-          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
-            ✓ Linee Guida Europee
-          </div>
-        </div>
-
-        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#00C9A7] text-ink font-bold shadow-[2px_2px_0px_#1A1A1A]">
-                ⌨️
-              </span>
-              <h3 class="font-display text-base font-bold text-ink">
-                Navigazione da Tastiera
-              </h3>
-            </div>
-            <p class="text-[14px] leading-relaxed text-ink/80">
-              Focus visibile su tutti gli elementi interattivi, skip links e piena compatibilità per chi non usa il mouse.
-            </p>
-          </div>
-          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
-            ✓ 100% Keyboard Friendly
-          </div>
-        </div>
-
-        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#FFE8E2] text-[#D63914] font-bold shadow-[2px_2px_0px_#1A1A1A]">
-                👁️
-              </span>
-              <h3 class="font-display text-base font-bold text-ink">
-                Contrasti & Leggibilità
-              </h3>
-            </div>
-            <p class="text-[14px] leading-relaxed text-ink/80">
-              Contrasto minimo 4.5:1 verificato, font ad alta leggibilità, testi scalabili e niente combinazioni cromatiche faticose.
-            </p>
-          </div>
-          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
-            ✓ Contrasti Verificati
-          </div>
-        </div>
-
-        <div class="pop-card bg-white p-6 text-ink flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-3 mb-4">
-              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#DFF9F4] text-[#064E3B] font-bold shadow-[2px_2px_0px_#1A1A1A]">
-                🔊
-              </span>
-              <h3 class="font-display text-base font-bold text-ink">
-                Screen Reader & SEO
-              </h3>
-            </div>
-            <p class="text-[14px] leading-relaxed text-ink/80">
-              HTML5 semantico puro, etichette ARIA descrittive e testi alternativi sulle immagini per lettori vocali e crawler Google.
-            </p>
-          </div>
-          <div class="mt-6 pt-3 border-t border-ink/10 font-mono text-xs font-bold text-ink/70">
-            ✓ Semantica & Aria Ready
-          </div>
-        </div>
-      </div>
+  <section class="border-b-2 border-ink bg-canvas px-[var(--page-gutter)] py-8">
+    <div class="mx-auto max-w-[1360px]">
+      <AccessibilityBanner />
     </div>
   </section>
 
@@ -613,7 +478,7 @@ const territoryStickers = [
     <div class="mx-auto max-w-[1360px]">
       <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
         <div class="max-w-2xl">
-          <span class="pop-badge bg-[#FFD027] text-ink -rotate-1 mb-4">
+          <span class="pop-badge bg-pop-yellow text-ink -rotate-1 mb-4">
             I lavori sul territorio
           </span>
           <h2 class="display-lg mt-3">
@@ -624,7 +489,7 @@ const territoryStickers = [
           </p>
         </div>
 
-        <a href={basePath('/projects')} class="pop-btn bg-white text-ink text-xs px-5 py-3 hover:bg-[#FFD027]">
+        <a href={basePath('/projects')} class="pop-btn bg-white text-ink text-xs px-5 py-3 hover:bg-pop-yellow">
           Tutti i casi studio
           <Icon name="arrow-right" size={14} />
         </a>
@@ -657,11 +522,11 @@ const territoryStickers = [
   <!-- ============================================================== -->
   <!-- 5. CHI SIAMO / APPROCCIO (PARTNER STRATEGICO PER PMI)          -->
   <!-- ============================================================== -->
-  <section class="border-b-2 border-ink bg-[#FFFBEB] px-[var(--page-gutter)] py-20 md:py-28">
+  <section class="border-b-2 border-ink bg-pop-yellow-soft px-[var(--page-gutter)] py-20 md:py-28">
     <div class="mx-auto max-w-[1360px]">
       <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-7" data-reveal>
-          <span class="pop-badge bg-[#1A1A1A] text-white -rotate-1 mb-4">
+          <span class="pop-badge bg-ink text-white -rotate-1 mb-4">
             Partner Digitale per PMI
           </span>
           <h2 class="display-lg mt-3 text-ink">
@@ -678,13 +543,13 @@ const territoryStickers = [
           </div>
 
           <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a href={basePath('/about')} class="pop-btn bg-[#1A1A1A] text-white hover:bg-accent text-sm px-6 py-3.5">
+            <a href={basePath('/about')} class="pop-btn bg-ink text-white hover:bg-accent text-sm px-6 py-3.5">
               Scopri chi siamo & il nostro metodo
               <Icon name="arrow-right" size={14} />
             </a>
             <a
               href={`tel:${SITE.phoneRaw}`}
-              class="pop-btn bg-white text-ink text-sm px-5 py-3.5 hover:bg-[#FFD027]"
+              class="pop-btn bg-white text-ink text-sm px-5 py-3.5 hover:bg-pop-yellow"
             >
               <Icon name="phone" size={14} />
               Chiamaci: {SITE.phone}
@@ -706,7 +571,7 @@ const territoryStickers = [
                 href={SITE.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="pop-btn bg-[#25D366] text-ink text-xs px-4 py-2 w-full font-bold"
+                class="pop-btn bg-pop-green text-ink text-xs px-4 py-2 w-full font-bold"
               >
                 💬 Scrivici: "Ciao, prendiamo un caffè?"
               </a>
@@ -722,16 +587,16 @@ const territoryStickers = [
   <!-- ============================================================== -->
   <section class="px-[var(--page-gutter)] py-20 md:py-28 bg-canvas">
     <div
-      class="pop-card bg-[#1A1A1A] text-white mx-auto max-w-[1360px] p-8 md:p-14 -rotate-0.5"
+      class="pop-card bg-ink text-white mx-auto max-w-[1360px] p-8 md:p-14 -rotate-0.5"
       data-reveal
     >
       <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
         <div class="lg:col-span-8">
-          <span class="pop-badge bg-[#FFD027] text-ink -rotate-1 mb-4 inline-block">
+          <span class="pop-badge bg-pop-yellow text-ink -rotate-1 mb-4 inline-block">
             Confronto Gratuito
           </span>
           <h2 class="display-lg max-w-[14ch] text-white mt-2">
-            Parliamo del tuo progetto a <span class="text-[#FFD027]">Verona</span>
+            Parliamo del tuo progetto a <span class="text-pop-yellow">Verona</span>
           </h2>
           <p class="mt-4 max-w-lg text-[16px] leading-relaxed text-white/90">
             Hai già delle campagne attive o un sito che non porta contatti? Mandaci il link: controlleremo velocità, visibilità locale e tracciamenti per dirti con sincerità cosa sistemare.
@@ -742,7 +607,7 @@ const territoryStickers = [
               href={SITE.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="pop-btn bg-[#25D366] text-ink hover:bg-[#20bd5a] px-6 py-3.5 text-sm font-bold"
+              class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover px-6 py-3.5 text-sm font-bold"
             >
               <Icon name="whatsapp" size={18} />
               Scrivici su WhatsApp
@@ -750,7 +615,7 @@ const territoryStickers = [
             </a>
             <a
               href={basePath('/contact')}
-              class="pop-btn bg-white text-ink hover:bg-[#FFD027] px-6 py-3.5 text-sm font-bold"
+              class="pop-btn bg-white text-ink hover:bg-pop-yellow px-6 py-3.5 text-sm font-bold"
             >
               Compila il modulo contatti breve
             </a>

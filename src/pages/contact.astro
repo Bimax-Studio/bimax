@@ -15,7 +15,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
   <section class="relative overflow-hidden pt-12 pb-18 md:pt-18 md:pb-24 bg-paper">
     <!-- Texture a pois leggeri -->
     <div
-      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+      class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
       aria-hidden="true"
     ></div>
 
@@ -23,13 +23,13 @@ const isError = Astro.url.searchParams.get('error') === '1';
       class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
     >
       <div class="flex flex-wrap items-center gap-2.5 mb-6">
-        <span class="pop-badge bg-[#FFD027] text-ink -rotate-1">
+        <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
           📬 Contatto Diretto Verona
         </span>
-        <span class="pop-badge bg-[#00C9A7] text-ink rotate-1 font-bold">
+        <span class="pop-badge bg-pop-mint text-ink rotate-1 font-bold">
           🤝 Partner per le PMI
         </span>
-        <span class="pop-badge bg-[#FF8080] text-ink -rotate-2">
+        <span class="pop-badge bg-pop-coral-soft text-pop-coral -rotate-2">
           🔍 Analisi Trasparente
         </span>
       </div>
@@ -38,7 +38,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
         <!-- Colonna Sinistra: Info e WhatsApp Fast Lane -->
         <div class="lg:col-span-5">
           <h1 class="display-xl max-w-[15ch] text-balance text-ink">
-            Parliamo del tuo progetto a <span class="bg-[#FFD027] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">Verona</span>
+            Parliamo del tuo progetto a <span class="bg-pop-yellow px-2 py-0.5 rounded-lg border-2 border-ink shadow-pop-sm">Verona</span>
           </h1>
 
           <p class="mt-6 max-w-md text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
@@ -46,17 +46,17 @@ const isError = Astro.url.searchParams.get('error') === '1';
           </p>
 
           <!-- Box WhatsApp amichevole ed eccentrico -->
-          <div class="mt-8 pop-card bg-[#DFF9F4] p-6 relative overflow-hidden">
+          <div class="mt-8 pop-card bg-pop-mint-soft p-6 relative overflow-hidden">
             <div class="flex items-start justify-between gap-4">
               <div class="flex items-center gap-3">
-                <span class="grid h-12 w-12 place-items-center rounded-2xl border-2 border-ink bg-[#25D366] text-ink shadow-[2px_2px_0px_#1A1A1A]">
+                <span class="grid h-12 w-12 place-items-center rounded-2xl border-2 border-ink bg-pop-green text-ink shadow-pop-sm">
                   <Icon name="whatsapp" size={24} />
                 </span>
                 <div>
                   <h2 class="font-display text-lg font-bold text-ink">
                     Canale WhatsApp Rapido
                   </h2>
-                  <span class="inline-block mt-0.5 font-mono text-xs font-bold text-[#064E3B]">
+                  <span class="inline-block mt-0.5 font-mono text-xs font-bold text-ink">
                     ⚡ Dialogo diretto con i referenti
                   </span>
                 </div>
@@ -75,7 +75,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
               href={SITE.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] mt-5 w-full flex items-center justify-center gap-2 font-bold py-3 text-[15px]"
+              class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover mt-5 w-full flex items-center justify-center gap-2 font-bold py-3 text-[15px]"
             >
               <Icon name="whatsapp" size={19} />
               Scrivici su WhatsApp
@@ -122,18 +122,18 @@ const isError = Astro.url.searchParams.get('error') === '1';
         <!-- Colonna Destra: Modulo Contatti Breve -->
         <div class="lg:col-span-7">
           <div
-            class="pop-card bg-white p-8 md:p-10 shadow-[6px_6px_0px_#1A1A1A]"
+            class="pop-card bg-white p-8 md:p-10 shadow-pop-lg"
           >
             <div class="flex items-center justify-between gap-4">
               <div>
-                <span class="pop-badge bg-[#FFD027] text-ink text-[11px] mb-2">
+                <span class="pop-badge bg-pop-yellow text-ink text-[11px] mb-2">
                   Modulo Breve
                 </span>
                 <h2 class="display-md text-2xl font-bold text-ink">
                   Richiedi un audit gratuito
                 </h2>
               </div>
-              <span class="hidden sm:inline-block font-mono text-xs font-bold bg-[#DFF9F4] text-[#064E3B] border border-ink/20 px-2.5 py-1 rounded-lg">
+              <span class="hidden sm:inline-block font-mono text-xs font-bold bg-pop-mint-soft text-ink border border-ink/20 px-2.5 py-1 rounded-lg">
                 ⏱️ 1 minuto
               </span>
             </div>
@@ -145,10 +145,10 @@ const isError = Astro.url.searchParams.get('error') === '1';
             <!-- Banner di successo dinamico (client-side o server) -->
             <div
               id="form-success-banner"
-              class={`mt-6 rounded-2xl border-2 border-ink bg-[#DFF9F4] p-5 text-ink shadow-[3px_3px_0px_#1A1A1A] ${isSent ? 'block' : 'hidden'}`}
+              class={`mt-6 rounded-2xl border-2 border-ink bg-pop-mint-soft p-5 text-ink shadow-pop ${isSent ? 'block' : 'hidden'}`}
             >
               <div class="flex items-center gap-3">
-                <span class="grid h-6 w-6 place-items-center rounded-full bg-[#00C9A7] text-white border border-ink font-bold text-xs">✓</span>
+                <span class="grid h-6 w-6 place-items-center rounded-full bg-pop-mint text-white border border-ink font-bold text-xs">✓</span>
                 <p class="font-bold text-sm">
                   Grazie, abbiamo ricevuto la tua richiesta di audit!
                 </p>
@@ -163,7 +163,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
                   href={SITE.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="pop-badge bg-[#25D366] text-ink text-xs font-bold hover:bg-[#20ba5a] inline-flex items-center gap-1.5"
+                  class="pop-badge bg-pop-green text-ink text-xs font-bold hover:bg-pop-green-hover inline-flex items-center gap-1.5"
                 >
                   <Icon name="whatsapp" size={13} />
                   Apri la richiesta su WhatsApp
@@ -272,7 +272,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
               <button
                 type="submit"
                 id="submit-btn"
-                class="pop-btn bg-[#D63914] text-white hover:bg-[#b82f0f] w-full py-3.5 text-center font-bold text-[15px] mt-4 flex items-center justify-center gap-2 cursor-pointer"
+                class="pop-btn bg-pop-coral text-white hover:bg-pop-coral-hover w-full py-3.5 text-center font-bold text-[15px] mt-4 flex items-center justify-center gap-2 cursor-pointer"
               >
                 Invia richiesta audit gratuito
                 <Icon name="arrow-right" size={16} />

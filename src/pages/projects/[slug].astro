@@ -54,7 +54,7 @@ const accent = project
           Il caso studio che stai cercando non esiste o è stato rinominato.
           Puoi consultare l'elenco completo nell'archivio progetti.
         </p>
-        <a href={basePath('/projects')} class="pop-btn bg-[#D63914] text-white mt-8">
+        <a href={basePath('/projects')} class="pop-btn bg-pop-coral text-white mt-8">
           Torna all'archivio progetti
           <Icon name="arrow-right" size={15} />
         </a>
@@ -73,7 +73,7 @@ const accent = project
         <section class="relative overflow-hidden pt-10 pb-12 md:pt-14 md:pb-16 bg-paper">
           <!-- Texture a pois leggeri -->
           <div
-            class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+            class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
             aria-hidden="true"
           ></div>
 
@@ -82,7 +82,7 @@ const accent = project
           >
             <a
               href={basePath('/projects')}
-              class="pop-badge bg-white text-ink text-xs mb-6 hover:bg-[#FFD027] inline-flex items-center gap-1.5 font-bold"
+              class="pop-badge bg-white text-ink text-xs mb-6 hover:bg-pop-yellow inline-flex items-center gap-1.5 font-bold"
             >
               <Icon
                 name="arrow-right"
@@ -95,10 +95,10 @@ const accent = project
             <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
               <div class="lg:col-span-8">
                 <div class="flex flex-wrap items-center gap-2 mb-4">
-                  <span class="pop-badge bg-[#FFD027] text-ink text-xs font-bold">
+                  <span class="pop-badge bg-pop-yellow text-ink text-xs font-bold">
                     📍 {project.client}
                   </span>
-                  <span class="pop-badge bg-[#00C9A7] text-ink text-xs font-bold">
+                  <span class="pop-badge bg-pop-mint text-ink text-xs font-bold">
                     Articolo Caso Studio
                   </span>
                 </div>
@@ -144,7 +144,7 @@ const accent = project
         <!-- Cover Image -->
         <section class="px-[var(--page-gutter)] pt-4 pb-8 md:pt-6">
           <div class="mx-auto max-w-[1360px]">
-            <div class="relative overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-white shadow-[6px_6px_0px_#1A1A1A]">
+            <div class="relative overflow-hidden rounded-[2.5rem] border-[2.5px] border-ink bg-white shadow-pop-lg">
               {project.coverUrl ? (
                 <img
                   src={project.coverUrl}
@@ -156,7 +156,7 @@ const accent = project
                   class="aspect-[4/3] w-full object-cover md:aspect-[16/9]"
                 />
               ) : (
-                <div class="aspect-[16/9] w-full bg-[#FFE8E2] flex items-center justify-center">
+                <div class="aspect-[16/9] w-full bg-pop-coral-soft flex items-center justify-center">
                   <span class="font-display text-4xl font-black text-ink">{project.title}</span>
                 </div>
               )}
@@ -197,7 +197,7 @@ const accent = project
                       href={SITE.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] w-full text-xs flex items-center justify-center gap-2 py-2.5"
+                      class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover w-full text-xs flex items-center justify-center gap-2 py-2.5"
                     >
                       <Icon name="whatsapp" size={16} />
                       Scrivici per un progetto simile
@@ -206,7 +206,7 @@ const accent = project
                 </div>
 
                 <!-- Box amichevole con mascotte -->
-                <div class="pop-card bg-[#FFFBEB] p-5 flex items-center gap-4">
+                <div class="pop-card bg-pop-yellow-soft p-5 flex items-center gap-4">
                   <Mascot name="coder" size={70} />
                   <div>
                     <p class="text-xs font-bold text-ink">
@@ -233,7 +233,7 @@ const accent = project
               <div class="mx-auto max-w-[1360px]">
                 <a
                   href={basePath(`/projects/${nextProject.slug}`)}
-                  class="group block pop-card bg-[#FFE8E2] p-6 md:p-10 transition-transform hover:-translate-y-1 shadow-[5px_5px_0px_#1A1A1A]"
+                  class="group block pop-card bg-pop-coral-soft p-6 md:p-10 transition-transform hover:-translate-y-1 shadow-pop-lg"
                 >
                   <div class="flex flex-col justify-between gap-6 md:flex-row md:items-center">
                     <div>
@@ -247,7 +247,7 @@ const accent = project
                         {nextProject.client} · Verona e provincia
                       </p>
                     </div>
-                    <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-ink bg-white text-ink transition-transform group-hover:scale-110 shadow-[2px_2px_0px_#1A1A1A]">
+                    <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-ink bg-white text-ink transition-transform group-hover:scale-110 shadow-pop-sm">
                       <Icon
                         name="arrow-up-right"
                         size={20}

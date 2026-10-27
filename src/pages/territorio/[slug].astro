@@ -34,7 +34,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
       <section class="mx-auto flex min-h-[60vh] max-w-[1360px] flex-col items-start justify-center px-[var(--page-gutter)] py-24">
         <h1 class="display-lg text-ink">Territorio non trovato</h1>
         <p class="mt-4 text-ink/75">La pagina territoriale richiesta non esiste.</p>
-        <a href={basePath('/')} class="pop-btn bg-[#D63914] text-white mt-6">Torna alla home</a>
+        <a href={basePath('/')} class="pop-btn bg-pop-coral text-white mt-6">Torna alla home</a>
       </section>
     </Layout>
   ) : (
@@ -46,19 +46,19 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
       <section class="relative overflow-hidden pt-12 pb-18 md:pt-18 md:pb-24 bg-paper">
         <!-- Texture a pois leggeri -->
         <div
-          class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(#1A1A1A_2px,transparent_2px)] [background-size:24px_24px]"
+          class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
           aria-hidden="true"
         ></div>
 
         <div class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]">
           <div class="flex flex-wrap items-center gap-2.5 mb-6">
-            <a href={basePath('/')} class="pop-badge bg-white text-ink text-xs font-bold hover:bg-[#FFD027]">
+            <a href={basePath('/')} class="pop-badge bg-white text-ink text-xs font-bold hover:bg-pop-yellow">
               ← Home
             </a>
-            <span class="pop-badge bg-[#FFD027] text-ink text-xs font-bold -rotate-1">
+            <span class="pop-badge bg-pop-yellow text-ink text-xs font-bold -rotate-1">
               {territorio.badge}
             </span>
-            <span class="pop-badge bg-[#00C9A7] text-ink text-xs font-bold rotate-1">
+            <span class="pop-badge bg-pop-mint text-ink text-xs font-bold rotate-1">
               Partner per PMI
             </span>
           </div>
@@ -66,7 +66,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
           <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div class="lg:col-span-8">
               <h1 class="display-xl max-w-[15ch] text-balance text-ink">
-                Sviluppo web e crescita digitale per le PMI a <span class="bg-[#FFD027] px-2 py-0.5 rounded-lg border-2 border-ink shadow-[2px_2px_0px_#1A1A1A]">{territorio.shortName}</span>
+                Sviluppo web e crescita digitale per le PMI a <span class="bg-pop-yellow px-2 py-0.5 rounded-lg border-2 border-ink shadow-pop-sm">{territorio.shortName}</span>
               </h1>
 
               <p class="mt-6 max-w-[60ch] text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
@@ -74,9 +74,9 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
               </p>
 
               <!-- Box valore d'agenzia: non solo tecnici -->
-              <div class="mt-8 pop-card bg-[#FFFBEB] p-5 max-w-xl">
+              <div class="mt-8 pop-card bg-pop-yellow-soft p-5 max-w-xl">
                 <div class="flex items-start gap-3.5">
-                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-[#00C9A7] text-ink font-bold shadow-[2px_2px_0px_#1A1A1A]">
+                  <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border-2 border-ink bg-pop-mint text-ink font-bold shadow-pop-sm">
                     ★
                   </span>
                   <div>
@@ -95,14 +95,14 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
                   href={SITE.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="pop-btn bg-[#25D366] text-ink hover:bg-[#20ba5a] text-sm px-6 py-3.5"
+                  class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover text-sm px-6 py-3.5"
                 >
                   <Icon name="whatsapp" size={18} />
                   Parliamo del tuo progetto
                 </a>
                 <a
                   href={basePath('/contact')}
-                  class="pop-btn bg-white text-ink hover:bg-[#FFD027] text-sm px-6 py-3.5"
+                  class="pop-btn bg-white text-ink hover:bg-pop-yellow text-sm px-6 py-3.5"
                 >
                   Richiedi un audit gratuito
                   <Icon name="arrow-right" size={15} />
@@ -133,7 +133,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
       <section class="border-y-2 border-ink bg-canvas px-[var(--page-gutter)] py-16 md:py-22">
         <div class="mx-auto max-w-[1360px]">
           <div class="max-w-lg">
-            <span class="pop-badge bg-[#1A1A1A] text-white text-xs font-bold mb-3">
+            <span class="pop-badge bg-ink text-white text-xs font-bold mb-3">
               Settori del territorio
             </span>
             <h2 class="display-lg text-ink mt-2">
@@ -148,7 +148,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
             {territorio.sectors.map((sector, idx) => (
               <div class="pop-card bg-white p-6 flex flex-col justify-between">
                 <div>
-                  <span class="inline-block font-mono text-xs font-bold text-ink/75 bg-[#FFFBEB] border border-ink/20 px-2 py-0.5 rounded-md mb-3">
+                  <span class="inline-block font-mono text-xs font-bold text-ink/75 bg-pop-yellow-soft border border-ink/20 px-2 py-0.5 rounded-md mb-3">
                     Settore #{idx + 1}
                   </span>
                   <h3 class="font-display text-base font-bold text-ink">
@@ -169,8 +169,8 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
         <div class="mx-auto max-w-[1360px]">
           <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
             <!-- Problema -->
-            <div class="pop-card bg-[#FFE8E2] p-8 md:p-10">
-              <span class="pop-badge bg-[#D63914] text-white text-xs font-bold mb-4">
+            <div class="pop-card bg-pop-coral-soft p-8 md:p-10">
+              <span class="pop-badge bg-pop-coral text-white text-xs font-bold mb-4">
                 La sfida frequente
               </span>
               <h2 class="display-md text-2xl font-bold text-ink">
@@ -180,13 +180,13 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
                 {territorio.challenges}
               </p>
               <div class="mt-6 pt-4 border-t-2 border-ink/15 text-xs font-mono font-bold text-ink">
-                <span class="text-[#8A1800] mr-1.5 font-black">✕</span> Dispersione di tempo e contatti non tracciati
+                <span class="text-pop-coral mr-1.5 font-black">✕</span> Dispersione di tempo e contatti non tracciati
               </div>
             </div>
 
             <!-- Soluzione -->
-            <div class="pop-card bg-[#DFF9F4] p-8 md:p-10">
-              <span class="pop-badge bg-[#00C9A7] text-ink text-xs font-bold mb-4">
+            <div class="pop-card bg-pop-mint-soft p-8 md:p-10">
+              <span class="pop-badge bg-pop-mint text-ink text-xs font-bold mb-4">
                 Il nostro approccio
               </span>
               <h2 class="display-md text-2xl font-bold text-ink">
@@ -195,7 +195,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
               <p class="mt-4 max-w-[60ch] text-[15px] leading-relaxed text-ink/85">
                 {territorio.solution}
               </p>
-              <div class="mt-6 pt-4 border-t-2 border-ink/15 text-xs font-mono font-bold text-[#064E3B]">
+              <div class="mt-6 pt-4 border-t-2 border-ink/15 text-xs font-mono font-bold text-ink">
                 <span class="font-black mr-1.5">✓</span> Strumenti leggeri, misurabili e facili da usare
               </div>
             </div>
@@ -204,10 +204,10 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
       </section>
 
       <!-- Sezione Presenza Locale & Visibilità (senza false promesse) -->
-      <section class="border-y-2 border-ink bg-[#FFFBEB] px-[var(--page-gutter)] py-16 md:py-22">
+      <section class="border-y-2 border-ink bg-pop-yellow-soft px-[var(--page-gutter)] py-16 md:py-22">
         <div class="mx-auto max-w-[1360px]">
           <div class="max-w-lg">
-            <span class="pop-badge bg-[#FFD027] text-ink text-xs font-bold mb-3">
+            <span class="pop-badge bg-pop-yellow text-ink text-xs font-bold mb-3">
               Visibilità & Presidio Google Maps
             </span>
             <h2 class="display-lg text-ink mt-2">
@@ -221,7 +221,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
           <div class="mt-10 grid gap-6 md:grid-cols-3">
             <div class="pop-card bg-white p-7">
               <div class="flex items-center gap-3">
-                <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-[#00C9A7] text-ink font-bold">
+                <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-pop-mint text-ink font-bold">
                   📍
                 </span>
                 <h3 class="font-display text-lg font-bold text-ink">
@@ -235,7 +235,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
 
             <div class="pop-card bg-white p-7">
               <div class="flex items-center gap-3">
-                <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-[#FFD027] text-ink font-bold">
+                <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-pop-yellow text-ink font-bold">
                   🏷️
                 </span>
                 <h3 class="font-display text-lg font-bold text-ink">
@@ -249,7 +249,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
 
             <div class="pop-card bg-white p-7">
               <div class="flex items-center gap-3">
-                <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-[#845EC2] text-white font-bold">
+                <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-pop-purple text-white font-bold">
                   📊
                 </span>
                 <h3 class="font-display text-lg font-bold text-ink">
@@ -270,7 +270,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
           <div class="mx-auto max-w-[1360px]">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div>
-                <span class="pop-badge bg-[#00C9A7] text-ink text-xs font-bold mb-3">
+                <span class="pop-badge bg-pop-mint text-ink text-xs font-bold mb-3">
                   Caso Studio Correlato
                 </span>
                 <h2 class="display-lg text-ink mt-2">
@@ -283,9 +283,9 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
               </a>
             </div>
 
-            <div class="pop-card bg-[#F8F9FA] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+            <div class="pop-card bg-canvas p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
               {relatedProject.coverUrl && (
-                <div class="w-full md:w-1/2 overflow-hidden rounded-2xl border-2 border-ink shadow-[3px_3px_0px_#1A1A1A]">
+                <div class="w-full md:w-1/2 overflow-hidden rounded-2xl border-2 border-ink shadow-pop">
                   <img
                     src={relatedProject.coverUrl}
                     alt={relatedProject.title}
@@ -328,7 +328,7 @@ const otherTerritori = TERRITORI.filter((t) => t.slug !== slug);
             {otherTerritori.map((other) => (
               <a
                 href={basePath(`/territorio/${other.slug}`)}
-                class="pop-badge bg-white text-ink hover:bg-[#FFD027] transition-colors text-xs font-bold"
+                class="pop-badge bg-white text-ink hover:bg-pop-yellow transition-colors text-xs font-bold"
               >
                 📍 {other.shortName}
               </a>
