@@ -114,9 +114,19 @@ export async function getServices() {
   return cached('services', async () => {
     const reader = await getReader();
     const entries = await reader.collections.services.all();
+    const order = [
+      'sviluppo-web-performante',
+      'visibilita-locale-google-maps',
+      'tracciamenti-integrazione-campagne',
+    ];
     return entries
       .map(normalizeService)
-      .sort((a, b) => a.kicker.localeCompare(b.kicker));
+      .sort((a, b) => {
+        const indexA = order.indexOf(a.slug);
+        const indexB = order.indexOf(b.slug);
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        return a.title.localeCompare(b.title);
+      });
   });
 }
 
