@@ -38,7 +38,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
         <!-- Colonna Sinistra: Info e WhatsApp Fast Lane -->
         <div class="lg:col-span-5">
           <h1 class="display-xl max-w-[15ch] text-balance text-ink">
-            Parliamo del tuo progetto a <span class="bg-pop-yellow px-2 py-0.5 rounded-lg border-2 border-ink shadow-pop-sm">Verona</span>
+            Parliamo del tuo <span class="bg-pop-yellow px-2 py-0.5 rounded-lg border-2 border-ink shadow-pop-sm">progetto</span>
           </h1>
 
           <p class="mt-6 max-w-md text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
@@ -82,11 +82,11 @@ const isError = Astro.url.searchParams.get('error') === '1';
             </a>
           </div>
 
-          <!-- Recapiti diretti in card pop -->
+          <!-- Recapiti diretti in card pop (senza sede fisica fittizia) -->
           <div class="mt-8 grid gap-3 sm:grid-cols-2">
             <div class="pop-card bg-white p-4">
               <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold">
-                Telefono Sede
+                Telefono & WhatsApp
               </p>
               <a
                 href={`tel:${SITE.phoneRaw}`}
@@ -108,13 +108,13 @@ const isError = Astro.url.searchParams.get('error') === '1';
               </a>
             </div>
 
-            <div class="pop-card bg-white p-4 sm:col-span-2">
+            <div class="pop-card bg-pop-yellow-soft p-4 sm:col-span-2">
               <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink/75 font-bold">
-                Sede a Verona
+                Dove operiamo
               </p>
-              <address class="mt-1 not-italic text-[13px] text-ink/85 font-medium">
-                {SITE.address} — {SITE.city}
-              </address>
+              <p class="mt-1 text-[13px] text-ink/85 font-medium leading-relaxed">
+                Verona, Lago di Garda e provincia. Lavoriamo da remoto e sul territorio.
+              </p>
             </div>
           </div>
         </div>
@@ -126,15 +126,12 @@ const isError = Astro.url.searchParams.get('error') === '1';
           >
             <div class="flex items-center justify-between gap-4">
               <div>
-                <span class="pop-badge bg-pop-yellow text-ink text-[11px] mb-2">
-                  Modulo Breve
-                </span>
                 <h2 class="display-md text-2xl font-bold text-ink">
-                  Richiedi un audit gratuito
+                  Richiedi un audit gratuito :)
                 </h2>
               </div>
               <span class="hidden sm:inline-block font-mono text-xs font-bold bg-pop-mint-soft text-ink border border-ink/20 px-2.5 py-1 rounded-lg">
-                ⏱️ 1 minuto
+                ⏱️ Meno di un minuto
               </span>
             </div>
 
@@ -272,15 +269,15 @@ const isError = Astro.url.searchParams.get('error') === '1';
               <button
                 type="submit"
                 id="submit-btn"
-                class="pop-btn bg-pop-coral text-white hover:bg-pop-coral-hover w-full py-3.5 text-center font-bold text-[15px] mt-4 flex items-center justify-center gap-2 cursor-pointer"
+                class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover w-full py-3.5 text-center font-bold text-[15px] mt-4 flex items-center justify-center gap-2 cursor-pointer shadow-pop-sm"
               >
-                Invia richiesta audit gratuito
-                <Icon name="arrow-right" size={16} />
+                <Icon name="whatsapp" size={18} />
+                Invia richiesta (apre WhatsApp diretto)
               </button>
 
               <div class="mt-4 flex flex-wrap items-center justify-between gap-2 text-ink/75 font-mono text-xs uppercase font-bold">
                 <span>✓ Nessun costo né vincolo</span>
-                <span>⚡ Tempi chiari e concordati</span>
+                <span>⚡ Risposta diretta dai referenti</span>
               </div>
             </form>
 
@@ -289,7 +286,7 @@ const isError = Astro.url.searchParams.get('error') === '1';
               const successBanner = document.getElementById('form-success-banner');
               const waBtn = document.getElementById('whatsapp-forward-btn');
 
-              if (form && successBanner) {
+              if (form) {
                 form.addEventListener('submit', (e) => {
                   e.preventDefault();
                   const fd = new FormData(form);
@@ -298,18 +295,28 @@ const isError = Astro.url.searchParams.get('error') === '1';
                   const site = fd.get('site') || '';
                   const msg = fd.get('message') || '';
 
-                  // Aggiorna link whatsapp con i dati inseriti
+                  const waText = encodeURIComponent(
+                    `Ciao BIMAX! Sono ${name} (${email}). Richiedo un'analisi per il sito: ${site || 'da concordare'}.\nNote: ${msg || 'Vorrei un parere sulla nostra presenza online.'}`
+                  );
+                  const waUrl = `https://wa.me/393407189573?text=${waText}`;
+
+                  // Aggiorna link whatsapp di fallback nel banner
                   if (waBtn) {
-                    const waText = encodeURIComponent(
-                      `Ciao BIMAX, sono ${name} (${email}). Richiedo un audit gratuito per il sito: ${site || 'da concordare'}.\nNote: ${msg}`
-                    );
-                    waBtn.href = `https://wa.me/393401234567?text=${waText}`;
+                    waBtn.href = waUrl;
                   }
 
                   // Mostra banner di successo e nascondi form
-                  form.classList.add('hidden');
-                  successBanner.classList.remove('hidden');
-                  successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  if (successBanner) {
+                    form.classList.add('hidden');
+                    successBanner.classList.remove('hidden');
+                    successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+
+                  // Apre direttamente WhatsApp per inviare la richiesta
+                  const opened = window.open(waUrl, '_blank');
+                  if (!opened || opened.closed || typeof opened.closed === 'undefined') {
+                    window.location.href = waUrl;
+                  }
                 });
               }
             </script>

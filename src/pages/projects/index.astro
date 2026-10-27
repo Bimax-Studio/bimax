@@ -10,8 +10,8 @@ const projects = await getProjects();
 ---
 
 <Layout
-  title="Progetti & Casi Studio — BIMAX Verona"
-  description="I nostri progetti web per aziende e professionisti di Verona e provincia: schede semplici con immagine e articoli approfonditi."
+  title="Progetti Realizzati — BIMAX Verona"
+  description="I siti web che abbiamo realizzato per aziende e professionisti di Verona e provincia: veloci da cellulare, presenti su Google Maps e facili da gestire."
 >
   <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
     <!-- Texture a pois leggeri -->
@@ -23,21 +23,16 @@ const projects = await getProjects();
     <div
       class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]"
     >
-      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-        <div class="flex flex-wrap items-center gap-2.5">
-          <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
-            📁 Casi Studio Veronesi
-          </span>
-          <span class="pop-badge bg-pop-mint text-ink rotate-1">
-            📖 Spiegati come articoli
-          </span>
-          <span class="pop-badge bg-pop-coral-soft text-pop-coral -rotate-2">
-            ⚡ Risultati Reali
-          </span>
-        </div>
-        <p class="font-mono text-xs font-bold text-ink/60 bg-white border border-ink/20 px-3 py-1 rounded-full">
-          {projects.length} storie di progetti · Verona
-        </p>
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
+          💻 Progetti sul territorio
+        </span>
+        <span class="pop-badge bg-pop-mint text-ink rotate-1">
+          ⚡ Massima velocità
+        </span>
+        <span class="pop-badge bg-pop-coral-soft text-pop-coral -rotate-2">
+          📍 Verona e provincia
+        </span>
       </div>
 
       <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
@@ -46,17 +41,17 @@ const projects = await getProjects();
             Progetti realizzati con cura e attenzione sul territorio.
           </h1>
           <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
-            La parte dei progetti è semplice: ogni scheda mostra l'immagine del progetto e, aprendo la visualizzazione, la spiegazione di cosa è stato fatto, scritta come un vero articolo per comprendere il percorso e i risultati.
+            I siti web e le presenze digitali che abbiamo sviluppato per le attività locali: come abbiamo eliminato la lentezza del vecchio sito, impostato la presenza su Google Maps e aperto un canale diretto con i clienti.
           </p>
         </div>
 
         <div class="lg:col-span-4">
           <div class="pop-card bg-pop-yellow-soft p-5">
             <p class="font-mono text-xs font-bold uppercase tracking-[0.14em] text-ink/75">
-              Approccio ai casi studio
+              Il nostro approccio
             </p>
             <p class="mt-2 text-xs leading-relaxed text-ink/80">
-              Ogni progetto racconta il percorso reale svolto al fianco della PMI: problemi iniziali, interventi tecnici e risultati commerciali misurati.
+              Ogni progetto nasce per risolvere problemi concreti: tempi di caricamento infiniti da smartphone, assenza su Google Maps e difficoltà ad aggiornare i contenuti.
             </p>
           </div>
         </div>
@@ -66,7 +61,7 @@ const projects = await getProjects();
 
   <section class="px-[var(--page-gutter)] py-16 md:py-24 border-t-2 border-ink/10">
     <div class="mx-auto max-w-[1360px]">
-      <h2 class="sr-only">Archivio casi studio</h2>
+      <h2 class="sr-only">Tutti i progetti realizzati</h2>
       {
         projects.length === 0 ? (
           <div class="pop-card flex min-h-64 flex-col items-center justify-center gap-4 p-10 text-center bg-white">

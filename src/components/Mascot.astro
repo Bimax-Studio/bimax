@@ -212,6 +212,86 @@ const { name = 'coder', size = 160, class: className = '' } = Astro.props;
   }
 
   {
+    name === 'moka' && (
+      /* La moka che si scotta sul fuoco... però è felicissima! */
+      <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte moka sul fuoco felice">
+        <!-- Ombra a terra e griglia del fornello -->
+        <ellipse cx="100" cy="188" rx="55" ry="7" fill="#1A1A1A" opacity="0.15" />
+        <path d="M55 186 H145" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" />
+        <path d="M72 186 L62 195 M128 186 L138 195" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" />
+
+        <!-- Fiammelle vivaci del gas -->
+        <path d="M68 186 C64 172 74 164 78 158 C80 166 86 170 88 186 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="2" />
+        <path d="M84 186 C82 168 92 156 100 150 C108 158 114 168 114 186 Z" fill="#FFD027" stroke="#1A1A1A" stroke-width="2" />
+        <path d="M110 186 C112 170 120 164 126 160 C128 168 132 174 130 186 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="2" />
+
+        <!-- Caldaia inferiore ottagonale -->
+        <polygon points="68,184 132,184 126,142 74,142" fill="#F4EFE6" stroke="#1A1A1A" stroke-width="3.5" stroke-linejoin="round" />
+        <!-- Linee di sfaccettatura caldaia -->
+        <path d="M84 142 L82 184 M100 142 L100 184 M116 142 L118 184" stroke="#1A1A1A" stroke-width="2" stroke-opacity="0.2" />
+        <!-- Bagliore rossastro di calore (si scotta!) -->
+        <path d="M70 178 Q100 172 130 178 L132 184 L68 184 Z" fill="#FF5A36" opacity="0.45" />
+        <!-- Valvolina di sfogo dorata -->
+        <rect x="67" y="156" width="6" height="5" rx="2" fill="#FFD027" stroke="#1A1A1A" stroke-width="2" />
+
+        <!-- Anello / giunto centrale nero e metallo -->
+        <rect x="71" y="136" width="58" height="8" rx="2" fill="#1A1A1A" />
+        <rect x="73" y="138" width="54" height="4" rx="1.5" fill="#FFD027" />
+
+        <!-- Beccuccio versatore a sinistra -->
+        <polygon points="64,96 50,86 64,84" fill="#F4EFE6" stroke="#1A1A1A" stroke-width="3.5" stroke-linejoin="round" />
+
+        <!-- Bricco superiore ottagonale -->
+        <polygon points="73,136 127,136 136,86 64,86" fill="#F4EFE6" stroke="#1A1A1A" stroke-width="3.5" stroke-linejoin="round" />
+        <!-- Linee di sfaccettatura bricco -->
+        <path d="M82 136 L78 86 M100 136 L100 86 M118 136 L122 86" stroke="#1A1A1A" stroke-width="2" stroke-opacity="0.2" />
+
+        <!-- Manico antiscottatura nero a destra -->
+        <path d="M129 90 C149 90 156 106 147 124 C142 132 133 136 126 136" stroke="#1A1A1A" stroke-width="9" stroke-linecap="round" fill="none" />
+        <path d="M129 90 C149 90 156 106 147 124 C142 132 133 136 126 136" stroke="#FF5A36" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+        <!-- Coperchio socchiuso e pomello -->
+        <path d="M62 85 L100 76 L138 85" stroke="#1A1A1A" stroke-width="3.5" stroke-linejoin="round" fill="#F4EFE6" />
+        <path d="M100 76 L100 70" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" />
+        <ellipse cx="100" cy="69" rx="5" ry="4" fill="#1A1A1A" />
+
+        <!-- Sbuffi di vapore caldi e profumati -->
+        <path d="M72 70 C66 56 78 48 74 36" stroke="#FF5A36" stroke-width="3" stroke-linecap="round" fill="none" />
+        <path d="M96 62 C100 48 92 40 98 28" stroke="#FFD027" stroke-width="3.5" stroke-linecap="round" fill="none" />
+        <path d="M120 66 C126 52 116 44 122 32" stroke="#00C9A7" stroke-width="3" stroke-linecap="round" fill="none" />
+        <!-- Cuoricino di aroma di caffè -->
+        <path d="M136 24 C136 18 144 16 148 22 C152 16 160 18 160 24 C160 32 148 40 148 40 C148 40 136 32 136 24 Z" fill="#FF5A36" stroke="#1A1A1A" stroke-width="2" />
+
+        <!-- Faccina: si scotta, guanciotte rosse ma SORRISO FELICISSIMO! -->
+        <!-- Guanciotte accaldate -->
+        <ellipse cx="78" cy="116" rx="7" ry="4.5" fill="#FF5A36" opacity="0.85" />
+        <ellipse cx="122" cy="116" rx="7" ry="4.5" fill="#FF5A36" opacity="0.85" />
+        <path d="M74 116 L76 117 M120 116 L122 117" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+
+        <!-- Occhioni spalancati e felicissimi -->
+        <ellipse cx="85" cy="104" rx="6.5" ry="7.5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" />
+        <circle cx="86" cy="104" r="3.5" fill="#1A1A1A" />
+        <circle cx="88" cy="102" r="1.5" fill="#FFFFFF" />
+        <ellipse cx="115" cy="104" rx="6.5" ry="7.5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2.5" />
+        <circle cx="114" cy="104" r="3.5" fill="#1A1A1A" />
+        <circle cx="116" cy="102" r="1.5" fill="#FFFFFF" />
+
+        <!-- Sopracciglia entusiaste -->
+        <path d="M78 95 Q85 91 91 95" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <path d="M109 95 Q115 91 122 95" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+        <!-- Bocca aperta super felice con linguetta -->
+        <path d="M91 114 Q100 128 109 114 Z" fill="#1A1A1A" />
+        <path d="M94 118 Q100 126 106 118 Z" fill="#FF5A36" />
+        <path d="M89 114 Q100 129 111 114" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+        <!-- Gocciolina cartoon di sudore/calore allegro -->
+        <path d="M125 94 C125 90 129 86 129 86 C129 86 133 90 133 94 C133 96.5 131 98 129 98 C127 98 125 96.5 125 94 Z" fill="#00C9A7" stroke="#1A1A1A" stroke-width="2" />
+      </svg>
+    )
+  }
+
+  {
     name === 'accessible' && (
       /* Il guardiano dell'accessibilità: simpatico robottino con occhiali, scudo AA e pollice in su */
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mascotte siti accessibili e conformi">

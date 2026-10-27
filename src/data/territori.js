@@ -1,5 +1,5 @@
 /**
- * Dati strutturati per i presidi territoriali e le PMI delle città e zone coperte da BIMAX.
+ * Dati territoriali per le PMI delle città e zone coperte da BIMAX.
  */
 export const TERRITORI = [
   {

@@ -3,35 +3,85 @@ import CtaBand from '@/components/CtaBand.astro';
 import Icon from '@/components/Icon.astro';
 import Mascot from '@/components/Mascot.astro';
 import Layout from '@/layouts/Layout.astro';
-import { SITE } from '@/lib/design';
+import { SITE, basePath } from '@/lib/design';
+
+const team = [
+  {
+    name: 'Lo Sviluppatore',
+    subtitle: 'Codice, prestazioni & velocità',
+    photo: basePath('/images/team/foto-sviluppatore.svg'),
+    bg: 'bg-pop-yellow-soft',
+    badge: '🛠️ "Funziona al primo colpo"',
+    badgeColor: 'bg-pop-yellow text-ink',
+    bio: 'Scrive codice pulito, cancella plugin pesanti e va in fumo se una pagina web impiega più di un secondo ad aprirsi sullo smartphone. Non sopporta il finto gergo da agenzia: preferisce farti vedere che il tuo sito vola e non si rompe mai.',
+    ironicNote: 'Dipendente da espresso doppio e allergico ai siti lenti come tartarughe.',
+  },
+  {
+    name: 'Il Referente Strategia & Dati',
+    subtitle: 'Google Maps, contatti reali & concretezza',
+    photo: basePath('/images/team/foto-strategia.svg'),
+    bg: 'bg-pop-mint-soft',
+    badge: '🎯 "Meno fuffa, più clienti"',
+    badgeColor: 'bg-pop-mint text-ink',
+    bio: 'Fa in modo che chi cerca un fornitore o un professionista a Verona trovi la tua attività e non quella dei concorrenti. Mette a posto la scheda Google Maps, collega WhatsApp e ti dice con franchezza se un’idea di marketing ha senso o è solo uno spreco di budget.',
+    ironicNote: 'Il tipo che ti dice: "Questa cosa non serve al tuo fatturato, risparmia i soldi".',
+  },
+];
+
+const maintenanceFeatures = [
+  {
+    title: 'Aggiornare testi e foto in 2 minuti',
+    description:
+      'Niente pannelli di controllo stile cabina di pilotaggio con decine di pulsanti incomprensibili. Hai un admin pulito ed essenziale: cambi un orario, carichi la foto di un nuovo lavoro o aggiorni i servizi in due clic, anche dal cellulare.',
+    icon: 'zap',
+    badge: '⏱️ Tempo medio: 2 min',
+    bg: 'bg-pop-yellow-soft',
+  },
+  {
+    title: 'Indicazioni chiare su cosa fare (zero stress)',
+    description:
+      'Molti siti vengono abbandonati perché il titolare non sa cosa scrivere. Ti diamo noi indicazioni semplici e pratiche: cosa pubblicare sui social, come tenere viva la scheda Google Maps e quando vale la pena fare una modifica, senza perdere ore.',
+    icon: 'compass',
+    badge: '📋 Istruzioni pratiche incluse',
+    bg: 'bg-pop-mint-soft',
+  },
+  {
+    title: 'Nessun vincolo, supporto umano al volo',
+    description:
+      'Non ti facciamo pagare un canone per cambiare una parola o una foto. Il sito è tuo al 100%. E se hai un dubbio o vuoi una mano, ci mandi un messaggio su WhatsApp e rispondiamo noi due direttamente.',
+    icon: 'shield-check',
+    badge: '💬 WhatsApp diretto',
+    bg: 'bg-pop-coral-soft',
+  },
+];
 
 const method = [
   {
     index: '01',
-    title: 'Analisi & Allineamento',
-    body: 'Esaminiamo la presenza attuale, le campagne attive e i canali di contatto prioritari per la tua attività.',
+    title: 'Analisi & Obiettivi',
+    body: 'Esaminiamo cosa fa la tua attività, chi sono i tuoi clienti a Verona e quali canali di contatto sono prioritari (telefono, WhatsApp o email).',
     output: 'Ascolto sincero · Verifica del sito attuale · Priorità',
     color: 'bg-pop-yellow',
   },
   {
     index: '02',
-    title: 'Sviluppo Tecnico & Contenuti',
-    body: 'Realizzazione della piattaforma sui nostri blocchi ottimizzati, garantendo navigabilità fluida da smartphone.',
-    output: 'Codice snello · Admin semplice · Ottimizzazione mobile',
+    title: 'Sviluppo & Semplicità',
+    body: 'Realizziamo un sito velocissimo, pulito e facile da navigare su smartphone, con un pannello di gestione chiaro per aggiornarlo in totale autonomia.',
+    output: 'Piattaforma veloce, Pannello di gestione semplice, Ottimizzazione mobile',
     color: 'bg-pop-mint',
   },
   {
     index: '03',
-    title: 'Cablaggio Dati & Presidio Locale',
-    body: 'Integrazione dei codici di tracciamento (GTM/GA4) e allineamento con la scheda Google Maps.',
-    output: 'Scheda Google Maps · Eventi WhatsApp · Trasparenza dati',
+    title: 'Presenza Locale & Trasparenza',
+    body: 'Configuriamo la scheda Google Maps e colleghiamo i contatti diretti (chiamate e messaggi) per darti piena visibilità sui numeri reali.',
+    output: 'Scheda Google, Trasparenza dati e integrazioni Campagne marketing (se necessari)',
     color: 'bg-pop-purple text-white',
   },
   {
     index: '04',
-    title: 'Messa Online & Continuità',
-    body: "Rilascio sul dominio, formazione rapida sull'uso dell'admin e monitoraggio continuo di sicurezza e prestazioni.",
-    output: 'Pubblicazione · Formazione semplice · Supporto continuo',
+    title: 'Messa Online & Istruzioni Chiare',
+    body: 'Pubblichiamo il sito e ti consegniamo istruzioni pratiche su come mantenerlo attivo nel tempo, senza farti perdere ore di lavoro.',
+    output: 'Pubblicazione · Formazione semplice · Supporto diretto',
     color: 'bg-pop-coral text-white',
   },
 ];
@@ -39,25 +89,25 @@ const method = [
 const pillars = [
   {
     title: 'Dialogo diretto tra persone',
-    body: 'Nelle agenzie tradizionali parlate con venditori o commerciali. Con noi parlate direttamente con chi scrive il codice e si occupa in prima persona del vostro sito.',
+    body: 'Nelle agenzie tradizionali parlate con venditori commerciali che poi passano il lavoro ad altri. Con noi parlate direttamente con chi realizza e cura il vostro sito.',
     icon: 'shield-check',
     bg: 'bg-pop-yellow-soft',
   },
   {
     title: 'Concretezza e serenità',
-    body: 'Non vi vendiamo ore di consulenza astratta o promesse gonfiate. Vi consegniamo uno strumento snello, rapido e piacevole da usare che porta contatti verificati.',
+    body: 'Niente ore di consulenza teorica o promesse irrealizzabili. Vi consegniamo uno strumento snello, rapido e piacevole da usare che aiuta davvero la vostra attività.',
     icon: 'activity',
     bg: 'bg-pop-mint-soft',
   },
   {
     title: 'Vicinanza al territorio di Verona',
-    body: 'Amiamo il nostro territorio: dal centro storico alla ZAI, dalla Valpolicella alle rive del Garda. Conosciamo le abitudini e le esigenze delle attività locali.',
+    body: 'Amiamo il nostro territorio: dal centro storico alla ZAI, dalla Valpolicella alle rive del Garda. Conosciamo le abitudini e le esigenze concrete delle attività locali.',
     icon: 'map-pin',
     bg: 'bg-pop-coral-soft',
   },
   {
     title: 'Piena autonomia e zero vincoli',
-    body: 'Nessun canone nascosto o dipendenza tecnologica forzata. Il sito è vostro al 100%, leggero e facile da gestire tramite un pannello di controllo intuitivo.',
+    body: 'Nessun canone nascosto o dipendenza forzata. Il sito è vostro al 100%, leggero e facile da gestire con un pannello intuitivo.',
     icon: 'check',
     bg: 'bg-canvas',
   },
@@ -65,12 +115,11 @@ const pillars = [
 ---
 
 <Layout
-  title="Chi Siamo & Approccio — BIMAX Verona"
-  description="Il partner di fiducia per le imprese di Verona che cercano concretezza, ascolto e vicinanza senza intermediari."
+  title="Chi Siamo & Metodo — BIMAX Verona"
+  description="Il partner di fiducia per le imprese di Verona: dialogo diretto, codice snello, visibilità su Google Maps e zero intermediari."
 >
   <!-- Hero -->
   <section class="relative overflow-hidden pt-12 pb-16 md:pt-18 md:pb-22 bg-paper">
-    <!-- Texture a pois leggeri -->
     <div
       class="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(var(--color-ink)_2px,transparent_2px)] [background-size:24px_24px]"
       aria-hidden="true"
@@ -79,7 +128,7 @@ const pillars = [
     <div class="relative mx-auto max-w-[1360px] px-[var(--page-gutter)]">
       <div class="flex flex-wrap items-center gap-2.5 mb-6">
         <span class="pop-badge bg-pop-yellow text-ink -rotate-1">
-          👥 Chi Siamo & Approccio
+          👥 Chi Siamo
         </span>
         <span class="pop-badge bg-pop-mint text-ink rotate-1">
           🚫 Zero Intermediari
@@ -96,19 +145,18 @@ const pillars = [
           </h1>
           <div class="mt-8 max-w-xl space-y-4 text-[17px] leading-relaxed text-ink/80 md:text-[18px]">
             <p>
-              Non siamo semplici programmatori che scrivono codice isolati dal contesto aziendale: siamo un partner al fianco delle PMI. La tecnologia e il codice su misura sono il nostro strumento, ma l'obiettivo prioritario è far crescere la tua attività, supportare il lavoro di tutti i giorni e portare contatti e clienti reali.
+              Non siamo programmatori isolati dal contesto aziendale: siamo un partner al fianco delle PMI. Il codice su misura è il nostro strumento, ma l'obiettivo prioritario è far crescere la tua attività, supportare il lavoro di tutti i giorni e portare contatti e clienti reali.
             </p>
             <p>
-              Abbiamo scelto di offrire alle piccole e medie imprese di Verona e del territorio un rapporto diretto e trasparente: nessun intermediario o venditore commerciale a fare promesse irrealizzabili. Parli direttamente con chi progetta, sviluppa e segue nel tempo la tua piattaforma.
+              Offriamo alle piccole e medie imprese di Verona e del territorio un rapporto diretto e trasparente: nessun venditore commerciale a fare promesse irrealizzabili. Parli direttamente con noi che sviluppiamo e seguiamo il tuo progetto.
             </p>
           </div>
         </div>
 
         <div class="lg:col-span-4 flex flex-col items-center gap-4">
-          <!-- Mascotte sviluppatore con nuvoletta -->
           <div class="relative">
             <div class="pop-card bg-white p-3.5 mb-3 text-center text-xs font-bold text-ink max-w-[220px]">
-              "La tecnologia è il mezzo, il tuo business è l'obiettivo!" 🚀
+              "La tecnologia è il mezzo, la tua attività è l'obiettivo!" 🚀
             </div>
             <div class="flex justify-center">
               <Mascot name="coder" size={160} />
@@ -119,8 +167,135 @@ const pillars = [
     </div>
   </section>
 
-  <!-- I 4 Valori / Punti di forza -->
-  <section class="border-y-2 border-ink/10 px-[var(--page-gutter)] py-20 md:py-28">
+  <!-- ============================================================== -->
+  <!-- IL LATO UMANO: I DUE TIZI DELL'AGENZIA (FOTO + DESCRIZIONE)     -->
+  <!-- ============================================================== -->
+  <section class="border-y-2 border-ink/10 px-[var(--page-gutter)] py-20 md:py-26 bg-canvas">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="max-w-2xl" data-reveal>
+        <span class="pop-badge bg-pop-yellow text-ink mb-3 -rotate-1">
+          Dietro le quinte
+        </span>
+        <h2 class="display-lg text-ink">
+          I due tizi dell'agenzia: ecco con chi parli davvero
+        </h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
+          Nessuna grande agenzia con figure commerciali misteriose che poi passano il lavoro a stagisti. Siamo noi due: rispondiamo al telefono, scriviamo il codice e curiamo la tua presenza online.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-2" data-reveal>
+        {
+          team.map((member, idx) => (
+            <div
+              class={`pop-card p-8 md:p-10 ${member.bg} flex flex-col justify-between transition-transform hover:-translate-y-1`}
+              style={`--reveal-delay: ${idx * 90}ms`}
+            >
+              <div>
+                <div class="grid gap-6 sm:grid-cols-12 sm:items-center">
+                  <!-- Contenitore Foto (sostituibile con file reale jpg in public/images/team/) -->
+                  <div class="sm:col-span-5 flex justify-center">
+                    <div class="relative aspect-square w-full max-w-[220px] overflow-hidden rounded-2xl border-2 border-ink bg-white shadow-pop">
+                      <img
+                        src={member.photo}
+                        alt={`${member.name} — ${member.subtitle}`}
+                        width="400"
+                        height="400"
+                        loading="lazy"
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="sm:col-span-7">
+                    <span class={`pop-badge ${member.badgeColor} text-xs mb-2 inline-block`}>
+                      {member.badge}
+                    </span>
+                    <h3 class="font-display text-2xl font-bold text-ink">
+                      {member.name}
+                    </h3>
+                    <p class="font-mono text-xs font-bold text-ink/70 mt-1 uppercase tracking-wider">
+                      {member.subtitle}
+                    </p>
+                    <p class="mt-3.5 text-[14px] leading-relaxed text-ink/85">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t-2 border-ink/15 flex items-center gap-2 text-xs font-mono font-bold text-ink/80">
+                <span class="text-accent font-black">💡</span>
+                <span>{member.ironicNote}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-8 pop-card bg-white p-5 text-center max-w-xl mx-auto rotate-0.5">
+        <p class="font-display text-sm font-bold text-ink">
+          🤝 Sì, siamo solo noi due. E questo significa zero rimpalli, risposte rapide e qualcuno che sa sempre a memoria cosa serve al tuo sito.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- FACILE DA MANTENERE NEL TEMPO (ZERO ANSIE)                     -->
+  <!-- ============================================================== -->
+  <section class="border-b-2 border-ink/10 px-[var(--page-gutter)] py-20 md:py-26 bg-paper">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="max-w-2xl" data-reveal>
+        <span class="pop-badge bg-pop-mint text-ink mb-3 -rotate-1">
+          Zero ansie post-lancio
+        </span>
+        <h2 class="display-lg text-ink">
+          Quanto è facile mantenerlo nel tempo? Facilissimo.
+        </h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
+          La paura più grande di chi rifà il sito è: <em>"E poi chi lo aggiorna? Devo chiamare l'agenzia ogni volta che cambio un prezzo o una foto?"</em>. La risposta è no: ti diamo noi istruzioni chiare e uno strumento elementare.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-8 md:grid-cols-3" data-reveal>
+        {
+          maintenanceFeatures.map((item, idx) => (
+            <div
+              class={`pop-card p-7 md:p-8 ${item.bg} flex flex-col justify-between`}
+              style={`--reveal-delay: ${idx * 70}ms`}
+            >
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="grid h-11 w-11 place-items-center rounded-2xl border-2 border-ink bg-white shadow-pop-sm">
+                    <Icon name={item.icon} size={20} />
+                  </span>
+                  <span class="pop-badge bg-white text-ink text-xs font-bold">
+                    {item.badge}
+                  </span>
+                </div>
+
+                <h3 class="font-display text-xl font-bold text-ink">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3.5 text-[14px] leading-relaxed text-ink/80">
+                  {item.description}
+                </p>
+              </div>
+
+              <div class="mt-6 pt-3 border-t-2 border-ink/15 text-xs font-mono font-bold text-ink/75">
+                ✓ Semplice e garantito
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- I 4 Valori / Principi guida -->
+  <section class="border-b-2 border-ink/10 px-[var(--page-gutter)] py-20 md:py-28 bg-canvas">
     <div class="mx-auto max-w-[1360px]">
       <div class="max-w-2xl" data-reveal>
         <span class="pop-badge bg-pop-yellow text-ink mb-3">
@@ -130,7 +305,7 @@ const pillars = [
           Un modo di lavorare più umano e trasparente
         </h2>
         <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
-          Crediamo nella semplicità, nella parola data e nella cura artigianale di ogni singolo sito a Verona.
+          Crediamo nella semplicità, nella parola data e nella cura diretta di ogni singolo sito sul territorio.
         </p>
       </div>
 
@@ -155,8 +330,8 @@ const pillars = [
                 </p>
               </div>
 
-              <div class="mt-6 pt-3 border-t-2 border-ink/15 text-xs text-ink font-mono font-bold">
-                Punto fermo 0{index + 1}
+              <div class="mt-6 pt-3 border-t-2 border-ink/15 text-xs text-ink/70 font-mono font-bold">
+                ✓ Valore garantito
               </div>
             </div>
           ))
@@ -203,7 +378,7 @@ const pillars = [
                 <p class="font-mono text-xs uppercase text-ink/75 font-bold">
                   Cosa ricevi:
                 </p>
-                <p class="mt-1 text-[13px] font-semibold text-ink">
+                <p class="mt-1 text-[13px] font-semibold text-ink leading-snug">
                   {step.output}
                 </p>
               </div>
@@ -214,29 +389,39 @@ const pillars = [
     </div>
   </section>
 
-  <!-- Box Ufficio & Caffè a Verona -->
+  <!-- Box Moka sul fuoco & Chiacchierata con caffè -->
   <section class="px-[var(--page-gutter)] pb-12">
     <div class="mx-auto max-w-[1360px]">
       <div class="pop-card bg-pop-coral-soft p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="flex-1">
           <span class="pop-badge bg-pop-coral text-white mb-3">
-            📍 Sede di Verona
+            ☕ Un caffè insieme (anche a distanza)
           </span>
           <h3 class="display-md text-2xl md:text-3xl font-bold text-ink">
             La moka è sempre sul fuoco.
           </h3>
           <p class="mt-3 text-[15px] leading-relaxed text-ink/90 max-w-xl">
-            Siamo a Verona: {SITE.address}, {SITE.city}. Se sei nei paraggi della ZAI o in centro, fermati pure per fare due chiacchiere e un caffè senza alcun impegno.
+            Non abbiamo un ufficio con poltrone di pelle e segretarie a fare da filtro: lavoriamo diretti, sul territorio di Verona e da remoto. Ci prendiamo volentieri un caffè virtuale in chiamata o se siamo in zona per lavoro ci troviamo al volo per un espresso. Ci racconti cosa fai e vediamo se possiamo darti una mano, senza nessun vincolo né impegno commerciale.
           </p>
           <div class="mt-5 flex flex-wrap gap-4 text-sm font-mono font-bold text-ink">
-            <span class="rounded-xl border border-ink/20 bg-white/80 px-3 py-1.5">📞 {SITE.phone}</span>
-            <span class="rounded-xl border border-ink/20 bg-white/80 px-3 py-1.5">✉️ {SITE.email}</span>
+            <a
+              href={`tel:${SITE.phoneRaw}`}
+              class="rounded-xl border border-ink/20 bg-white/80 px-3 py-1.5 hover:bg-pop-yellow transition-colors"
+            >
+              📞 {SITE.phone}
+            </a>
+            <a
+              href={`mailto:${SITE.email}`}
+              class="rounded-xl border border-ink/20 bg-white/80 px-3 py-1.5 hover:bg-pop-yellow transition-colors"
+            >
+              ✉️ {SITE.email}
+            </a>
           </div>
         </div>
 
         <div class="shrink-0 flex flex-col items-center">
-          <Mascot name="cup" size={130} />
-          <span class="text-xs font-mono font-bold text-ink mt-1">Caffè garantito!</span>
+          <Mascot name="moka" size={145} />
+          <span class="text-xs font-mono font-bold text-ink mt-2">Moka calda, moka felice! ☕</span>
         </div>
       </div>
     </div>

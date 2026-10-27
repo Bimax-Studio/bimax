@@ -24,21 +24,21 @@ const guarantees = [
   },
   {
     title: 'Visibilità su Google Maps & ricerca locale',
-    description: 'Presidio curato della scheda aziendale e dati geografici per farsi trovare sul territorio.',
+    description: 'Presenza curata della scheda Google e informazioni chiare per farsi trovare sul territorio.',
     icon: 'map-pin',
     mascot: 'scout',
     badgeColor: 'bg-pop-mint text-ink',
   },
   {
     title: 'Tracciamento reale di contatti e telefonate',
-    description: 'Misuriamo ogni click verso WhatsApp, chiamate e preventivi per verificare l’efficacia del sito.',
+    description: 'Misuriamo ogni click verso WhatsApp, chiamate e richieste per verificare quanti contatti arrivano.',
     icon: 'activity',
     mascot: 'whatsapp-buddy',
     badgeColor: 'bg-pop-purple text-white',
   },
   {
     title: 'Un partner diretto, zero intermediari',
-    description: 'Dialogo continuo con chi segue e sviluppa il tuo progetto. Niente commerciali o passaggi a vuoto.',
+    description: 'Dialogo continuo con chi realizza e sviluppa il tuo progetto. Niente commerciali o passaggi a vuoto.',
     icon: 'shield-check',
     mascot: 'coder',
     badgeColor: 'bg-pop-coral text-white',
@@ -57,7 +57,7 @@ const painPoints = [
   {
     title: 'Invisibili sul territorio',
     description:
-      'Avere un bel sito serve a poco se le aziende e i clienti della tua zona (Verona, lago o provincia) faticano a trovare la tua attività quando cercano un servizio su Google o Maps.',
+      'Avere un bel sito serve a poco se i clienti della tua zona (Verona, lago o provincia) faticano a trovare la tua attività quando cercano un servizio su Google o Maps.',
     icon: 'map-pin',
     bg: 'bg-pop-coral-soft',
     badge: '🗺️ Presenza locale da curare',
@@ -65,7 +65,7 @@ const painPoints = [
   {
     title: 'Zero controllo sui dati',
     description:
-      'Molte aziende investono budget in campagne pubblicitarie ma non sanno quanti contatti, messaggi WhatsApp o telefonate arrivano effettivamente dal sito web.',
+      'Molte aziende investono budget in pubblicità online ma non sanno quante telefonate o messaggi WhatsApp arrivano effettivamente dal sito web.',
     icon: 'activity',
     bg: 'bg-pop-mint-soft',
     badge: '💸 Budget speso senza riscontri',
@@ -75,27 +75,51 @@ const painPoints = [
 const processSteps = [
   {
     step: '01',
-    title: 'Analisi & Allineamento',
-    body: 'Esaminiamo il modello di business, i punti di forza della tua PMI e i canali di contatto prioritari per i tuoi clienti.',
+    title: 'Analisi & Obiettivi',
+    body: 'Esaminiamo cosa fa la tua attività, chi sono i tuoi clienti e quali canali di contatto funzionano meglio sul territorio.',
     color: 'bg-pop-yellow',
   },
   {
     step: '02',
-    title: 'Sviluppo Tecnico & Contenuti',
-    body: 'Realizzazione della piattaforma su codice pulito e leggero, garantendo una navigazione immediata e intuitiva da smartphone.',
+    title: 'Sviluppo Tecnico & Semplicità',
+    body: 'Piattaforma veloce, Pannello di gestione semplice, Ottimizzazione mobile.',
     color: 'bg-pop-mint',
   },
   {
     step: '03',
-    title: 'Cablaggio Dati & Presidio Locale',
-    body: 'Integrazione dei codici di misurazione (GTM/GA4) e cura della scheda Google Maps con dati territoriali corretti.',
+    title: 'Scheda Google & Trasparenza Dati',
+    body: 'Scheda Google, Trasparenza dati e integrazioni Campagne marketing (se necessari).',
     color: 'bg-pop-purple text-white',
   },
   {
     step: '04',
     title: 'Messa Online & Continuità',
-    body: "Rilascio sul dominio, formazione pratica sull'uso del pannello e supporto continuativo per far crescere la tua attività.",
+    body: "Pubblicazione sul dominio, formazione pratica sull'uso dell'admin e supporto per far crescere la tua attività.",
     color: 'bg-pop-coral text-white',
+  },
+];
+
+const maintenancePoints = [
+  {
+    title: 'Aggiornare testi e foto in 2 minuti',
+    description:
+      'Niente pannelli complicati tipo cockpit di un aereo. Hai un admin pulito ed essenziale: cambi un orario, carichi le foto dei nuovi lavori o aggiorni i servizi in due clic, anche da cellulare.',
+    icon: 'zap',
+    badge: '⏱️ Tempo medio: 2 min',
+  },
+  {
+    title: 'Indicazioni chiare su cosa fare',
+    description:
+      'Non ti lasciamo solo davanti al sito. Ti diamo noi indicazioni pratiche: cosa pubblicare sui social, come tenere viva la scheda Google Maps e quando vale la pena fare un aggiornamento, senza farti perdere ore.',
+    icon: 'compass',
+    badge: '📋 Istruzioni pratiche',
+  },
+  {
+    title: 'Nessun vincolo, supporto umano al volo',
+    description:
+      'Non ti facciamo pagare canoni per cambiare una frase. Il sito è tuo al 100%. E se hai un dubbio o vuoi una mano, ci mandi un messaggio su WhatsApp e rispondiamo noi direttamente.',
+    icon: 'shield-check',
+    badge: '💬 WhatsApp diretto',
   },
 ];
 
@@ -229,9 +253,6 @@ const territoryStickers = [
                     {item.description}
                   </p>
                 </div>
-                <div class="mt-4 pt-2 border-t border-black/10 text-xs font-mono font-bold text-accent">
-                  ✓ Punto fermo #{idx + 1}
-                </div>
               </div>
             ))
           }
@@ -245,7 +266,7 @@ const territoryStickers = [
     <div class="mx-auto max-w-[1360px] px-[var(--page-gutter)]">
       <div class="flex flex-wrap items-center justify-center gap-3">
         <span class="font-mono text-xs uppercase tracking-[0.14em] font-bold text-ink mr-2">
-          Presidi per PMI sul territorio:
+          Dove siamo attivi a Verona e provincia:
         </span>
         {
           territoryStickers.map((sticker, idx) => (
@@ -272,13 +293,13 @@ const territoryStickers = [
     <div class="mx-auto max-w-[1360px]">
       <div class="max-w-2xl" data-reveal>
         <span class="pop-badge bg-ink text-white -rotate-1 mb-4">
-          La realtà dei fatti
+          I problemi più comuni
         </span>
         <h2 class="display-lg mt-3 text-ink">
-          Perché molti siti aziendali non generano risultati commerciali?
+          Perché molti siti web aziendali non portano contatti?
         </h2>
         <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
-          Spendere budget per un sito che fa solo da soprammobile digitale è un problema comune a tante PMI. Ecco i tre veri ostacoli che incontriamo più spesso:
+          Spendere per un sito che non genera chiamate o richieste è un problema comune a tante attività locali. Ecco i tre veri ostacoli che vediamo tutti i giorni:
         </p>
       </div>
 
@@ -319,20 +340,20 @@ const territoryStickers = [
   </section>
 
   <!-- ============================================================== -->
-  <!-- 3. I SERVIZI: I 3 PILASTRI OPERATIVI                          -->
+  <!-- 3. I SERVIZI: COSA FACCIAMO PER LA TUA ATTIVITÀ               -->
   <!-- ============================================================== -->
   <section class="border-b-2 border-ink bg-paper px-[var(--page-gutter)] py-20 md:py-28">
     <div class="mx-auto max-w-[1360px]">
       <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
         <div class="max-w-2xl">
           <span class="pop-badge bg-pop-mint text-ink -rotate-1 mb-4">
-            Strumenti concreti
+            Cosa Facciamo
           </span>
           <h2 class="display-lg mt-3">
-            I 3 Pilastri Operativi
+            Servizi pratici e orientati ai contatti reali
           </h2>
           <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
-            Tre servizi coordinati, pensati per supportare il business e le richieste commerciali della tua impresa.
+            Tre soluzioni coordinate, pensate per dare valore concreto alla tua impresa senza costi inutili o complicazioni tecniche.
           </p>
         </div>
 
@@ -342,7 +363,7 @@ const territoryStickers = [
         </a>
       </div>
 
-      <!-- I 3 Pilastri a schede colorate -->
+      <!-- Schede Servizi colorate -->
       <div class="mt-14 space-y-8" data-reveal>
         {
           services.map((service, index) => {
@@ -366,9 +387,6 @@ const territoryStickers = [
                     <div class="flex items-center gap-3">
                       <span class={`pop-badge ${col.accent} text-xs`}>
                         {service.kicker}
-                      </span>
-                      <span class="font-mono text-xs font-bold text-ink/75">
-                        Pilastro 0{index + 1}
                       </span>
                     </div>
 
@@ -396,7 +414,7 @@ const territoryStickers = [
                       href={basePath(`/services#${service.slug}`)}
                       class="pop-btn bg-white text-ink text-xs px-4 py-2 mt-3 hover:bg-pop-yellow"
                     >
-                      Approfondisci questo pilastro →
+                      Scopri di più →
                     </a>
                   </div>
                 </div>
@@ -447,10 +465,70 @@ const territoryStickers = [
                   {step.body}
                 </p>
               </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-              <div class="mt-6 pt-3 border-t border-black/10 flex items-center justify-between text-xs font-mono font-bold text-ink/75">
-                <span>Fase 0{idx + 1}</span>
-                <span class="text-accent font-bold">Step verificato</span>
+  <!-- ============================================================== -->
+  <!-- FACILE DA MANTENERE NEL TEMPO (ZERO ANSIE POST-LANCIO)         -->
+  <!-- ============================================================== -->
+  <section class="border-b-2 border-ink bg-pop-mint-soft px-[var(--page-gutter)] py-20 md:py-26">
+    <div class="mx-auto max-w-[1360px]">
+      <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
+        <div class="max-w-2xl">
+          <span class="pop-badge bg-white text-ink -rotate-1 mb-4">
+            Zero ansie post-lancio
+          </span>
+          <h2 class="display-lg mt-3 text-ink">
+            Facile da mantenere nel tempo. Senza mal di testa.
+          </h2>
+          <p class="mt-4 text-[16px] leading-relaxed text-ink/85">
+            Molte aziende temono di rifare il sito per la paura di restare intrappolate con sistemi ingestibili o di dover pagare l'agenzia a ogni minima modifica. Con noi è diverso: ti diamo noi indicazioni chiarissime su cosa fare e un pannello elementare.
+          </p>
+        </div>
+
+        <a
+          href={SITE.whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pop-btn bg-pop-green text-ink hover:bg-pop-green-hover text-xs px-5 py-3 font-bold"
+        >
+          <Icon name="whatsapp" size={16} />
+          Chiedici come funziona
+        </a>
+      </div>
+
+      <div class="mt-14 grid gap-7 md:grid-cols-3" data-reveal>
+        {
+          maintenancePoints.map((item, idx) => (
+            <div
+              class="pop-card bg-white p-7 flex flex-col justify-between transition-transform hover:-translate-y-1"
+              style={`--reveal-delay: ${idx * 70}ms`}
+            >
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="grid h-10 w-10 place-items-center rounded-xl border-2 border-ink bg-pop-yellow text-ink shadow-pop-sm">
+                    <Icon name={item.icon} size={18} />
+                  </span>
+                  <span class="pop-badge bg-canvas text-ink text-xs font-bold">
+                    {item.badge}
+                  </span>
+                </div>
+
+                <h3 class="font-display text-xl font-bold text-ink">
+                  {item.title}
+                </h3>
+
+                <p class="mt-3.5 text-[14px] leading-relaxed text-ink/80">
+                  {item.description}
+                </p>
+              </div>
+
+              <div class="mt-6 pt-3 border-t-2 border-ink/10 text-xs font-mono font-bold text-ink/75">
+                ✓ Senza complicazioni
               </div>
             </div>
           ))
@@ -469,7 +547,7 @@ const territoryStickers = [
   </section>
 
   <!-- ============================================================== -->
-  <!-- PROGETTI & CASI STUDIO (SCRITTI COME ARTICOLI)                 -->
+  <!-- PROGETTI REALIZZATI SUL TERRITORIO                             -->
   <!-- ============================================================== -->
   <section
     id="work"
@@ -479,18 +557,18 @@ const territoryStickers = [
       <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end" data-reveal>
         <div class="max-w-2xl">
           <span class="pop-badge bg-pop-yellow text-ink -rotate-1 mb-4">
-            I lavori sul territorio
+            I lavori recenti
           </span>
           <h2 class="display-lg mt-3">
-            Progetti realizzati con le PMI
+            Progetti realizzati con cura e attenzione sul territorio
           </h2>
           <p class="mt-4 text-[16px] leading-relaxed text-ink/75">
-            La parte dei progetti è semplice: ogni scheda mostra l'immagine del lavoro e, aprendo la scheda, la spiegazione di cosa è stato fatto scritta come un articolo vero e proprio.
+            I siti web che abbiamo realizzato per le aziende locali: pagine veloci da smartphone, scheda Google Maps a posto e canali diretti per farsi contattare.
           </p>
         </div>
 
         <a href={basePath('/projects')} class="pop-btn bg-white text-ink text-xs px-5 py-3 hover:bg-pop-yellow">
-          Tutti i casi studio
+          Tutti i progetti
           <Icon name="arrow-right" size={14} />
         </a>
       </div>
@@ -561,10 +639,10 @@ const territoryStickers = [
           <div class="pop-card bg-white p-7 text-center rotate-1">
             <Mascot name="cup" size={140} class="mx-auto" />
             <h3 class="font-display text-xl font-bold text-ink mt-3">
-              Un caffè a Verona?
+              Due chiacchiere con un caffè alla mano?
             </h3>
             <p class="text-xs text-ink/75 mt-2 leading-relaxed">
-              Siamo in Corso Porta Nuova. Se vuoi fare due chiacchiere sulla presenza online della tua attività senza alcun impegno, il caffè lo offriamo volentieri noi.
+              Non abbiamo un ufficio formale: lavoriamo da remoto e sul territorio. Ci prendiamo volentieri un caffè virtuale in chiamata o al bar se siamo in zona per lavoro. Nessun venditore, nessun vincolo.
             </p>
             <div class="mt-4 pt-3 border-t border-black/10">
               <a
@@ -573,7 +651,7 @@ const territoryStickers = [
                 rel="noopener noreferrer"
                 class="pop-btn bg-pop-green text-ink text-xs px-4 py-2 w-full font-bold"
               >
-                💬 Scrivici: "Ciao, prendiamo un caffè?"
+                💬 Scrivici: facciamo due chiacchiere con un caffè
               </a>
             </div>
           </div>

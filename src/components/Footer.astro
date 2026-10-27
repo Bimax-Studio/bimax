@@ -8,10 +8,10 @@ const columns = [
   {
     title: 'Navigazione',
     links: [
-      { href: basePath('/projects'), label: 'Progetti & Casi Studio' },
-      { href: basePath('/services'), label: 'I 3 Pilastri Operativi' },
+      { href: basePath('/projects'), label: 'Progetti' },
+      { href: basePath('/services'), label: 'Cosa Facciamo' },
       { href: basePath('/about'), label: 'Chi Siamo & Metodo' },
-      { href: basePath('/contact'), label: 'Richiedi un Audit' },
+      { href: basePath('/contact'), label: 'Contattaci' },
       { href: basePath('/privacy'), label: 'Privacy Policy' },
     ],
   },
@@ -99,12 +99,12 @@ const columns = [
 
         <div>
           <p class="font-mono text-xs uppercase tracking-[0.16em] text-paper/70 font-bold">
-            Sede Operativa
+            Dove Siamo
           </p>
-          <address class="mt-5 not-italic text-[13px] leading-relaxed text-paper/80">
-            {SITE.address}<br />
-            {SITE.city}
-          </address>
+          <p class="mt-5 text-[13px] leading-relaxed text-paper/80 font-medium">
+            Verona e provincia<br />
+            Operativi da remoto e sul territorio
+          </p>
           <a
             href={`tel:${SITE.phoneRaw}`}
             class="link-underline mt-4 inline-block text-[13px] text-paper/90 font-mono"

@@ -61,17 +61,17 @@ export const SITE = {
   legalName: 'BIMAX — Sviluppo Web Umano a Verona',
   tagline: 'Siti web veloci e pronti a convertire per le imprese di Verona e provincia.',
   description:
-    'Sviluppiamo piattaforme snelle, ottimizzate per la ricerca locale su Google e collegate ai tuoi canali pubblicitari per trasformare le visite in chiamate e contatti reali.',
+    'Sviluppiamo siti web snelli, curiamo la presenza locale su Google e colleghiamo i contatti diretti per trasformare le visite in chiamate e richieste reali.',
   email: 'info@bimax.studio',
-  phone: '+39 045 800 1234',
-  phoneRaw: '+390458001234',
-  whatsapp: '+39 340 123 4567',
-  whatsappRaw: '393401234567',
+  phone: '+39 340 718 9573',
+  phoneRaw: '+393407189573',
+  whatsapp: '+39 340 718 9573',
+  whatsappRaw: '393407189573',
   whatsappUrl:
-    'https://wa.me/393401234567?text=Ciao%20BIMAX%2C%20vorrei%20richiedere%20un%20audit%20gratuito%20del%20nostro%20sito%20web%20%28ho%20visto%20le%20mascotte%21%29.',
-  city: 'Verona, Italia',
+    'https://wa.me/393407189573?text=Ciao%20BIMAX%2C%20vorrei%20informazioni%20per%20la%20mia%20attivit%C3%A0.',
+  city: 'Verona e provincia, Italia',
   province: 'Verona e provincia',
-  address: 'Corso Porta Nuova 11, 37122 Verona',
+  address: 'Verona e provincia (operativi da remoto e sul territorio)',
   founded: 2019,
   guarantees: [
     {
@@ -90,14 +90,14 @@ export const SITE = {
     },
     {
       title: 'Tracciamento reale di contatti e telefonate',
-      description: 'Vedi esattamente quante persone cliccano su WhatsApp, chiamano o chiedono preventivo. Zero favole.',
+      description: 'Vedi quante persone cliccano su WhatsApp, chiamano o chiedono informazioni. Numeri chiari, zero favole.',
       icon: 'activity',
       badgeColor: 'bg-pop-purple text-white',
       mascot: 'whatsapp-buddy',
     },
     {
-      title: 'Un unico referente tecnico diretto a Verona',
-      description: 'Parli con noi che scriviamo il codice e curiamo i sistemi. Nessun venditore, nessun call center.',
+      title: 'Un contatto diretto, nessun intermediario',
+      description: 'Parli con noi che realizziamo il sito. Nessun venditore, nessun call center o perdita di tempo.',
       icon: 'shield-check',
       badgeColor: 'bg-pop-coral text-white',
       mascot: 'coder',
@@ -105,7 +105,7 @@ export const SITE = {
   ],
   socials: [
     { label: 'LinkedIn', href: 'https://linkedin.com' },
-    { label: 'WhatsApp', href: 'https://wa.me/393401234567' },
+    { label: 'WhatsApp', href: 'https://wa.me/393407189573' },
     { label: 'Google Maps', href: 'https://maps.google.com' },
   ],
 };
